@@ -1,116 +1,191 @@
-
-body{
+/*body {
     margin: 0;
-    background-color: #e9ecef; /* Color de fondo claro */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0d1128;
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
-/* #container-main{
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
-} */
+.container {
+    text-align: center;
+}
 
-/* #main-title {
+h1 {
+    font-size: 4em;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 70px;
+}
+
+.button-container {
     display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: #345b63;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Orbitron', sans-serif;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.button .arrow {
+    margin-left: 15px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0; 
-    font-size: 56px; 
-    color: black; 
-    padding: 20px; 
-    text-align: center; 
-} */
+    width: 36px;
+    height: 36px;
+    background-color: #2b2f77;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
 
-/* #container-fields{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10%;
-} */
+.button:hover .arrow {
+    background-color: #4caf50;
+}
 
-h1{
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+        margin-bottom: 50px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+    }
+
+    .button .arrow {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+
+    .button .arrow {
+        width: 20px;
+        height: 20px;
+    }
+}
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.logo {
+    width: 80px;
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.version {
+    font-size: 1em;
+    color: #666;
+}
+
+main {
     display: flex;
     justify-content: center;
-    font-size: 50px;
-}
-
-#main-container {
-    display: grid;
-    grid-template-rows: repeat(3,1fr);
-    height: 500px;
     gap: 20px;
     padding: 20px;
-    box-sizing: border-box;
 }
 
-#container-trl-fields{
-    border: 3px solid red;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 60px;
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
 }
 
-#btn-main-trl, .btn-main {
-    background-color: #6c757d; 
-    color: white;              
-    padding: 15px 30px;        
-    border: 2px solid #302d2d;              
-    border-radius: 5px;        
-    cursor: pointer;           
-    font-size: 18px;                         
-    transition: background-color 0.3s ease;
-    margin-left: 40px;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-#btn-main-trl:hover, .btn-main:hover {
-    background-color: #5a6268; 
+.card a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* .main-container{
-    display: grid;
-    grid-template-rows: repeat(3,1fr);
-} */
-
-.hidden{
-    display: none;
+.card img {
+    width: 100%;
+    height: auto;
 }
 
-/* Configuracion para los botones de cada campo */
-.btn-field {
-    background-color: white;
-    color: #333;
-    border: 2px solid #333;
-    border-radius: 5px;
-    /*padding: 10px 20px;*/
-    margin: 30px 20px;
-    font-size: 16px;
-    height: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+.card h3 {
+    color: #007BFF;
+    margin: 15px 0 10px;
+    font-size: 1.2em;
 }
 
-.btn-field:hover {
-    background-color: #333;
-    color: white;
-    border-color: #333;
+.card p {
+    padding: 0 15px 20px;
+    color: #555;
+    font-size: 0.9em;
 }
 
-.btn-field:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.btn-field:active {
-    background-color: #555;
-    border-color: #555;
-}
-
-/* Para mandar dos botones a otra fila*/
-
-.btn-field:nth-child(4),
-.btn-field:nth-child(5){
-    grid-column: span 1;
-}
-
-label {
+.card::after {
+    content: "";
     display: block;
-    margin-bottom: 10px;
+    width: 50px;
+    height: 2px;
+    background-color: #ff6600;
+    margin: 10px auto;
 }

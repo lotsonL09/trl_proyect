@@ -1,49 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRL Proyect</title>
+    <title>Calculadora CONCYTEC</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h1>Calculadora TRL/CRL (demo)</h1>
-    <section id="main-container">
-        <div class="minor-container">
-            <button id="btn-main-trl">Cálculo de TRL</button>
-            <div id="container-trl-fields" class="hidden button-container">
-                <button class="btn-field" onclick="toEndPoint('/agricultura_silvicultura/')">Agricultura y Silvicultura</button>
-                <button class="btn-field" onclick="toEndPoint('/ingenieria_tecnologia/')">Ingeniería y Tecnología</button>
-                <button class="btn-field" onclick="toEndPoint('/ciencias_medicas_salud/')">Ciencias Médicas y Salud</button>
-                <button class="btn-field" onclick="toEndPoint('/pesca/')">Pesca</button>
-                <button class="btn-field" onclick="toEndPoint('/software_hardware/')">Software y Hardware</button>
+    <div class="container">
+        <h1>Calculadora TRL/CRL (demo)</h1>
+        <div class="button-container">
+            <a href="/ingenieria_tecnologia/" class="button">
+                TRL <span class="arrow">&rarr;</span>
+            </a>
+            <a href="#" class="button">
+                CRL <span class="arrow">&rarr;</span>
+            </a>
+            <a href="#" class="button">
+                TRL Y CRL <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora TLR/CRL</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/static/images/logo_concytec_horizontal.png" alt="Logo1" class="logo">
+                <img src="/static/images/logo_vinculate.png" alt="Logo2" class="logo">
             </div>
+            <h1>Calculadora TLR/CRL</h1>
+            <span class="version">Versión alpha</span>
         </div>
-    
-        <div class="minor-container">
-            <button class="btn-main">Cálculo de CRL</button>
+    </header>
+    <main>
+        <div class="card">
+            <a href="/trl_fields/">
+                <img src="https://via.placeholder.com/300x200" alt="Solo TRL">
+                <h3>Solo TRL</h3>
+                <p>Los niveles de madurez tecnológica o Technology Readiness Level (TRL) es una escala para clasificar tecnología en relación al grado de desarrollo en el que se encuentra y cuánto le falta para llegar a entrar al mercado.</p>
+            </a>
         </div>
-    
-        <div class="minor-container">
-            <button class="btn-main">Cálculo de CRL y TRL</button>
+        <div class="card">
+            <a href="solo-crl.html">
+                <img src="https://via.placeholder.com/300x200" alt="Solo CRL">
+                <h3>Solo CRL</h3>
+                <p>El nivel de madurez comercial o Commercialization Readiness Level (CRL) busca clasificar la tecnología en relación a la necesidad de aspecto de comercialización.</p>
+            </a>
         </div>
-    </section>
-    
-    <script>
-        
-        document.getElementById("btn-main-trl").addEventListener("click",function(){
-            var container = document.getElementById("container-trl-fields");
-            if (container.classList.contains("hidden")){
-                container.classList.remove("hidden");
-            }else{
-                container.classList.add("hidden");
-            }
-        })
-
-        function toEndPoint(endpoint){
-            window.location.href=endpoint;
-        }
-    </script>
-
+        <div class="card">
+            <a href="trl-crl.html">
+                <img src="https://via.placeholder.com/300x200" alt="TRL + CRL">
+                <h3>TRL + CRL</h3>
+                <p>Esta opción medirá los niveles de madurez tecnológica y comercial de tu proyecto.</p>
+            </a>
+        </div>
+    </main>
 </body>
 </html>

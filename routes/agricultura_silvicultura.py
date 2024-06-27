@@ -1,6 +1,19 @@
-from flask import Blueprint,render_template
+from flask import Blueprint,render_template,request
+from random import shuffle
 
 bp_agricultura_silvicultura=Blueprint('agricultura_silvicultura',__name__,url_prefix='/agricultura_silvicultura')
+
+condictions={
+    'TRL1':1,
+    'TRL2':2,
+    'TRL3':2,
+    'TRL4':2,
+    'TRL5':2,
+    'TRL6':2,
+    'TRL7':3,
+    'TRL8':3,
+    'TRL9':3
+}
 
 data={
     'campo_1':{
@@ -71,23 +84,23 @@ data={
                 'TRL': 'TRL7'}
             },
             {'pregunta':{
-                'enunciado':'•	Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias.',
+                'enunciado':'Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias .',
                 'TRL': 'TRL7'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha sido completamente desarrollada e implementada.',
+                'enunciado':'La tecnología ha sido completamente desarrollada e implementada .',
                 'TRL': 'TRL8'}
             },
             {'pregunta':{
-                'enunciado':'•	Se cuenta con los certificados emitidos por autoridades regulatorias relevantes para el sector agrícola .',
+                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes para el sector agrícola .',
                 'TRL': 'TRL8'}
             },
             {'pregunta':{
-                'enunciado':'•	Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado agrícola .',
+                'enunciado':'Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado agrícola.',
                 'TRL': 'TRL9'}
             },
             {'pregunta':{
-                'enunciado':'•	La tecnología está completamente operativa y se utiliza en operaciones comerciales de agrícolas de manera regular .',
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de agrícolas de manera regular.',
                 'TRL': 'TRL9'}
             },
         ]
@@ -97,15 +110,15 @@ data={
         'title': 'Desarrollo Comercial',
         'questions': [
         {'pregunta':{
-            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
+            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes agrícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
             'TRL': 'TRL9'}
         },
         {'pregunta':{
-            'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales.',
+            'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales .',
             'TRL': 'TRL8'}
         },
         {'pregunta':{
-            'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas pesqueras y ha recibido interés para futuras implementaciones comerciales.',
+            'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas agrícolas y ha recibido interés para futuras implementaciones comerciales.',
             'TRL': 'TRL7'}
         },
     ]
@@ -115,4 +128,35 @@ data={
 
 @bp_agricultura_silvicultura.route('/')
 def root():
-    return render_template('fields/agricultura_silvicultura.1.html')
+    shuffle(data['campo_1']['questions'])
+    shuffle(data['campo_2']['questions'])
+    shuffle(data['campo_3']['questions'])
+    shuffle(data['campo_4']['questions'])
+    return render_template('fields/agricultura_silvicultura.1.html',data=data)
+
+@bp_agricultura_silvicultura.route('/evaluacion',methods=['POST'])
+def evaluation():
+    results=[]
+    count=0
+    print(request.form)
+    investigacion = request.form.getlist('Investigación')
+    desarrollo = request.form.getlist('Desarrollo Tecnológico')
+    implementacion = request.form.getlist('Implementación')
+    comercial = request.form.getlist('Desarrollo Comercial')
+    results.extend(investigacion)
+    results.extend(desarrollo)
+    results.extend(implementacion)
+    results.extend(comercial)
+    print(results)
+    for level in condictions.keys():
+        print('nivel',level)
+        print(results.count(level))
+        print('condicion',condictions[level])
+        if results.count(level) == condictions[level]:
+            count+=1
+        else:
+            break
+    if count == 0:
+        return 'No hay nivel de TRL'
+    else:
+        return f'Se encuentra en TRL{count}'

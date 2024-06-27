@@ -51,21 +51,21 @@ main h2 {
 }
 
 .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
 }
 
 .category {
     background-color: #007BFF;
     color: white;
-    padding: 15px 25px;
+    padding: 25px 25px;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.2em;
+    border-radius: 10px;
+    font-size: 2em;
     transition: background-color 0.3s ease;
-    width: 200px;
+    width: 250px;
     text-align: center;
 }
 
@@ -74,10 +74,9 @@ main h2 {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .categories {
-        flex-direction: column;
-        gap: 10px;
+        grid-template-columns: 1fr;
     }
 
     .category {

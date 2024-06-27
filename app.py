@@ -6,10 +6,10 @@ from routes.ciencias_medicas_salud import bp_ciencias_medicas_salud
 from routes.ingenieria_tecnologia import bp_ingenieria_tecnologia
 from routes.pesca import bp_pesca
 from routes.software_hardware import bp_software_hardware
-from routes.main import bp_main
+from routes.home import bp_home
 
 app=Flask(__name__)
-app.register_blueprint(bp_main)
+app.register_blueprint(bp_home)
 app.register_blueprint(bp_agricultura_silvicultura)
 app.register_blueprint(bp_ciencias_medicas_salud,)
 app.register_blueprint(bp_ingenieria_tecnologia)

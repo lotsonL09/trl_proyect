@@ -4,4 +4,4 @@ bp_ingenieria_tecnologia=Blueprint('ingenieria_tecnologia',__name__,url_prefix='
 
 @bp_ingenieria_tecnologia.route('/')
 def root():
-    return render_template('fields/ingenieria_tecnologia.html')
+    return render_template('fields/ingenieria_tecnologia.1.html')

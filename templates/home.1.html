@@ -7,19 +7,39 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-
-    <div id="contenedor-main">
-        <header id="main-title">Bienvenidos a la calculadora de TRL</header>
-        <section id="contenedor-fields">
-            <button class="btn-field" onclick="toEndPoint('/agricultura_silvicultura/')">Agricultura y Silvicultura</button>
-            <button class="btn-field" onclick="toEndPoint('/ingenieria_tecnologia/')">Ingeniería y Tecnología</button>
-            <button class="btn-field" onclick="toEndPoint('/ciencias_medicas_salud/')">Ciencias Médicas y Salud</button>
-            <button class="btn-field" onclick="toEndPoint('/pesca/')">Pesca</button>
-            <button class="btn-field" onclick="toEndPoint('/software_hardware/')">Software y Hardware</button>
-        </section>
-    </div>
-
+    <h1>Calculadora TRL/CRL (demo)</h1>
+    <section id="main-container">
+        <div class="minor-container">
+            <button id="btn-main-trl">Cálculo de TRL</button>
+            <div id="container-trl-fields" class="hidden button-container">
+                <button class="btn-field" onclick="toEndPoint('/agricultura_silvicultura/')">Agricultura y Silvicultura</button>
+                <button class="btn-field" onclick="toEndPoint('/ingenieria_tecnologia/')">Ingeniería y Tecnología</button>
+                <button class="btn-field" onclick="toEndPoint('/ciencias_medicas_salud/')">Ciencias Médicas y Salud</button>
+                <button class="btn-field" onclick="toEndPoint('/pesca/')">Pesca</button>
+                <button class="btn-field" onclick="toEndPoint('/software_hardware/')">Software y Hardware</button>
+            </div>
+        </div>
+    
+        <div class="minor-container">
+            <button class="btn-main">Cálculo de CRL</button>
+        </div>
+    
+        <div class="minor-container">
+            <button class="btn-main">Cálculo de CRL y TRL</button>
+        </div>
+    </section>
+    
     <script>
+        
+        document.getElementById("btn-main-trl").addEventListener("click",function(){
+            var container = document.getElementById("container-trl-fields");
+            if (container.classList.contains("hidden")){
+                container.classList.remove("hidden");
+            }else{
+                container.classList.add("hidden");
+            }
+        })
+
         function toEndPoint(endpoint){
             window.location.href=endpoint;
         }

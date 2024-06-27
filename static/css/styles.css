@@ -1,33 +1,76 @@
-/* html,body{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
-#contenedor-main{
+body{
+    margin: 0;
+    background-color: #e9ecef; /* Color de fondo claro */
+}
+
+/* #container-main{
     display: grid;
     grid-template-rows: repeat(2,1fr);
-}
+} */
 
-#main-title {
+/* #main-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*height: 100vh;*/ 
-    background-color: #f0f0f0; /* Color de fondo para el contenedor */
-    font-size: 56px; /* Tamaño de fuente para el texto */
-    color: black; /* Color del texto */
-    padding: 20px; /* Espaciado interno del contenedor */
-    text-align: center; /* Alinea el texto en el centro */
+    background-color: #f0f0f0; 
+    font-size: 56px; 
+    color: black; 
+    padding: 20px; 
+    text-align: center; 
+} */
 
-}
-
-#contenedor-fields{
+/* #container-fields{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10%;
+} */
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+#main-container {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    height: 500px;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#container-trl-fields{
+    border: 3px solid red;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+#btn-main-trl, .btn-main {
+    background-color: #6c757d; 
+    color: white;              
+    padding: 15px 30px;        
+    border: 2px solid #302d2d;              
+    border-radius: 5px;        
+    cursor: pointer;           
+    font-size: 18px;                         
+    transition: background-color 0.3s ease;
+    margin-left: 40px;
+}
+
+#btn-main-trl:hover, .btn-main:hover {
+    background-color: #5a6268; 
+}
+
+/* .main-container{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+} */
+
+.hidden{
+    display: none;
 }
 
 /* Configuracion para los botones de cada campo */

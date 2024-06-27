@@ -20,7 +20,7 @@ bp_pesca=Blueprint('pesca',__name__,url_prefix='/pesca')
 
 @bp_pesca.route('/')
 def root():
-    return render_template('fields/pesca.html')
+    return render_template('fields/pesca.1.html')
 
 @bp_pesca.route('/evaluacion',methods=['POST'])
 def evaluation():

@@ -103,114 +103,91 @@ body {
     }
 }
 */
-
+/* styles_fields.css */
+/* styles_fields.css */
+/* styles_fields.css */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
-header {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header-container {
+.header {
+    background-color: white;
+    color: black;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
 .logo-container {
     display: flex;
-    gap: 10px;
+    align-items: center;
 }
 
 .logo {
-    width: 80px;
+    height: 50px;
+    margin-right: 10px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
-    color: #333;
+.title-container {
     flex-grow: 1;
     text-align: center;
 }
 
+.title-container h1 {
+    margin: 0;
+}
+
 .version {
-    font-size: 1em;
-    color: #666;
+    font-size: 0.9em;
 }
 
-.categories {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-}
-
-.category {
-    color: #333;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.category:hover {
-    background-color: #0056b3;
-    font-weight: bold;
-    color: white;
-}
-
-.questions-section {
-    display: none;
-    background-color: white;
-    margin: 20px auto;
+.section {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
 }
 
-.questions-section h2 {
-    background-color: #0056b3;
-    color: white;
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
     padding: 10px;
-    border-radius: 4px;
 }
 
-.questions-section label {
-    display: block;
-    margin: 10px 0;
-}
-
-.questions-section input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.questions-section button {
-    background-color: #0056b3;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.questions-section button:hover {
-    background-color: #0056b3;
+legend {
+    font-weight: bold;
+    font-size: 1.5em;
+    
 }
 
 label {
     display: block;
     margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #004494;
+}
+
+/* Hide the options at the top if they exist */
+.header + nav, .header + .tabs {
+    display: none;
 }

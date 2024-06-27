@@ -1,49 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRL Proyect</title>
+    <title>Calculadora CONCYTEC</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h1>Calculadora TRL/CRL (demo)</h1>
-    <section id="main-container">
-        <div class="minor-container">
-            <button id="btn-main-trl">Cálculo de TRL</button>
-            <div id="container-trl-fields" class="hidden button-container">
-                <button class="btn-field" onclick="toEndPoint('/agricultura_silvicultura/')">Agricultura y Silvicultura</button>
-                <button class="btn-field" onclick="toEndPoint('/ingenieria_tecnologia/')">Ingeniería y Tecnología</button>
-                <button class="btn-field" onclick="toEndPoint('/ciencias_medicas_salud/')">Ciencias Médicas y Salud</button>
-                <button class="btn-field" onclick="toEndPoint('/pesca/')">Pesca</button>
-                <button class="btn-field" onclick="toEndPoint('/software_hardware/')">Software y Hardware</button>
-            </div>
+    <div class="container">
+        <h1>Calculadora TRL/CRL (demo)</h1>
+        <div class="button-container">
+            <a href="/ingenieria_tecnologia/" class="button">
+                TRL <span class="arrow">&rarr;</span>
+            </a>
+            <a href="#" class="button">
+                CRL <span class="arrow">&rarr;</span>
+            </a>
+            <a href="#" class="button">
+                TRL Y CRL <span class="arrow">&rarr;</span>
+            </a>
         </div>
-    
-        <div class="minor-container">
-            <button class="btn-main">Cálculo de CRL</button>
-        </div>
-    
-        <div class="minor-container">
-            <button class="btn-main">Cálculo de CRL y TRL</button>
-        </div>
-    </section>
-    
-    <script>
-        
-        document.getElementById("btn-main-trl").addEventListener("click",function(){
-            var container = document.getElementById("container-trl-fields");
-            if (container.classList.contains("hidden")){
-                container.classList.remove("hidden");
-            }else{
-                container.classList.add("hidden");
-            }
-        })
-
-        function toEndPoint(endpoint){
-            window.location.href=endpoint;
-        }
-    </script>
-
+    </div>
 </body>
 </html>

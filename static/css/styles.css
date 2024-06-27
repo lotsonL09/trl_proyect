@@ -1,0 +1,73 @@
+/* html,body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+#contenedor-main{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+
+#main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 100vh;*/ 
+    background-color: #f0f0f0; /* Color de fondo para el contenedor */
+    font-size: 56px; /* Tamaño de fuente para el texto */
+    color: black; /* Color del texto */
+    padding: 20px; /* Espaciado interno del contenedor */
+    text-align: center; /* Alinea el texto en el centro */
+
+}
+
+#contenedor-fields{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10%;
+}
+
+/* Configuracion para los botones de cada campo */
+.btn-field {
+    background-color: white;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    /*padding: 10px 20px;*/
+    margin: 30px 20px;
+    font-size: 16px;
+    height: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-field:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.btn-field:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-field:active {
+    background-color: #555;
+    border-color: #555;
+}
+
+/* Para mandar dos botones a otra fila*/
+
+.btn-field:nth-child(4),
+.btn-field:nth-child(5){
+    grid-column: span 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}

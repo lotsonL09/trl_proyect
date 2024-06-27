@@ -4,70 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de TRL</title>
-    <link rel="stylesheet" href="/static/css/styles_trl_fields.css">
+    <link rel="stylesheet" href="/static/css/styles_fields.css">
 </head>
 <body>
     <div class="header">
         <h1>Calculadora de TRL</h1>
     </div>
-    <div class="navigation">
-        <a href="/ingenieria_tecnologia/" class="button">INGENIERÍA Y TECNOLOGÍA</a>
-        <a href="/software_hardware/" class="button">SOFTWARE Y HARDWARE</a>
-        <a href="/agricultura_silvicultura/" class="button">AGRICULTURA Y SILVICULTURA</a>
-        <a href="/pesca/" class="button active">PESCA</a>
-        <a href="/ciencias_medicas_salud/" class="button">CIENCIAS MÉDICAS</a>
-        <a href="/generales/" class="button">GENERALES</a>
-    </div>
-    <div class="section">
-        <h3>Investigación</h3>
-        <!--<legend>Investigación</legend> -->
-        <label><input type="checkbox" name="investigacion[]" value="TRL1">Se ha establecido una base teórica inicial que justifica la necesidad de una investigación (TRL1)</label>
-        <label><input type="checkbox" name="investigacion[]" value="TRL3">Se ha realizado pruebas experimentales iniciales en condiciones controladas (TRL3)</label>
-        <label><input type="checkbox" name="investigacion[]" value="TRL2">Se ha desarrollado modelos conceptuales que describen el funcionamiento práctico de la tecnología (TRL2)</label>
-        <label><input type="checkbox" name="investigacion[]" value="TRL3">La tecnología ha demostrado eficacia en condiciones de laboratorio (TRL3)</label>
-        <label><input type="checkbox" name="investigacion[]" value="TRL2">Se ha formulado una hipótesis clara y específica (TRL2)</label>
-        <label><input type="checkbox" name="investigacion[]" value="none">No cumplo con ninguna de las alternativas</label>
-
-        <!-- Add more checkboxes as needed -->
-    </div>
-    <div class="section">
-        <h3>Desarrollo tecnológico</h3>
-        <!--<legend>Desarrollo tecnológico</legend> -->
-        <label><input type="checkbox" name="desarrollo[]" value="TRL4">Ha modelado y simulado condiciones marinas en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos (TRL4)</label>
-        <label><input type="checkbox" name="desarrollo[]" value="TRL5">Se ha simulado situaciones operativas reales controladas (no necesariamente en el campo o entorno de uso final) para validar la tecnología propuesta (TRL5)</label>
-        <label><input type="checkbox" name="desarrollo[]" value="TRL6">Se ha colaborado con pescadores/usuarios para realizar pruebas operativas de la tecnología (TRL6)</label>
-        <label><input type="checkbox" name="desarrollo[]" value="TRL4">Se tiene alguna documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo (TRL4)</label>
-        <label><input type="checkbox" name="desarrollo[]" value="TRL6">Se ha demostrado que la tecnología presentada es eficiente y sostenible en un entorno operativo relevante (fuera de un entorno controlado, pero no es un entorno operativo final) (TRL6)</label>
-        <label><input type="checkbox" name="desarrollo[]" value="TRL5">Ha realizado evaluaciones iniciales de eficiencia y sostenibilidad de la tecnología (TRL5)</label>
-        <label><input type="checkbox" name="desarrollo[]" value="none">No cumplo con ninguna de las alternativas</label>
-
-        <!-- Add more checkboxes as needed -->
-    </div>
-    <div class="section">
-        <h3>Implementación</h3>
-        <!--<legend>Implementación</legend> -->
-        <label><input type="checkbox" name="implementacion[]" value="TRL7">La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso (TRL7)</label>
-        <label><input type="checkbox" name="implementacion[]" value="TRL7">Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias (TRL7)</label>
-        <label><input type="checkbox" name="implementacion[]" value="TRL8">La tecnología ha sido completamente desarrollada e implementada (TRL8)</label>
-        <label><input type="checkbox" name="implementacion[]" value="TRL8">Se cuenta con los certificados emitidos por autoridades regulatorias relevantes (TRL8)</label>
-        <label><input type="checkbox" name="implementacion[]" value="TRL9">Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado (TRL9)</label>
-        <label><input type="checkbox" name="implementacion[]" value="TRL9">La tecnología está completamente operativa y se utiliza en operaciones comerciales de pesca de manera regular (TRL9)</label>
-        <label><input type="checkbox" name="implementacion[]" value="none">No cumplo con ninguna de las alternativas</label>
-
-        <!-- Add more checkboxes as needed -->
-    </div>
-
-    <div class="section">
-        <h3>Desarrollo comercial</h3>
-        <!--<legend>Desarrollo comercial</legend> -->
-            <label><input type="checkbox" name="comercial[]" value="TRL9">Se está recopilando y analizando datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado (TRL 9)</label>
-            <label><input type="checkbox" name="comercial[]" value="TRL8">Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales (TRL 8)</label>
-            <label><input type="checkbox" name="comercial[]" value="TRL7">Se ha presentado la tecnología a potenciales clientes y/o empresas pesqueras y ha recibido interés para futuras implementaciones comerciales (TRL 7)</label>
-            <label><input type="checkbox" name="comercial[]" value="none">No cumplo con ninguna de las alternativas</label>
-
-    </div>
-    <div class="footer">
-        <button type="submit" >Evaluar</button>
-    </div>
+    
+    <section class="section">
+        <form action="/pesca/evaluacion" method="post">
+            {%for campo,datos in data.items() %}
+            <fieldset>
+                    <legend>{{datos.title}}</legend>
+                    {%for question in datos.questions%}
+                        <label>
+                            <input type="checkbox" name={{datos.title}} value={{question.pregunta.TRL}}> {{question.pregunta.enunciado}}
+                        </label>
+                    {%endfor%}
+                    <label><input type="checkbox" name={{datos.title}} value="none"> No cumplo con ninguna de las alternativas</label>
+                </fieldset>
+            {%endfor%}
+            <input type="submit" value="Evaluar">
+        </form>
+    </section>
+    
 </body>
 </html>

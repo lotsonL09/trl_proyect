@@ -209,3 +209,8 @@ header h1 {
 .questions-section button:hover {
     background-color: #0056b3;
 }
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}

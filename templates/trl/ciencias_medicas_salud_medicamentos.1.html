@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de TRL</title>
-    <link rel="stylesheet" href="/static/css/styles_fields.css">
-</head>
-<body>
-    <div class="header">
-        <div class="title-container">
-            <h1>Calculadora TRL-Ciencias Médicas y de Saludo (medicamentos)</h1>
-        </div>
-        <div class="version">
-            Versión alpha 1.2
-        </div>
-    </div>
-    
+{% extends "base.html" %}
+
+{%block stylesheet%} /static/css/styles_fields.css {%endblock%}
+
+{%block header%} Calculadora TRL-Ciencias Médicas y de Saludo (medicamentos) {%endblock%}
+
+{%block content%}
+
     <section class="section">
         <form action="/ciencias_medicas_salud_medicamentos/evaluacion" method="post">
             {%for campo,datos in data.items() %}
@@ -45,5 +35,6 @@
             });
         }
     </script>
-</body>
-</html>
+
+{%endblock%}
+

@@ -11,16 +11,17 @@
 <body>
     <header>
         <div class="header-container">
-            <h1>Calculadora TLR/CRL</h1>
+            {%block header%}<h1>Calculadora TLR/CRL</h1>{%endblock%}
             <span class="version">Versión alpha 1.2</span>
         </div>
     </header>
+
     {%block content%}
 
     {%endblock%}
-    <div class="logo-container">
+    <footer class="logo-container">
         <img src="/static/images/logo_concytec_horizontal.png" alt="Logo1" class="logo">
         <img src="/static/images/logo_vinculate.png" alt="Logo2" class="logo">
-    </div>
+    </footer>
 </body>
 </html>

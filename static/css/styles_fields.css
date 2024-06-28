@@ -8,26 +8,51 @@ body {
     color: #333;
 }
 
-.header {
-    background-color: white;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+/* Para la cabecera */
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container {
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.version {
+    font-size: 1.8em;
+    color: #666;
+}
+
+/* Para la cabecera */
+
+.logo-container {
+    position: relative;
+    background-color: #fff; /* Ajusta según el diseño de tu página */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .logo {
-    width: 100px;
-    margin-right: 10px;
+    width: 400px;
+
 }
 
-.title-container {
+/* .title-container {
     flex-grow: 1;
     text-align: center;
 }
@@ -35,11 +60,7 @@ body {
 .title-container h1 {
     margin: 0;
     font-size: 3em;
-}
-
-.version {
-    font-size: 2em;
-}
+} */
 
 .section {
     padding: 20px;
@@ -149,8 +170,4 @@ input[type="submit"]:hover {
 img{
     width: 200px;
 }
-
-/* .option{
-    font-size: 30px;
-} */
 

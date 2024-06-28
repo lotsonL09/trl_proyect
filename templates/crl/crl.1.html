@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de CRL</title>
-    <link rel="stylesheet" href="/static/css/styles_fields.css">
-</head>
-<body>
-    <div class="header">
-        <div class="title-container">
-            <h1>Calculadora CRL</h1>
-        </div>
-        <div class="version">
-            Versión alpha 1.2
-        </div>
-    </div>
-    
+{% extends "base.html" %}
+
+{%block stylesheet%} /static/css/styles_fields.css {%endblock%}
+
+{%block header%} <h1> Calculadora CRL </h1> {%endblock%}
+
+{%block content%}
     <section class="section">
         <form action="/crl/evaluacion" method="post">
             {%for campo,datos in data.items() %}
@@ -45,5 +34,4 @@
             });
         }
     </script>
-</body>
-</html>
+{%endblock%}

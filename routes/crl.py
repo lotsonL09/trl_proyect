@@ -127,10 +127,10 @@ data={
     },
 }
 
-bp_pesca=Blueprint('pesca',__name__,url_prefix='/pesca')
+bp_crl=Blueprint('crl',__name__,url_prefix='/crl')
 
 
-@bp_pesca.route('/')
+@bp_crl.route('/')
 def root():
 
     shuffle(data['campo_1']['questions'])
@@ -138,9 +138,9 @@ def root():
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
 
-    return render_template('fields/pesca.1.html',data=data)
+    return render_template('fields/crl.1.html',data=data)
 
-@bp_pesca.route('/evaluacion',methods=['POST'])
+@bp_crl.route('/evaluacion',methods=['POST'])
 def evaluation():
     results=[]
     count=0

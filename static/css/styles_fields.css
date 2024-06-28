@@ -115,6 +115,11 @@ input[type="submit"]:hover {
 }
 */ 
 
+
+
+
+
+
 /* styles_fields.css */
 body {
     font-family: Arial, sans-serif;
@@ -202,7 +207,7 @@ input[type="submit"]:hover {
 }
 
 /* Popup window styles */
-.popup {
+/*.popup {
     display: none;
     position: fixed;
     left: 50%;
@@ -227,3 +232,55 @@ input[type="submit"]:hover {
     cursor: pointer;
     font-size: 1.2em;
 }
+
+*/
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.highlight {
+    border: 2px solid #ff0000;
+    border-radius: 50%;
+}
+
+#trlGraph {
+    position: relative;
+    text-align: center;
+}
+
+#trlGraph img {
+    width: 100%;
+}
+
+.trl-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+#trl1 { top: 20px; left: 60px; }
+#trl2 { top: 20px; left: 160px; }
+#trl3 { top: 20px; left: 260px; }
+#trl4 { top: 20px; left: 360px; }
+#trl5 { top: 20px; left: 460px; }
+#trl6 { top: 20px; left: 560px; }
+#trl7 { top: 20px; left: 660px; }
+#trl8 { top: 20px; left: 760px; }
+#trl9 { top: 20px; left: 860px; }

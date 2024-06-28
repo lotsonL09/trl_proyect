@@ -35,10 +35,10 @@
                 </label>
             </fieldset>
             {%endfor%}
-            <input type="submit" value="Evaluar" onclick="showPopup()">
+            <input type="submit" value="Evaluar" onclick="redirectToResultPage()">
         </form>
     </section>
-
+    <script src="/static/js/script.js"></script>
     <script>
         function handleNoneOption(element) {
             const fieldset = element.closest('fieldset');
@@ -51,3 +51,4 @@
     </script>
 </body>
 </html>
+

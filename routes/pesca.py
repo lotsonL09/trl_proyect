@@ -187,4 +187,4 @@ def evaluation():
         'TRL':TRL
     }
 
-    return window_content
+    return render_template("/fields/resultados.1.html",data=window_content)

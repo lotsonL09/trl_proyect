@@ -8,10 +8,14 @@ from routes.pesca import bp_pesca
 from routes.software_hardware import bp_software_hardware
 from routes.home import bp_home
 from routes.general import bp_general
+from routes.crl import bp_crl
+from routes.resultados import bp_resultados
 
 app=Flask(__name__)
 app.register_blueprint(bp_home)
 app.register_blueprint(bp_general)
+app.register_blueprint(bp_crl)
+app.register_blueprint(bp_resultados)
 app.register_blueprint(bp_agricultura_silvicultura)
 app.register_blueprint(bp_ciencias_medicas_salud)
 app.register_blueprint(bp_ingenieria_tecnologia)

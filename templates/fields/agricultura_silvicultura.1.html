@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,10 +27,12 @@
                 <legend>{{datos.title}}</legend>
                 {%for question in datos.questions%}
                     <label>
-                        <input type="checkbox" name="{{datos.title}}" value="{{question.pregunta.TRL}}"> {{question.pregunta.enunciado}}
+                        <input type="checkbox" name="{{datos.title}}" value="{{question.pregunta.TRL}}" class="option"> {{question.pregunta.enunciado}}
                     </label>
                 {%endfor%}
-                <label><input type="checkbox" name="{{datos.title}}" value="none"> No cumplo con ninguna de las alternativas</label>
+                <label>
+                    <input type="checkbox" name="{{datos.title}}" value="none" class="none-option" onclick="handleNoneOption(this)"> No cumplo con ninguna de las alternativas
+                </label>
             </fieldset>
             {%endfor%}
             <input type="submit" value="Evaluar" onclick="showPopup()">
@@ -45,6 +46,15 @@
     </div>
 
     <script>
+        function handleNoneOption(element) {
+            const fieldset = element.closest('fieldset');
+            const options = fieldset.querySelectorAll('.option');
+            options.forEach(option => {
+                option.checked = false;
+                option.disabled = element.checked;
+            });
+        }
+
         function showPopup() {
             document.getElementById('popup').style.display = 'block';
 
@@ -64,4 +74,3 @@
     </script>
 </body>
 </html>
-

@@ -35,16 +35,17 @@
                 </label>
             </fieldset>
             {%endfor%}
-            <input type="submit" value="Evaluar" onclick="showPopup()">
+            <input type="submit" value="Evaluar" onclick="redirectToResultPage()">
         </form>
     </section>
+    <script src="/static/js/script.js"></script>
 
-    <div class="popup" id="popup">
+    <!--<div class="popup" id="popup">
         <span class="close" onclick="hidePopup()">&times;</span>
         <h2>Resultados de la evaluación</h2>
         <p id="popupContent">Aquí se mostrarán los resultados de la evaluación.</p>
     </div>
-
+-->
     <script>
         function handleNoneOption(element) {
             const fieldset = element.closest('fieldset');
@@ -54,8 +55,8 @@
                 option.disabled = element.checked;
             });
         }
-
-        function showPopup() {
+        
+        /*function showPopup() {
             document.getElementById('popup').style.display = 'block';
 
             // You can add any logic here to populate the popup with dynamic content
@@ -70,7 +71,8 @@
 
         function hidePopup() {
             document.getElementById('popup').style.display = 'none';
-        }
+        }*/
     </script>
 </body>
 </html>
+

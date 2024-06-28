@@ -114,15 +114,15 @@ data={
         'title': 'Desarrollo Comercial',
         'questions': [
         {'pregunta':{
-            'enunciado':'•	Se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
+            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
             'TRL': 'TRL9_3_0'}
         },
         {'pregunta':{
-            'enunciado':'•	Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales.',
+            'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales.',
             'TRL': 'TRL8_3_1'}
         },
         {'pregunta':{
-            'enunciado':'•	Se ha presentado la tecnología a potenciales clientes y/o empresas y ha recibido interés para futuras implementaciones comerciales.',
+            'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas y ha recibido interés para futuras implementaciones comerciales.',
             'TRL': 'TRL7_3_2'}
         },
     ]

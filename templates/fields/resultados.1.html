@@ -23,13 +23,16 @@
         <h2>Los resultados de su proyecto no alcanza algún nivel de TRL.</h2>
     {%endif%}
     <h3>Alternativas seleccionadas:</h3>
-    {%if data.answers == "No ha seleccionado ninguna opción" %}
-        <p>{{data.answers}}</p>
-    {%else%}
-        {%for answer in data.answers%}
-            <p> {{answer}} </p>
-        {%endfor%}
-    {%endif%}
+    <ul>
+        {%if data.answers == "No ha seleccionado ninguna opción" %}
+        <li>{{data.answers}}</li>
+        {%else%}
+            {%for answer in data.answers%}
+                <li> {{answer}} </li>
+            {%endfor%}
+        {%endif%}
+    </ul>
+    
 
     <div class="container">
         <div class="row">

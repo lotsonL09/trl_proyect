@@ -1,10 +1,37 @@
+
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-container {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 4em;
+}
+
 body {
     font-family: 'Merriweather', serif;
-    margin: 0;
+    margin: 50px;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
+
+h2{
+    font-size: 3em;
+}
+
+h3{
+    font-size: 3em;
+}
+
+p{
+    font-size: 2em;
+}
+
 .container {
     display: flex;
     justify-content: center;

@@ -284,3 +284,7 @@ input[type="submit"]:hover {
 #trl7 { top: 20px; left: 660px; }
 #trl8 { top: 20px; left: 760px; }
 #trl9 { top: 20px; left: 860px; }
+
+img{
+    width: 200px;
+}

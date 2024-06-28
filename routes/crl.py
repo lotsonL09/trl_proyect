@@ -1,131 +1,24 @@
 from flask import Blueprint,render_template,request
-from enum import Enum
 from random import shuffle
+from aditional_data.crl import crl_questions,fields
 
+import re
+
+fields= fields
 
 condictions={
-    'TRL1':1,
-    'TRL2':2,
-    'TRL3':2,
-    'TRL4':2,
-    'TRL5':2,
-    'TRL6':2,
-    'TRL7':3,
-    'TRL8':3,
-    'TRL9':3
+    'CRL1':2,
+    'CRL2':2,
+    'CRL3':2,
+    'CRL4':2,
+    'CRL5':2,
+    'CRL6':2,
+    'CRL7':3,
+    'CRL8':3,
+    'CRL9':2
 }
 
-data={
-    'campo_1':{
-        'title': 'Iniciacion y Evaluación Preliminar',
-        'questions': [
-            {'pregunta':{
-                'enunciado':'Se tiene una comprensión inicial y superficial de cómo la idea podría ser aplicada en el mercado.',
-                'CRL': 'CRL_0_0'}
-            },
-            {'pregunta':{
-                'enunciado':'SSe han identificado los nichos y segmentos de mercado, en donde el producto o servicio puede ir enfocado.',
-                'CRL': 'CRL_0_1'
-            },
-            },
-            {'pregunta':{
-                'enunciado':'Se ha evaluado la viabilidad técnica, comercial y económica sobre cómo deberían ser los productos o servicios para satisfacer las necesidades del mercado.',
-                'CRL': 'CRL_0_2'
-            },
-            },
-            {'pregunta':{
-                'enunciado':'Se ha desarrollado un modelo inicial de negocio que evalúa los costos de producción y operación en relación con los ingresos esperados y otros beneficios.',
-                'CRL': 'CRL_0_3'
-            },
-            },
-            {'pregunta':{
-                'enunciado':'Se ha validado la propuesta de valor, utilizando modelos detallados de costo-rendimiento que han sido ajustados con datos obtenidos de estudios de mercado.',
-                'CRL': 'CRL_0_4'
-            }
-            }
-        ],
-    },
-
-    'campo_2':{
-        'title': 'Investigación y Análisis de mercado',
-        'questions': [
-            {'pregunta':{
-                'enunciado':'Aun no se han llevado a cabo investigaciones formales como estudios de mercado, análisis de la competencia, ni evaluaciones de viabilidad técnica y económica.',
-                'CRL': 'CRL_1_0'}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha realizado un análisis de mercado basado en información secundaria: datos disponibles públicamente.',
-                'CRL': 'CRL_1_1'}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha identificado aplicaciones específicas y realizando un análisis de mercado preliminar basado en encuestas o entrevistas con clientes potenciales.',
-                'CRL': 'CRL_1_2'}
-            },
-            {'pregunta':{
-                'enunciado':'Se han realizado ajustes y mejoras al prototipo del producto o servicio, basándose en los resultados y el feedback de los consumidores.',
-                'cRL': 'cRL_1_3'}
-            },
-            {'pregunta':{
-                'enunciado':'Se han establecido relaciones comerciales estratégicas con proveedores, socios y clientes.',
-                'CRL': 'CRL_1_4'}
-            },
-
-        ]
-    },
-
-    'campo_3':{
-        'title': 'Desarrollo y Validación Tencica',
-        'questions': [
-            {'pregunta':{
-                'enunciado':'Se ha realizado los ajustes y mejoras del producto o servicio, para que se adapte mejor a las necesidades y preferencias del mercado.',
-                'CRL': 'CRL_2_0'}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha completado el diseño final del producto o servicio, asegurando que todas las características y especificaciones están definidas y optimizadas.',
-                'CRL': 'CRL_2_1'}
-            },
-            {'pregunta':{
-                'enunciado':'Se tiene el conocimiento detallado y práctico de las normativas y certificaciones necesarias para operar legalmente y con éxito en el mercado. ',
-                'CRL': 'CRL_2_2'}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha desarrollado y validado modelos financieros detallados que proyectan los ingresos, costos, y rentabilidad del producto o servicio, tomando en cuenta el entorno económico y de mercado local. ',
-                'CRL': 'CRL_2_3'}
-            },
-            {'pregunta':{
-                'enunciado':'El producto cumple con todas las certificaciones y regulaciones requeridas para operar en el mercado. ',
-                'CRL': 'CRL_2_4'}
-            },
-
-        ]
-    },
-
-    'campo_4':{
-        'title': 'Lanzamiento y Evaluación Post-Lanzamiento',
-        'questions': [
-        {'pregunta':{
-            'enunciado':'Se ha realizado un ajuste en las estrategias y modelos financieros para reflejar mejor la realidad del mercado y maximizar la rentabilidad. ',
-            'CRL': 'CRL_3_0'}
-        },
-        {'pregunta':{
-            'enunciado':'El producto/servicio se ha lanzado oficialmente al mercado y ya se han realizado ventas iniciales.',
-            'CRL': 'CRL_3_1'}
-        },
-        {'pregunta':{
-            'enunciado':'Se han recopilado opiniones y calificaciones de los primeros clientes para evaluar la aceptación y el desempeño del producto en condiciones reales.',
-            'CRL': 'CRL_3_2'}
-        },
-                {'pregunta':{
-            'enunciado':'El producto/servicio cumple o supera las expectativas del mercado y de los clientes, en términos de calidad, precio, y disponibilidad.',
-            'CRL': 'CRL_3_3'}
-        },
-                {'pregunta':{
-            'enunciado':'Se ha logrado una sólida posición en el mercado, con una red de distribución establecida y un flujo constante de producción y ventas. ',
-            'CRL': 'CRL_3_4'}
-        },
-    ]
-    },
-}
+data=crl_questions
 
 bp_crl=Blueprint('crl',__name__,url_prefix='/crl')
 
@@ -144,25 +37,45 @@ def root():
 def evaluation():
     results=[]
     count=0
-    print(request.form)
-    investigacion = request.form.getlist('Investigación')
-    desarrollo = request.form.getlist('Desarrollo Tecnológico')
-    implementacion = request.form.getlist('Implementación')
-    comercial = request.form.getlist('Desarrollo Comercial')
-    results.extend(investigacion)
-    results.extend(desarrollo)
-    results.extend(implementacion)
-    results.extend(comercial)
-    print(results)
+    CRL=None
+
+    iniciacion_evaluacion = request.form.getlist('Iniciacion y Evaluación Preliminar')
+    investigacion_analisis = request.form.getlist('Investigación y Análisis de mercado')
+    desarrollo_validacion = request.form.getlist('Desarrollo y Validación Técnica')
+    lanzamiento_evaluacion = request.form.getlist('Lanzamiento y Evaluación Post-Lanzamiento')
+    results.extend(iniciacion_evaluacion)
+    results.extend(investigacion_analisis)
+    results.extend(desarrollo_validacion)
+    results.extend(lanzamiento_evaluacion)
+    
+    options_marked=[]
+    results_new=[]
+    print('resultados',results)
+    for result in results:
+        try:
+            index_0=int(re.findall('[CRL0-9]+',result)[1])
+            index_1=int(re.findall('[CRL0-9]+',result)[2])
+            option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
+            options_marked.append(option)
+            results_new.append(re.findall('[CRL0-9]+',result)[0])
+        except:
+            continue
+    print('resultados nuevos',results_new)
+    if len(options_marked)==0:
+        options_marked='No ha seleccionado ninguna opción'
     for level in condictions.keys():
-        print('nivel',level)
-        print(results.count(level))
-        print('condicion',condictions[level])
-        if results.count(level) == condictions[level]:
+        if results_new.count(level) == condictions[level]:
             count+=1
         else:
             break
     if count == 0:
-        return 'No hay nivel de TRL'
+        CRL='none'
     else:
-        return f'Se encuentra en TRL{count}'
+        CRL=f'CRL{count}'
+    print(options_marked)
+    window_content={
+        'answers':options_marked,
+        'CRL':CRL
+    }
+
+    return render_template("/fields/resultados_crl.1.html",data=window_content)

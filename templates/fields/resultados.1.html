@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="/static/css/styles_resultados.css">
 </head>
 <body>
-    <h3>El TRL de su proyecto es: </h3>
-    <h3>Usted se encuentra en un TRL 5, por el cual está en una fase de desarrollo tecnologico</h3>
+    {%if data.TRL != 'none' %}
+        <h3>El TRL de su proyecto es: {{data.TRL}} </h3>
+    {%endif%}
+
+    {%if data.phase != 'none' %}
+        <h3>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h3>
+    {%else%}
+        <h3>Los resultados de su proyecto no alcanza algún nivel de TRL.</h3>
+    {%endif%}
     <h4>Alternativas seleccionadas:</h4>
-    <p>Se ha establecido una base teórica inicial que justifica la necesidad de una investigación (TRL1)</p>
+    {%if data.answers == "No ha seleccionado ninguna opción" %}
+        <p>{{data.answers}}</p>
+    {%else%}
+        {%for answer in data.answers%}
+            <p> {{answer}} </p>
+        {%endfor%}
+    {%endif%}
     <div class="container">
         <div class="row">
             <div class="column bordered">

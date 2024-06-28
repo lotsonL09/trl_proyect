@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRL Chart</title>
+    <link rel="stylesheet" href="/static/css/styles_resultados.css">
+</head>
+<body>
+    {%if data.CRL != 'none' %}
+        <h3>El CRL de su proyecto es: {{data.TRL}} </h3>
+    {%else%}
+        <h3>Los resultados de su proyecto no alcanzan algún nivel de CRL.</h3>
+    {%endif%}
+
+    <h4>Alternativas seleccionadas:</h4>
+    {%if data.answers == "No ha seleccionado ninguna opción" %}
+        <p>{{data.answers}}</p>
+    {%else%}
+        {%for answer in data.answers%}
+            <p> {{answer}} </p>
+        {%endfor%}
+    {%endif%}
+    
+    <script src="script.js"></script>
+</body>
+</html>

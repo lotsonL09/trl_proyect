@@ -2,10 +2,7 @@ from flask import Blueprint,render_template,request
 from random import shuffle
 import re
 
-<<<<<<< HEAD:routes/general.py
-=======
 
->>>>>>> a2588372980f39f188d8364718f181f9a713f221:routes/generales.py
 bp_general=Blueprint('general',__name__,url_prefix='/general')
 
 condictions={

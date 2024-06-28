@@ -62,64 +62,66 @@ data={
                 'CRL': 'CRL_1_2'}
             },
             {'pregunta':{
-                'enunciado':'Se tiene alguna documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo.',
-                'TRL': 'TRL4'}
+                'enunciado':'Se han realizado ajustes y mejoras al prototipo del producto o servicio, basándose en los resultados y el feedback de los consumidores.',
+                'cRL': 'cRL_1_3'}
             },
             {'pregunta':{
-                'enunciado':'Se ha demostrado que la tecnología presentada es eficiente y sostenible en un entorno operativo relevante (fuera de un entorno controlado, pero no es un entorno operativo final).',
-                'TRL': 'TRL6'}
+                'enunciado':'Se han establecido relaciones comerciales estratégicas con proveedores, socios y clientes.',
+                'CRL': 'CRL_1_4'}
             },
-            {'pregunta':{
-                'enunciado':'Ha realizado evaluaciones iniciales de eficiencia y sostenibilidad de la tecnología.',
-                'TRL': 'TRL5'}
-            },
+
         ]
     },
 
     'campo_3':{
-        'title': 'Implementación',
+        'title': 'Desarrollo y Validación Tencica',
         'questions': [
             {'pregunta':{
-                'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
-                'TRL': 'TRL7'}
+                'enunciado':'Se ha realizado los ajustes y mejoras del producto o servicio, para que se adapte mejor a las necesidades y preferencias del mercado.',
+                'CRL': 'CRL_2_0'}
             },
             {'pregunta':{
-                'enunciado':'Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias.',
-                'TRL': 'TRL7'}
+                'enunciado':'Se ha completado el diseño final del producto o servicio, asegurando que todas las características y especificaciones están definidas y optimizadas.',
+                'CRL': 'CRL_2_1'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha sido completamente desarrollada e implementada.',
-                'TRL': 'TRL8'}
+                'enunciado':'Se tiene el conocimiento detallado y práctico de las normativas y certificaciones necesarias para operar legalmente y con éxito en el mercado. ',
+                'CRL': 'CRL_2_2'}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes.',
-                'TRL': 'TRL8'}
+                'enunciado':'Se ha desarrollado y validado modelos financieros detallados que proyectan los ingresos, costos, y rentabilidad del producto o servicio, tomando en cuenta el entorno económico y de mercado local. ',
+                'CRL': 'CRL_2_3'}
             },
             {'pregunta':{
-                'enunciado':'Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado.',
-                'TRL': 'TRL9'}
+                'enunciado':'El producto cumple con todas las certificaciones y regulaciones requeridas para operar en el mercado. ',
+                'CRL': 'CRL_2_4'}
             },
-            {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de pesca de manera regular.',
-                'TRL': 'TRL9'}
-            },
+
         ]
     },
 
     'campo_4':{
-        'title': 'Desarrollo Comercial',
+        'title': 'Lanzamiento y Evaluación Post-Lanzamiento',
         'questions': [
         {'pregunta':{
-            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
-            'TRL': 'TRL9'}
+            'enunciado':'Se ha realizado un ajuste en las estrategias y modelos financieros para reflejar mejor la realidad del mercado y maximizar la rentabilidad. ',
+            'CRL': 'CRL_3_0'}
         },
         {'pregunta':{
-            'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales.',
-            'TRL': 'TRL8'}
+            'enunciado':'El producto/servicio se ha lanzado oficialmente al mercado y ya se han realizado ventas iniciales.',
+            'CRL': 'CRL_3_1'}
         },
         {'pregunta':{
-            'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas pesqueras y ha recibido interés para futuras implementaciones comerciales.',
-            'TRL': 'TRL7'}
+            'enunciado':'Se han recopilado opiniones y calificaciones de los primeros clientes para evaluar la aceptación y el desempeño del producto en condiciones reales.',
+            'CRL': 'CRL_3_2'}
+        },
+                {'pregunta':{
+            'enunciado':'El producto/servicio cumple o supera las expectativas del mercado y de los clientes, en términos de calidad, precio, y disponibilidad.',
+            'CRL': 'CRL_3_3'}
+        },
+                {'pregunta':{
+            'enunciado':'Se ha logrado una sólida posición en el mercado, con una red de distribución establecida y un flujo constante de producción y ventas. ',
+            'CRL': 'CRL_3_4'}
         },
     ]
     },

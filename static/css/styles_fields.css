@@ -34,10 +34,11 @@ body {
 
 .title-container h1 {
     margin: 0;
+    font-size: 3em;
 }
 
 .version {
-    font-size: 0.9em;
+    font-size: 2em;
 }
 
 .section {
@@ -60,12 +61,19 @@ fieldset {
 
 legend {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 2.5em;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+input[type='checkbox']{
+    transform: scale(2.5);
+    margin-right: 20px;
 }
 
 input[type="submit"] {
@@ -142,7 +150,7 @@ img{
     width: 200px;
 }
 
-.option{
+/* .option{
     font-size: 30px;
-}
+} */
 

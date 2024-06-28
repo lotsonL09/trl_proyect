@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 import re
-from aditional_data.trl import trl_questions_ingenieria_tecnologia,fields,trl_data
+from aditional_data.trl import trl_questions_salud_medicamentos,fields,trl_data
 
 condictions={
     'TRL1':1,
@@ -10,28 +10,28 @@ condictions={
     'TRL4':2,
     'TRL5':2,
     'TRL6':2,
-    'TRL7':3,
+    'TRL7':2,
     'TRL8':3,
-    'TRL9':3
+    'TRL9':2
 }
 
 fields=fields
 
-data=trl_questions_ingenieria_tecnologia
+data=trl_questions_salud_medicamentos
 
-bp_ingenieria_tecnologia=Blueprint('ingenieria_tecnologia',__name__,url_prefix='/ingenieria_tecnologia')
+bp_ciencias_medicas_salud_medicamentos=Blueprint('ciencias_medicas_salud_medicamentos',__name__,url_prefix='/ciencias_medicas_salud_medicamentos')
 
-
-
-@bp_ingenieria_tecnologia.route('/')
+@bp_ciencias_medicas_salud_medicamentos.route('/')
 def root():
+
     shuffle(data['campo_1']['questions'])
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
-    return render_template('fields/ingenieria_tecnologia.1.html',data=data)
 
-@bp_ingenieria_tecnologia.route('/evaluacion',methods=['POST'])
+    return render_template('trl/ciencias_medicas_salud_medicamentos.1.html',data=data)
+
+@bp_ciencias_medicas_salud_medicamentos.route('/evaluacion',methods=['POST'])
 def evaluation():
     results=[]
     TRL=None
@@ -81,4 +81,3 @@ def evaluation():
     }
 
     return render_template("/fields/resultados.1.html",data=window_content)
-

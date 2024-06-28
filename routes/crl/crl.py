@@ -31,7 +31,7 @@ def root():
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
 
-    return render_template('fields/crl.1.html',data=data)
+    return render_template('crl/crl.1.html',data=data)
 
 @bp_crl.route('/evaluacion',methods=['POST'])
 def evaluation():
@@ -78,4 +78,4 @@ def evaluation():
         'CRL':CRL
     }
 
-    return render_template("/fields/resultados_crl.1.html",data=window_content)
+    return render_template("/resultados/resultados_crl.1.html",data=window_content)

@@ -1,9 +1,11 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 import re
-from aditional_data.trl import trl_questions_general,fields,trl_data
+from aditional_data.trl import trl_questions_agricultura_silvicultura,fields,trl_data
 
-bp_general=Blueprint('general',__name__,url_prefix='/general')
+
+bp_agricultura_silvicultura=Blueprint('agricultura_silvicultura',__name__,url_prefix='/agricultura_silvicultura')
+fields=fields
 
 condictions={
     'TRL1':1,
@@ -17,24 +19,23 @@ condictions={
     'TRL9':3
 }
 
-fields=fields
+data=trl_questions_agricultura_silvicultura
 
-data=trl_questions_general
 
-@bp_general.route('/')
+@bp_agricultura_silvicultura.route('/')
 def root():
     shuffle(data['campo_1']['questions'])
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
-    return render_template('fields/general.1.html',data=data)
+    return render_template('trl/agricultura_silvicultura.1.html',data=data)
 
-@bp_general.route('/evaluacion',methods=['POST'])
+@bp_agricultura_silvicultura.route('/evaluacion',methods=['POST'])
 def evaluation():
     results=[]
     TRL=None
     count=0
-    print(request.form)
+    
     investigacion = request.form.getlist('Investigación')
     desarrollo = request.form.getlist('Desarrollo Tecnológico')
     implementacion = request.form.getlist('Implementación')
@@ -43,10 +44,10 @@ def evaluation():
     results.extend(desarrollo)
     results.extend(implementacion)
     results.extend(comercial)
-    print(results)
-
+    
     options_marked=[]
     results_new=[]
+
     for result in results:
         try:
             index_0=int(re.findall('[TRL0-9]+',result)[1])
@@ -77,4 +78,4 @@ def evaluation():
         'phase':trl_data[TRL]
     }
 
-    return render_template("/fields/resultados.1.html",data=window_content)
+    return render_template("/resultados/resultados.1.html",data=window_content)

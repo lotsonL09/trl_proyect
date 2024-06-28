@@ -8,4 +8,4 @@ def root():
 
 @bp_home.route('/trl_fields/')
 def get_fields():
-    return render_template('/fields/trl_fields.html')
+    return render_template('/trl_fields.html')

@@ -27,7 +27,7 @@ def root():
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
-    return render_template('fields/software_hardware.1.html',data=data)
+    return render_template('trl/software_hardware.1.html',data=data)
 
 
 @bp_software_hardware.route('/evaluacion',methods=['POST'])
@@ -77,4 +77,4 @@ def evaluation():
         'phase':trl_data[TRL]
     }
 
-    return render_template("/fields/resultados.1.html",data=window_content)
+    return render_template("/resultados/resultados.1.html",data=window_content)

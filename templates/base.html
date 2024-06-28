@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}Calculadora de TLR y CLR{%endblock%}</title>
+    <link rel="stylesheet" href=" {%block stylesheet%} /static/css/styles.css {%endblock%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Calculadora TLR/CRL</h1>
+            <span class="version">Versión alpha 1.2</span>
+        </div>
+    </header>
+    {%block content%}
+
+    {%endblock%}
+    <div class="logo-container">
+        <img src="/static/images/logo_concytec_horizontal.png" alt="Logo1" class="logo">
+        <img src="/static/images/logo_vinculate.png" alt="Logo2" class="logo">
+    </div>
+</body>
+</html>

@@ -1,7 +1,9 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 import re
-from aditional_data.trl import trl_questions_salud_dispositivos,fields,trl_data
+from aditional_data.trl import trl_questions_general,fields,trl_data
+
+bp_general=Blueprint('general',__name__,url_prefix='/general')
 
 condictions={
     'TRL1':1,
@@ -10,30 +12,29 @@ condictions={
     'TRL4':2,
     'TRL5':2,
     'TRL6':2,
-    'TRL7':2,
-    'TRL8':2,
-    'TRL9':2
+    'TRL7':3,
+    'TRL8':3,
+    'TRL9':3
 }
 
 fields=fields
 
-data=trl_questions_salud_dispositivos
+data=trl_questions_general
 
-bp_ciencias_medicas_salud_dispositivos=Blueprint('ciencias_medicas_salud_dispositivos',__name__,url_prefix='/ciencias_medicas_salud_dispositivos')
-
-@bp_ciencias_medicas_salud_dispositivos.route('/')
+@bp_general.route('/')
 def root():
     shuffle(data['campo_1']['questions'])
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
-    return render_template('fields/ciencias_medicas_salud_dispositivos.1.html',data=data)
+    return render_template('trl/general.1.html',data=data)
 
-@bp_ciencias_medicas_salud_dispositivos.route('/evaluacion',methods=['POST'])
+@bp_general.route('/evaluacion',methods=['POST'])
 def evaluation():
     results=[]
     TRL=None
     count=0
+    print(request.form)
     investigacion = request.form.getlist('Investigación')
     desarrollo = request.form.getlist('Desarrollo Tecnológico')
     implementacion = request.form.getlist('Implementación')
@@ -42,7 +43,8 @@ def evaluation():
     results.extend(desarrollo)
     results.extend(implementacion)
     results.extend(comercial)
-    
+    print(results)
+
     options_marked=[]
     results_new=[]
     for result in results:
@@ -58,14 +60,11 @@ def evaluation():
     if len(options_marked)==0:
         options_marked='No ha seleccionado ninguna opción'
 
-
     for level in condictions.keys():
         if results_new.count(level) == condictions[level]:
             count+=1
         else:
             break
-    
-    
 
     if count == 0:
         TRL='none'
@@ -78,4 +77,4 @@ def evaluation():
         'phase':trl_data[TRL]
     }
 
-    return render_template("/fields/resultados.1.html",data=window_content)
+    return render_template("/resultados/resultados.1.html",data=window_content)

@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora TLR/CRL</title>
-    <link rel="stylesheet" href="/static/css/styles_trl.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <h1>Calculadora TRL</h1>
-            <span class="version">Versión alpha 1.2</span>
-        </div>
-    </header>
+{% extends "base.html" %}
+
+{%block stylesheet%} /static/css/styles_trl.css {%endblock%}
+
+{% block content %}
     <main>
         <div class="categories">
             <a href="/ingenieria_tecnologia/" class="category">Ingeniería y Tecnología</a>
@@ -30,9 +19,5 @@
             <a href="/general/" class="category">Otras disciplinas</a>
         </div>
     </main>
-    <div class="logo-container">
-        <img src="/static/images/logo_concytec_horizontal.png" alt="Logo1" class="logo">
-        <img src="/static/images/logo_vinculate.png" alt="Logo2" class="logo">
-    </div>
-</body>
-</html>
+{% endblock %}
+

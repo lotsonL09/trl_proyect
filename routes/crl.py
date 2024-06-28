@@ -47,19 +47,19 @@ data={
     },
 
     'campo_2':{
-        'title': 'Desarrollo Tecnológico',
+        'title': 'Investigación y Análisis de mercado',
         'questions': [
             {'pregunta':{
-                'enunciado':'Ha modelado y simulado condiciones marinas en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
-                'TRL': 'TRL4'}
+                'enunciado':'Aun no se han llevado a cabo investigaciones formales como estudios de mercado, análisis de la competencia, ni evaluaciones de viabilidad técnica y económica.',
+                'CRL': 'CRL_1_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha simulado situaciones operativas reales controladas (no necesariamente en el campo o entorno de uso final) para validar la tecnología propuesta.',
-                'TRL': 'TRL5'}
+                'enunciado':'Se ha realizado un análisis de mercado basado en información secundaria: datos disponibles públicamente.',
+                'CRL': 'CRL_1_1'}
             },
             {'pregunta':{
-                'enunciado':'Se ha colaborado con pescadores/usuarios para realizar pruebas operativas de la tecnología.',
-                'TRL': 'TRL6'}
+                'enunciado':'Se ha identificado aplicaciones específicas y realizando un análisis de mercado preliminar basado en encuestas o entrevistas con clientes potenciales.',
+                'CRL': 'CRL_1_2'}
             },
             {'pregunta':{
                 'enunciado':'Se tiene alguna documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo.',

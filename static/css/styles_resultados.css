@@ -1,38 +1,7 @@
-
-
-header {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.title-container {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 4em;
-}
-
 body {
-    font-family: 'Merriweather', serif;
-    margin: 50px;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 2rem;
 }
-
-h2{
-    font-size: 3em;
-}
-
-h3{
-    font-size: 3em;
-}
-
-li{
-    font-size: 2em;
-    
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -46,6 +15,7 @@ li{
 }
 .row {
     display: flex;
+
 }
 .circle {
     width: 50px;
@@ -81,3 +51,62 @@ li{
     border: 1px solid #ccc;
     padding: 10px;
 }
+.progressBar {
+    height: 6rem;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+.containerProgressBar {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+}
+.itemProgres{
+    width: 100%;
+}
+.trlTag{
+    text-align: center;
+    font-weight: bold;
+}
+#TRL1 { 
+    background-color: #2f6983;
+    margin-left: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+#TRL2 { 
+    background-color: #ff7c43;
+    margin-top: 6px;
+ }
+#TRL3 { 
+    background-color: #ff7c43;
+    margin-top: 6px;
+ }
+#TRL4 { background-color: #ff7c43;
+    margin-top: 6px;
+}
+#TRL5 { background-color: #4CAF50 ;
+    margin-top: 6px;
+}
+#TRL6 { background-color: #4CAF50;
+    margin-top: 6px;
+}
+#TRL7 { background-color: #4CAF50;
+    margin-top: 6px;
+ }
+#TRL8 { background-color: skyblue;
+    margin-top: 6px;
+ }
+#TRL9 { 
+    background-color: skyblue;
+    margin-right: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+

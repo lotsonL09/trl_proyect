@@ -7,58 +7,112 @@
     <link rel="stylesheet" href="/static/css/styles_resultados.css">
 </head>
 <body>
-    <div class="header">
-        <div class="title-container">
-            <h1>RESULTADOS</h1>
-        </div>
-    </div>
 
     {%if data.TRL != 'none' %}
-        <h2>El TRL de su proyecto es: {{data.TRL}} </h2>
+        <h3>El TRL de su proyecto es: {{data.TRL}} </h3>
     {%endif%}
 
     {%if data.phase != 'none' %}
-        <h2>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h2>
+        <h3>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h3>
     {%else%}
-        <h2>Los resultados de su proyecto no alcanza algún nivel de TRL.</h2>
+        <h3>Los resultados de su proyecto no alcanza algún nivel de TRL.</h3>
     {%endif%}
-    <h3>Alternativas seleccionadas:</h3>
-    <ul>
-        {%if data.answers == "No ha seleccionado ninguna opción" %}
-        <li>{{data.answers}}</li>
-        {%else%}
-            {%for answer in data.answers%}
-                <li> {{answer}} </li>
-            {%endfor%}
-        {%endif%}
-    </ul>
-    
-
+    <h4>Alternativas seleccionadas:</h4>
+    {%if data.answers == "No ha seleccionado ninguna opción" %}
+        <p>{{data.answers}}</p>
+    {%else%}
+        {%for answer in data.answers%}
+            <p> {{answer}} </p>
+        {%endfor%}
+    {%endif%}
     <div class="container">
         <div class="row">
             <div class="column bordered">
                 <div class="section">Investigación Básica</div>
-                <div class="circle trl1">TRL 1</div>
-                <div class="circle trl2">TRL 2</div>
+                {%if data.TRL == 'TRL1'  or data.TRL == 'TRL3' or data.TRL == 'TRL4' or data.TRL == 'TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL == 'TRL8' or data.TRL == 'TRL9' %}
+                    <div class="containerProgressBar">
+                        <div class="itemProgres">
+                            <p class="trlTag">TRL1</p>                        
+                            <div class="progressBar " id="TRL1"></div>
+                        </div>
+                    </div>
+                {%endif%}
             </div>
             <div class="column bordered">
                 <div class="section">Investigación Aplicada</div>
-                <div class="circle trl3">TRL 3</div>
-                <div class="circle trl4">TRL 4</div>
+                {%if data.TRL == 'TRL2' or data.TRL == 'TRL3' or data.TRL == 'TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9'%}
+                    <div class="containerProgressBar">
+                        {%if data.TRL=='TRL2' or data.TRL == 'TRL3' or data.TRL=='TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9'%}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL2</p>
+                                <div class="progressBar " id="TRL2"></div>    
+                            </div>
+                        {%endif%}
+                        {%if data.TRL=='TRL3' or data.TRL=='TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL3</p>
+                                <div class="progressBar " id="TRL3"></div>    
+                            </div>
+                        {%endif%}
+                        {%if data.TRL=='TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL4</p>
+                                <div class="progressBar " id="TRL4"></div>    
+                            </div>
+                        {%endif%}
+                    </div>                    
+                {%endif%}
             </div>
             <div class="column bordered">
                 <div class="section">Desarrollo Tecnológico</div>
-                <div class="circle trl5">TRL 5</div>
-                <div class="circle trl6">TRL 6</div>
-                <div class="circle trl7">TRL 7</div>
+                {%if data.TRL == 'TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9'%}
+                    <div class="containerProgressBar">
+                        {%if data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL5</p>
+                                <div class=" progressBar" id="TRL5"></div>
+                            </div>
+                        {%endif%}
+                        {%if data.TRL=='TRL6' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL6</p>
+                                <div class=" progressBar" id="TRL6"></div>
+                            </div>
+                        {%endif%}
+                        {%if data.TRL=='TRL7' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL7</p>
+                                <div class=" progressBar" id="TRL7"></div>
+                            </div>
+                        {%endif%}
+                    </div>
+                {%endif%}
             </div>
             <div class="column bordered">
                 <div class="section">Innovación</div>
-                <div class="circle trl8">TRL 8</div>
-                <div class="circle trl9">TRL 9</div>
+                {%if data.TRL == 'TRL8' or data.TRL == 'TRL9' %}
+                    <div class="containerProgressBar">
+                        {%if data.TRL=='TRL8' or data.TRL=='TRL9' %}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL8</p>
+                                <div class=" progressBar" id="TRL8"></div>
+                            </div>
+                        {%endif%}
+                        {%if data.TRL=='TRL9'%}
+                            <div class="itemProgres">
+                                <p class="trlTag">TRL9</p>
+                                <div class=" progressBar" id="TRL9"></div>
+                            </div>
+                        {%endif%}
+                    </div>                
+                {%endif%}
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function () {
+            
+        })
+    </script>
 </body>
 </html>

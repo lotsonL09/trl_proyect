@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 
-bp_general=Blueprint('generales',__name__,url_prefix='/generales')
+bp_general=Blueprint('general',__name__,url_prefix='/general')
 
 condictions={
     'TRL1':1,
@@ -131,7 +131,7 @@ def root():
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
-    return render_template('fields/generales.1.html',data=data)
+    return render_template('fields/general.1.html',data=data)
 
 @bp_general.route('/evaluacion',methods=['POST'])
 def evaluation():

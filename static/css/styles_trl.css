@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -71,6 +71,125 @@ main h2 {
 
 .category:hover {
     background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.logo {
+    width: 80px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.version {
+    font-size: 1em;
+    color: #666;
+}
+
+main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+main h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+}
+
+.category {
+    position: relative;
+    background-color: #007BFF;
+    color: white;
+    padding: 25px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 2em;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    text-align: center;
+}
+
+.category:hover {
+    background-color: #0056b3;
+}
+
+.category .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #007BFF;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.category:hover .submenu {
+    display: block;
+}
+
+.category .submenu a {
+    display: block;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+.category .submenu a:hover {
+    background-color: #0056b3;
+    color: white;
 }
 
 /* Responsive Design */

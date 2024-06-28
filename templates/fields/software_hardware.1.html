@@ -1,43 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de TRL</title>
-    <link rel="stylesheet" href="/static/css/styles_trl_fields.css">
+    <link rel="stylesheet" href="/static/css/styles_fields.css">
 </head>
 <body>
     <div class="header">
-        <h1>Calculadora de TRL</h1>
+        <div class="logo-container">
+            <img src="/static/images/logo_concytec_horizontal.png" alt="Logo1" class="logo">
+            <img src="/static/images/logo_vinculate.png" alt="Logo2" class="logo">
+        </div>
+        <div class="title-container">
+            <h1>Calculadora TLR/CRL</h1>
+        </div>
+        <div class="version">
+            Versión alpha
+        </div>
     </div>
-    <div class="navigation">
-        <a href="/ingenieria_tecnologia/" class="button">INGENIERÍA Y TECNOLOGÍA</a>
-        <a href="/software_hardware/" class="button active">SOFTWARE Y HARDWARE</a>
-        <a href="/agricultura_silvicultura/" class="button">AGRICULTURA Y SILVICULTURA</a>
-        <a href="/pesca/" class="button">PESCA</a>
-        <a href="/ciencias_medicas_salud/" class="button">CIENCIAS MÉDICAS</a>
-        <a href="/generales/" class="button">GENERALES</a>
+    
+    <section class="section">
+        <form id="trlForm" action="javascript:void(0);">
+            {%for campo,datos in data.items() %}
+            <fieldset>
+                <legend>{{datos.title}}</legend>
+                {%for question in datos.questions%}
+                    <label>
+                        <input type="checkbox" name="{{datos.title}}" value="{{question.pregunta.TRL}}"> {{question.pregunta.enunciado}}
+                    </label>
+                {%endfor%}
+                <label><input type="checkbox" name="{{datos.title}}" value="none"> No cumplo con ninguna de las alternativas</label>
+            </fieldset>
+            {%endfor%}
+            <input type="submit" value="Evaluar" onclick="showPopup()">
+        </form>
+    </section>
+
+    <div class="popup" id="popup">
+        <span class="close" onclick="hidePopup()">&times;</span>
+        <h2>Resultados de la evaluación</h2>
+        <p id="popupContent">Aquí se mostrarán los resultados de la evaluación.</p>
     </div>
-    <div class="section">
-        <h3>Desarrollo tecnológico</h3>
-        <label><input type="checkbox"> Ha modelado y simulado condiciones marinas en el laboratorio...</label>
-        <label><input type="checkbox"> Se ha simulado situaciones operativas reales controladas...</label>
-        <!-- Add more checkboxes as needed -->
-    </div>
-    <div class="section">
-        <h3>Implementación</h3>
-        <label><input type="checkbox"> La tecnología propuesta ya ha sido probada y demostrada...</label>
-        <label><input type="checkbox"> Se tiene informes detallados donde se evidencie...</label>
-        <!-- Add more checkboxes as needed -->
-    </div>
-    <div class="section">
-        <h3>Desarrollo comercial</h3>
-        <label><input type="checkbox"> Se está recopilando y analizando datos de los usuarios...</label>
-        <label><input type="checkbox"> Se ha desarrollado material de soporte técnico...</label>
-        <!-- Add more checkboxes as needed -->
-    </div>
-    <div class="footer">
-        <button>Evaluar</button>
-    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+
+            // You can add any logic here to populate the popup with dynamic content
+            const form = document.getElementById('trlForm');
+            const formData = new FormData(form);
+            let result = '';
+            formData.forEach((value, key) => {
+                result += `${key}: ${value}\n`;
+            });
+            document.getElementById('popupContent').innerText = result;
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
+

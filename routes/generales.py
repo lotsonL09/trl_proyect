@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 
-bp_general=Blueprint('generales',__name__,url_prefix='/generales')
+bp_general=Blueprint('general',__name__,url_prefix='/general')
 
 condictions={
     'TRL1':1,
@@ -77,7 +77,7 @@ data={
     },
 
     'campo_3':{
-        'title': 'Innovación',
+        'title': 'Implementación',
         'questions': [
             {'pregunta':{
                 'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
@@ -140,7 +140,7 @@ def evaluation():
     print(request.form)
     investigacion = request.form.getlist('Investigación')
     desarrollo = request.form.getlist('Desarrollo Tecnológico')
-    implementacion = request.form.getlist('Innovación')
+    implementacion = request.form.getlist('Implementación')
     comercial = request.form.getlist('Desarrollo Comercial')
     results.extend(investigacion)
     results.extend(desarrollo)

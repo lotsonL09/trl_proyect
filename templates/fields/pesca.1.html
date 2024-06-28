@@ -21,7 +21,7 @@
     </div>
     
     <section class="section">
-        <form id="trlForm" action="javascript:void(0);">
+        <form action="/pesca/evaluacion" method="post">
             {%for campo,datos in data.items() %}
             <fieldset>
                 <legend>{{datos.title}}</legend>
@@ -39,12 +39,6 @@
         </form>
     </section>
 
-    <div class="popup" id="popup">
-        <span class="close" onclick="hidePopup()">&times;</span>
-        <h2>Resultados de la evaluación</h2>
-        <p id="popupContent">Aquí se mostrarán los resultados de la evaluación.</p>
-    </div>
-
     <script>
         function handleNoneOption(element) {
             const fieldset = element.closest('fieldset');
@@ -53,23 +47,6 @@
                 option.checked = false;
                 option.disabled = element.checked;
             });
-        }
-
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-
-            // You can add any logic here to populate the popup with dynamic content
-            const form = document.getElementById('trlForm');
-            const formData = new FormData(form);
-            let result = '';
-            formData.forEach((value, key) => {
-                result += `${key}: ${value}\n`;
-            });
-            document.getElementById('popupContent').innerText = result;
-        }
-
-        function hidePopup() {
-            document.getElementById('popup').style.display = 'none';
         }
     </script>
 </body>

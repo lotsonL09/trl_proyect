@@ -152,6 +152,7 @@ def evaluation():
     results.extend(comercial)
     
     options_marked=[]
+    results_new=[]
 
     for result in results:
         try:
@@ -159,6 +160,7 @@ def evaluation():
             index_1=int(re.findall('[TRL0-9]+',result)[2])
             option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
             options_marked.append(option)
+            results_new.append(re.findall('[TRL0-9]+',result)[0])
         except:
             continue
 
@@ -166,7 +168,7 @@ def evaluation():
         options_marked='No ha seleccionado ninguna opción'
 
     for level in condictions.keys():
-        if results.count(level) == condictions[level]:
+        if results_new.count(level) == condictions[level]:
             count+=1
         else:
             break

@@ -1,5 +1,4 @@
 from flask import Blueprint,render_template,request
-from enum import Enum
 from random import shuffle
 import re
 

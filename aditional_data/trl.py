@@ -3,7 +3,7 @@ fields=['campo_1','campo_2','campo_3','campo_4']
 trl_data={
     'none':'none',
     'TRL1':'Investigación Básica',
-    'TRL2':'Investigación Básica',
+    'TRL2':'Investigación Aplicada',
     'TRL3':'Investigación Aplicada',
     'TRL4':'Investigación Aplicada',
     'TRL5':'Desarrollo Tecnológico',

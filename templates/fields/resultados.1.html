@@ -8,23 +8,35 @@
 </head>
 <body>
 
+    <div class="header">
+        <div class="title-container">
+            <h1>RESULTADOS</h1>
+        </div>
+    </div>
+
     {%if data.TRL != 'none' %}
-        <h3>El TRL de su proyecto es: {{data.TRL}} </h3>
+        <h2>El TRL de su proyecto es: {{data.TRL}} </h2>
     {%endif%}
 
     {%if data.phase != 'none' %}
-        <h3>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h3>
+        <h2>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h2>
     {%else%}
-        <h3>Los resultados de su proyecto no alcanza algún nivel de TRL.</h3>
+        <h2>Los resultados de su proyecto no alcanza algún nivel de TRL.</h2>
     {%endif%}
-    <h4>Alternativas seleccionadas:</h4>
-    {%if data.answers == "No ha seleccionado ninguna opción" %}
-        <p>{{data.answers}}</p>
-    {%else%}
-        {%for answer in data.answers%}
-            <p> {{answer}} </p>
-        {%endfor%}
-    {%endif%}
+    <h3>Alternativas seleccionadas:</h3>
+    <ul>
+        {%if data.answers == "No ha seleccionado ninguna opción" %}
+        <li>{{data.answers}}</li>
+        {%else%}
+            {%for answer in data.answers%}
+                <li> {{answer}} </li>
+            {%endfor%}
+        {%endif%}
+    </ul>
+
+    
+    <!-- Barra -->
+
     <div class="container">
         <div class="row">
             <div class="column bordered">

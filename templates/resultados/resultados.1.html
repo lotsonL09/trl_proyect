@@ -131,6 +131,15 @@
 
         })
     </script>
+     <div class="form-regresar">
+        <button type="button" class="regresar-button">Regresar</button>
+    </div>
+    <script src="/static/js/script.js"></script>
+    <script>
+        document.querySelector('.regresar-button').addEventListener('click', function() {
+            window.history.back(); // Go back to the previous page
+        });
+    </script>
     {%endblock%}
 <!--</body>
 

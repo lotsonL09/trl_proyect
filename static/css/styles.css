@@ -102,6 +102,8 @@ main {
     font-size: 1em;
 }
 
+.card-trl p
+
 .card::after {
     content: "";
     display: block;

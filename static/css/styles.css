@@ -1,3 +1,6 @@
+html {
+    height: 100%; /* Ensures the root element takes full viewport height */
+}
 
 .card {
     background-color: #4dbbd4;
@@ -54,6 +57,9 @@ body {
     background-color: #f4f4f4;
     color: white;
     font-size: 0.8em;
+    display: flex;
+    flex-direction: column; /* Stacks children elements vertically */
+    min-height: 100vh; /* Minimum height of 100% of the viewport height */
 }
 
 /* Para la cabecera */
@@ -86,19 +92,24 @@ header h1 {
     color: #555;
 }
 
+.main-content {
+    flex: 1; /* This makes the content grow to occupy any available space */
+    padding: 0px 0; /* Add padding as needed */
+}
+
 /* Para el contenedor de logos */
 .logo-container {
     display: flex;
     gap: 50px;
     justify-content: center;
     align-items: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: white; /* Fondo blanco para el contenedor */
     padding: 10px 0; /* Espacio vertical alrededor de los logos */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el contenedor */
-    z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
@@ -178,28 +189,34 @@ main {
     text-decoration: underline;
 }
 
-
-.section {
-    padding: 20px;
-}
-
 .form-section {
     background-color: #ffffff;
-    border: 2px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
     border-radius: 8px;
+    border: none; /* Optional: remove if border is not desired */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow for the entire section */
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.title-wrapper {
+    background-color: #4dbbd4;
+    border-radius: 8px 8px 0 0; /* Only round the top corners */
+    color: white;
+    padding: 10px 15px; /* Adjust padding to fit content */
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.form-content {
+    padding: 20px; /* Padding inside the fieldset for content */
 }
 
 .section-title {
-    font-size: 1.2em;
-    color: #4dbbd4;
-    margin-bottom: 15px;
+    font-size: 1.5em;
+    margin: 0; /* Remove margin to fit flush with the edges */
 }
 
 .option-container {
-    display: flex;
-    align-items: center;
     margin-bottom: 10px;
 }
 
@@ -209,14 +226,15 @@ main {
 }
 
 .option-label {
-    width: 100%;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .option-text {
     flex-grow: 1;
     color: #333;
+    font-size: 1.3em;
 }
 
 /* Flip container */

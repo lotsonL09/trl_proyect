@@ -2,20 +2,11 @@ from flask import Blueprint,render_template,request
 from random import shuffle
 import re
 from aditional_data.trl import trl_questions_general,fields,trl_data
+from aditional_data.results import general
+
 
 bp_general=Blueprint('general',__name__,url_prefix='/general')
 
-condictions={
-    'TRL1':1,
-    'TRL2':2,
-    'TRL3':2,
-    'TRL4':2,
-    'TRL5':2,
-    'TRL6':2,
-    'TRL7':3,
-    'TRL8':3,
-    'TRL9':3
-}
 
 fields=fields
 
@@ -32,9 +23,6 @@ def root():
 @bp_general.route('/evaluacion',methods=['POST'])
 def evaluation():
     results=[]
-    TRL=None
-    count=0
-    print(request.form)
     investigacion = request.form.getlist('Investigación')
     desarrollo = request.form.getlist('Desarrollo Tecnológico')
     implementacion = request.form.getlist('Implementación')
@@ -43,38 +31,15 @@ def evaluation():
     results.extend(desarrollo)
     results.extend(implementacion)
     results.extend(comercial)
-    print(results)
 
-    options_marked=[]
-    results_new=[]
-    for result in results:
-        try:
-            index_0=int(re.findall('[TRL0-9]+',result)[1])
-            index_1=int(re.findall('[TRL0-9]+',result)[2])
-            option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
-            options_marked.append(option)
-            results_new.append(re.findall('[TRL0-9]+',result)[0])
-        except:
-            continue
+    options_marked,results_new=general.get_options_marked_and_new_format(results)
 
-    if len(options_marked)==0:
-        options_marked='No ha seleccionado ninguna opción'
+    level=general.get_level(results_new)
 
-    for level in condictions.keys():
-        if results_new.count(level) == condictions[level]:
-            count+=1
-        else:
-            break
-
-    if count == 0:
-        TRL='none'
-    else:
-        TRL=f'TRL{count}'
-    
     window_content={
         'answers':options_marked,
-        'TRL':TRL,
-        'phase':trl_data[TRL]
+        'TRL':level,
+        'phase':trl_data[level]
     }
 
     return render_template("/resultados/resultados.1.html",data=window_content)

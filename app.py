@@ -10,14 +10,13 @@ from routes.fields_trl.general import bp_general
 from routes.fields_trl.ciencias_medicas_salud_medicamentos import bp_ciencias_medicas_salud_medicamentos
 from routes.fields_trl.ciencias_medicas_salud_dispositivos import bp_ciencias_medicas_salud_dispositivos
 from routes.crl.crl import bp_crl
-from routes.resultados import bp_resultados
+
 
 
 app=Flask(__name__)
 app.register_blueprint(bp_home)
 app.register_blueprint(bp_general)
 app.register_blueprint(bp_crl)
-app.register_blueprint(bp_resultados)
 app.register_blueprint(bp_agricultura_silvicultura)
 app.register_blueprint(bp_ingenieria_tecnologia)
 app.register_blueprint(bp_pesca)

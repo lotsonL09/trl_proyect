@@ -37,7 +37,12 @@
                 </div>
             </fieldset>
             {% endfor %}
-            <button type="submit" class="submit-button">Evaluar</button>
+            <div class="form-button">
+                <button type="submit" class="submit-button">Evaluar</button>
+            </div>
+            <div class="form-regresar">
+                <button type="button" class="regresar-button">Regresar</button>
+            </div>
         </form>
     </section>
 
@@ -53,6 +58,11 @@
             });
         }
 
+    </script>
+    <script>
+        document.querySelector('.regresar-button').addEventListener('click', function() {
+            window.history.back(); // Go back to the previous page
+        });
     </script>
 {%endblock%}
 

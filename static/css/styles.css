@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     font-size: 0.8em;
 }
 
-/* Para la cabecera */
+
 header {
     background-color: #a1bf47;
     padding: 20px;
@@ -38,7 +38,7 @@ header h1 {
     color: #555;
 }
 
-/* Para el contenedor de logos */
+
 .logo-container {
     display: flex;
     gap: 50px;
@@ -47,10 +47,10 @@ header h1 {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: white; /* Fondo blanco para el contenedor */
-    padding: 10px 0; /* Espacio vertical alrededor de los logos */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el contenedor */
-    z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+    background-color: white; 
+    padding: 10px 0; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1000;
 }
 
 .logo {
@@ -71,7 +71,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    width: 250px;  /* Tamaño reducido */
+    width: 250px;  
     transition: transform 0.3s ease;
     margin-bottom: 20px;
 }
@@ -111,7 +111,7 @@ main {
     margin: 10px auto;
 }
 
-/* Media Queries para hacer el diseño responsivo */
+
 @media (min-width: 768px) {
     .header-container {
         flex-direction: row;
@@ -127,7 +127,7 @@ main {
     }
 
     .card {
-        width: 300px;  /* Ajuste para pantallas medianas */
+        width: 300px;  
     }
 
     .card h3 {
@@ -141,7 +141,7 @@ main {
 
 @media (min-width: 2000px) {
     .card {
-        width: 350px;  /* Ajuste para pantallas grandes */
+        width: 350px;  
     }
 
     .card h3 {
@@ -150,5 +150,154 @@ main {
 
     .card p {
         font-size: 1.2em;
+    }
+}
+*/
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: white;
+    font-size: 0.8em;
+}
+
+/* Para la cabecera */
+header {
+    background-color: #a1bf47;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.version {
+    color: grey;
+}
+
+.version1 {
+    font-size: 0.8 em;
+    color: #555;
+}
+
+/* Para el contenedor de logos */
+.logo-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white; /* Fondo blanco para el contenedor */
+    padding: 10px 0; /* Espacio vertical alrededor de los logos */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el contenedor */
+    z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+
+.logo {
+    width: 150px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category {
+    background-color: #4dbbd4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 200px;  /* Tamaño reducido */
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+.category img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.category span {
+    display: block;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #333;
+    padding: 10px;
+}
+
+.category:hover .submenu {
+    display: flex;
+}
+
+.submenu a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .version {
+        font-size: 1.8em;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .category {
+        width: 250px;  /* Ajuste para pantallas medianas */
+    }
+}
+
+@media (min-width: 1200px) {
+    .category {
+        width: 300px;  /* Ajuste para pantallas grandes */
     }
 }

@@ -1,70 +1,4 @@
-/*body {
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: white;
-    font-size: 0.8em;
-}
 
-
-header {
-    background-color: #a1bf47;
-    padding: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 3em;
-    color: white;
-    flex-grow: 1;
-    text-align: center;
-}
-
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-}
-
-.version {
-    color: grey;
-}
-
-.version1{
-    font-size: 0.8 em;
-    color: #555;
-}
-
-
-.logo-container {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: white; 
-    padding: 10px 0; 
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
-    z-index: 1000;
-}
-
-.logo {
-    width: 150px;
-}
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-*/
 .card {
     background-color: #4dbbd4;
     border-radius: 8px;
@@ -87,7 +21,7 @@ main {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .card h3 {
@@ -112,49 +46,7 @@ main {
     background-color: white;
     margin: 10px auto;
 }
-/*
 
-@media (min-width: 768px) {
-    .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .version {
-        font-size: 1.8em;
-    }
-
-    .logo {
-        width: 200px;
-    }
-
-    .card {
-        width: 300px;  
-    }
-
-    .card h3 {
-        font-size: 2em;
-    }
-
-    .card p {
-        font-size: 1.2em;
-    }
-}
-
-@media (min-width: 2000px) {
-    .card {
-        width: 350px;  
-    }
-
-    .card h3 {
-        font-size: 2.5em;
-    }
-
-    .card p {
-        font-size: 1.2em;
-    }
-}
-*/
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
@@ -222,19 +114,21 @@ main {
 }
 
 .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     gap: 20px;
+    justify-items: center; /* Centrar elementos horizontalmente */
+    padding: 20px;
 }
 
 .category {
+    position: relative;
     background-color: #4dbbd4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    width: 200px;  /* Tamaño reducido */
+    width: 250px;
     transition: transform 0.3s ease;
     margin-bottom: 20px;
     text-decoration: none;
@@ -252,9 +146,15 @@ main {
 }
 
 .category span {
-    display: block;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 40%;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.7em;
 }
 
 .submenu {
@@ -276,6 +176,47 @@ main {
 
 .submenu a:hover {
     text-decoration: underline;
+}
+
+
+.section {
+    padding: 20px;
+}
+
+.form-section {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 1.2em;
+    color: #4dbbd4;
+    margin-bottom: 15px;
+}
+
+.option-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option-input {
+    margin-right: 10px;
+    accent-color: #4dbbd4;
+}
+
+.option-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.option-text {
+    flex-grow: 1;
+    color: #333;
 }
 
 /* Media Queries para hacer el diseño responsivo */

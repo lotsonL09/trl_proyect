@@ -174,10 +174,12 @@ main {
 
 .categories {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 20px;
+    grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) ); /* Tres columnas */
+    gap: 10px;
     justify-items: center; /* Centrar elementos horizontalmente */
     padding: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .category {
@@ -192,6 +194,7 @@ main {
     margin-bottom: 20px;
     text-decoration: none;
     color: white;
+    height: 160px;
 }
 
 .category:hover {
@@ -375,13 +378,6 @@ main {
         width: 200px;
     }
 
-    .category {
-        width: 250px;  /* Ajuste para pantallas medianas */
-    }
 }
 
-@media (min-width: 1200px) {
-    .category {
-        width: 300px;  /* Ajuste para pantallas grandes */
-    }
-}
+

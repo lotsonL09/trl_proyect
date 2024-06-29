@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
-from aditional_data.trl import trl_questions_software_hardware,trl_data
+from aditional_data.trl_crl import trl_questions_software_hardware,trl_data
 from aditional_data.results import software_hardware
 
 bp_software_hardware=Blueprint('software_hardware',__name__,url_prefix='/software_hardware')

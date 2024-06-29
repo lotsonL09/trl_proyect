@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
-from aditional_data.trl import trl_questions_salud_medicamentos,trl_data
+from aditional_data.trl_crl import trl_questions_salud_medicamentos,trl_data
 from aditional_data.results import ciencias_salud_medicamentos
 
 data=trl_questions_salud_medicamentos

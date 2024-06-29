@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+
+{%block header%}<h1>Formulario de ingreso</h1>{%endblock%}
+
+{%block content%}
+
+    <form action="/register/register_participant" method="post">
+        <label for="first-name">Nombres:</label>
+        <input type="text" id="first-name" name="first_name" required>
+        <label for="second-name">Nombres:</label>
+        <input type="text" id="second-name" name="first_name" required>
+        <label for="company">Compañía o Entidad </label>
+        <input type="text" id="company" name="company" required>
+        <label for="job">Puesto </label>
+        <input type="text" id="job" name="job" required>
+    </form>
+    
+{%endblock%}

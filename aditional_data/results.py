@@ -1,8 +1,6 @@
-from flask import Blueprint,render_template,request
 from aditional_data.trl import tree_content,fields
 
 import re
-
 
 class category:
     def __init__(self,campo_1:str,campo_2:str,campo_3:str,campo_4:str,type:str,name:str):
@@ -13,12 +11,12 @@ class category:
         self.type=type
         self.name=name
     
-    def get_options_marked_and_new_format(self,results:list):
+    def get_options_marked_and_new_format(self,results:list) -> str:
         options_marked=[]
         results_new=[]
         for result in results:
             try:
-                data=tree_content[self.name]
+                data=tree_content[self.name]['content']
                 index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
                 index_1=int(re.findall(f'[{self.type}0-9]+',result)[2])
                 option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
@@ -31,6 +29,7 @@ class category:
         return options_marked,results_new
     
     def get_level(self,results_new):
+        count=0
         conditions=tree_content[self.name]['conditions']
         for level in conditions.keys():
             if results_new.count(level) == conditions[level]:
@@ -39,9 +38,9 @@ class category:
                 break
         if count == 0:
             return 'none'
-        if count == 0 and self.type == 'TRL':
+        if count != 0 and self.type == 'TRL':
             return f'TRL{count}'
-        if count == 0 and self.type == 'CRL':
+        if count != 0 and self.type == 'CRL':
             return f'CRL{count}'
 
 
@@ -109,6 +108,4 @@ pesca=category(
     type='TRL',
     name='Pesca'
 )
-
-
 

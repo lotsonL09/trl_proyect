@@ -1,21 +1,8 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 import re
-from aditional_data.trl import trl_questions_salud_dispositivos,fields,trl_data
-
-condictions={
-    'TRL1':1,
-    'TRL2':2,
-    'TRL3':2,
-    'TRL4':2,
-    'TRL5':2,
-    'TRL6':2,
-    'TRL7':2,
-    'TRL8':2,
-    'TRL9':2
-}
-
-fields=fields
+from aditional_data.trl import trl_questions_salud_dispositivos,trl_data
+from aditional_data.results import ciencias_salud_dispositivos
 
 data=trl_questions_salud_dispositivos
 
@@ -32,8 +19,6 @@ def root():
 @bp_ciencias_medicas_salud_dispositivos.route('/evaluacion',methods=['POST'])
 def evaluation():
     results=[]
-    TRL=None
-    count=0
     investigacion = request.form.getlist('Investigación')
     desarrollo = request.form.getlist('Desarrollo Tecnológico')
     implementacion = request.form.getlist('Implementación')
@@ -42,40 +27,15 @@ def evaluation():
     results.extend(desarrollo)
     results.extend(implementacion)
     results.extend(comercial)
-    
-    options_marked=[]
-    results_new=[]
-    for result in results:
-        try:
-            index_0=int(re.findall('[TRL0-9]+',result)[1])
-            index_1=int(re.findall('[TRL0-9]+',result)[2])
-            option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
-            options_marked.append(option)
-            results_new.append(re.findall('[TRL0-9]+',result)[0])
-        except:
-            continue
 
-    if len(options_marked)==0:
-        options_marked='No ha seleccionado ninguna opción'
-
-
-    for level in condictions.keys():
-        if results_new.count(level) == condictions[level]:
-            count+=1
-        else:
-            break
+    options_marked,results_new=ciencias_salud_dispositivos.get_options_marked_and_new_format(results)
     
-    
+    level=ciencias_salud_dispositivos.get_level(results_new)
 
-    if count == 0:
-        TRL='none'
-    else:
-        TRL=f'TRL{count}'
-    
     window_content={
         'answers':options_marked,
-        'TRL':TRL,
-        'phase':trl_data[TRL]
+        'TRL':level,
+        'phase':trl_data[level]
     }
 
     return render_template("/resultados/resultados.1.html",data=window_content)

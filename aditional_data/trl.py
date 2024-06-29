@@ -13,6 +13,42 @@ trl_data={
     'TRL9':'Innovación',
 }
 
+condictions_ing_tec=condictions_general=condictions_agri_silvi=condictions_pesca=condictions_software_hardware={
+    'TRL1':1,
+    'TRL2':2,
+    'TRL3':2,
+    'TRL4':2,
+    'TRL5':2,
+    'TRL6':2,
+    'TRL7':3,
+    'TRL8':3,
+    'TRL9':3
+}
+
+condictions_salud_dispositivos={
+    'TRL1':1,
+    'TRL2':2,
+    'TRL3':2,
+    'TRL4':2,
+    'TRL5':2,
+    'TRL6':2,
+    'TRL7':2,
+    'TRL8':2,
+    'TRL9':2
+}
+
+condictions_salud_medicamentos={
+    'TRL1':1,
+    'TRL2':2,
+    'TRL3':2,
+    'TRL4':2,
+    'TRL5':2,
+    'TRL6':2,
+    'TRL7':2,
+    'TRL8':3,
+    'TRL9':2
+}
+
 
 trl_questions_pesca={
     'campo_1':{
@@ -768,7 +804,37 @@ trl_questions_salud_dispositivos={
     },
 }
 
-
+tree_content ={
+    'Ingeniería y Tecnología':{
+        'content':trl_questions_ingenieria_tecnologia,
+        'conditions':condictions_ing_tec
+    }
+    ,
+    'Agricultura y Silvicultura':{
+        'content':trl_questions_agricultura_silvicultura,
+        'conditions':condictions_agri_silvi
+    },
+    'Software y Hardware':{
+        'content':trl_questions_software_hardware,
+        'conditions':condictions_software_hardware
+    },
+    'Ciencias Médicas y de la Salud-medicamentos':{
+        'content':trl_questions_salud_medicamentos,
+        'conditions':condictions_salud_medicamentos
+    },
+    'Ciencias Médicas y de la Salud-dispositivos':{
+        'content':trl_questions_salud_dispositivos,
+        'conditions':condictions_salud_dispositivos
+    },
+    'General':{
+        'content':trl_questions_general,
+        'conditions':condictions_general
+    },
+    'Pesca':{
+        'content':trl_questions_pesca,
+        'conditions':condictions_pesca
+    }
+}
 
 
 

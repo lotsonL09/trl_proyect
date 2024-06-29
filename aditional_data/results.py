@@ -1,9 +1,9 @@
-from aditional_data.trl import tree_content,fields
+from aditional_data.trl_crl import tree_content,fields
 
 import re
 
 class category:
-    def __init__(self,campo_1:str,campo_2:str,campo_3:str,campo_4:str,type:str,name:str):
+    def __init__(self,campo_1:str,campo_2:str,campo_3:str,campo_4:str,type:str,name:str=None):
         self.campo_1=campo_1
         self.campo_2=campo_2
         self.campo_3=campo_3
@@ -16,16 +16,15 @@ class category:
         results_new=[]
         indexes_spider=[]
         data=tree_content[self.name]['content']
-
+        print(results)
         for result in results:
             try:
-                # data=tree_content[self.name]['content']
                 index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
                 index_1=int(re.findall(f'[{self.type}0-9]+',result)[2])
                 option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
                 options_marked.append(option)
                 indexes_spider.append((index_0,index_1))
-                results_new.append(re.findall('[TRL0-9]+',result)[0])
+                results_new.append(re.findall(f'[{self.type}0-9]+',result)[0])
             except:
                 continue
         if len(options_marked)==0:
@@ -33,11 +32,9 @@ class category:
 
         stored=[]
         spider_dict=dict()
-        #print(indexes_spider)
         for element in indexes_spider:
             if not stored.count(element[0]):
                 stored.append(element[0])
-        print(indexes_spider)
         for index in stored:
             amount=0
             for element in indexes_spider:
@@ -45,7 +42,6 @@ class category:
                     amount+=1
             group_name=data[fields[index]]['title']
             factor=data[fields[index]]['factor']
-            print(factor)
             spider_dict[group_name]=amount*factor #correccion de los valores
         
         print(spider_dict)
@@ -132,3 +128,11 @@ pesca=category(
     name='Pesca'
 )
 
+crl=category(
+    campo_1='Iniciación y Evaluación Preliminar',
+    campo_2='Investigación y Análisis de mercado',
+    campo_3='Desarrollo y Validación Técnica',
+    campo_4='Lanzamiento y Evaluación Post-Lanzamiento',
+    type='CRL',
+    name='CRL'
+)

@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
 import re
-from aditional_data.trl import trl_data,trl_questions_pesca
+from aditional_data.trl_crl import trl_data,trl_questions_pesca
 from aditional_data.results import pesca
 
 data=trl_questions_pesca

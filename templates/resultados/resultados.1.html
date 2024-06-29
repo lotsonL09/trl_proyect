@@ -33,98 +33,96 @@
             {%endfor%}
         {%endif%}
     </ul>
-
     
     <!-- Barra -->
 
-    <div class="container">
-        <div class="row">
-            <div class="column bordered">
-                <div class="section">Investigación Básica</div>
-                {%if data.TRL == 'TRL1'  or data.TRL == 'TRL3' or data.TRL == 'TRL4' or data.TRL == 'TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL == 'TRL8' or data.TRL == 'TRL9' %}
-                    <div class="containerProgressBar">
-                        <div class="itemProgres">
-                            <p class="trlTag">TRL1</p>                        
-                            <div class="progressBar " id="TRL1"></div>
-                        </div>
-                    </div>
-                {%endif%}
+    <div id="containerProgressBar">
+        <div class="boxProgressBar">
+            <div class="progressBar-titles">
+                <div class="title-progressBar" id="title1">
+                    <p >Investigación Básica</p>
+                </div>
+                <div class="title-progressBar" id="title2">
+                    <p >Investigación Aplicada</p>
+                </div>
+                <div class="title-progressBar" id="title3">
+                    <p >Desarrollo Tecnológico</p>
+                </div>
+                <div class="title-progressBar" id="title4">
+                    <p >Innovación</p>
+                </div>
             </div>
-            <div class="column bordered">
-                <div class="section">Investigación Aplicada</div>
-                {%if data.TRL == 'TRL2' or data.TRL == 'TRL3' or data.TRL == 'TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9'%}
-                    <div class="containerProgressBar">
-                        {%if data.TRL=='TRL2' or data.TRL == 'TRL3' or data.TRL=='TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9'%}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL2</p>
-                                <div class="progressBar " id="TRL2"></div>    
-                            </div>
-                        {%endif%}
-                        {%if data.TRL=='TRL3' or data.TRL=='TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL3</p>
-                                <div class="progressBar " id="TRL3"></div>    
-                            </div>
-                        {%endif%}
-                        {%if data.TRL=='TRL4' or data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL4</p>
-                                <div class="progressBar " id="TRL4"></div>    
-                            </div>
-                        {%endif%}
-                    </div>                    
-                {%endif%}
+            <div class="progressBar-circles">
             </div>
-            <div class="column bordered">
-                <div class="section">Desarrollo Tecnológico</div>
-                {%if data.TRL == 'TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9'%}
-                    <div class="containerProgressBar">
-                        {%if data.TRL=='TRL5' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL5</p>
-                                <div class=" progressBar" id="TRL5"></div>
-                            </div>
-                        {%endif%}
-                        {%if data.TRL=='TRL6' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL6</p>
-                                <div class=" progressBar" id="TRL6"></div>
-                            </div>
-                        {%endif%}
-                        {%if data.TRL=='TRL7' or data.TRL == 'TRL6' or data.TRL == 'TRL7' or data.TRL=='TRL8' or data.TRL=='TRL9' %}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL7</p>
-                                <div class=" progressBar" id="TRL7"></div>
-                            </div>
-                        {%endif%}
-                    </div>
-                {%endif%}
-            </div>
-            <div class="column bordered">
-                <div class="section">Innovación</div>
-                {%if data.TRL == 'TRL8' or data.TRL == 'TRL9' %}
-                    <div class="containerProgressBar">
-                        {%if data.TRL=='TRL8' or data.TRL=='TRL9' %}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL8</p>
-                                <div class=" progressBar" id="TRL8"></div>
-                            </div>
-                        {%endif%}
-                        {%if data.TRL=='TRL9'%}
-                            <div class="itemProgres">
-                                <p class="trlTag">TRL9</p>
-                                <div class=" progressBar" id="TRL9"></div>
-                            </div>
-                        {%endif%}
-                    </div>                
-                {%endif%}
+            <div class="progressBar-separators">
+                <div class="separators" id="separator1"></div>
+                <div class="separators" id="separator2"></div>
+                <div class="separators" id="separator3"></div>
             </div>
         </div>
     </div>
+
+    <figure class="highcharts-figure">
+        <div id="spyderChart"></div>
+    </figure>
+    <figure class="highcharts-figure">
+        <div id="spyderChart2"></div>
+    </figure>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/xrange.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="{{ url_for('static', filename='js/highcharts/highcharts.js') }}"></script>
     <script>
+
         document.addEventListener('DOMContentLoaded',function () {
-            
+            var trlLevel = "{{ data['TRL'] }}";
+            var trlIndex = parseInt(trlLevel.replace('TRL', ''));
+
+            const elementsTrl = [
+                {trlNumber : 1,trlLabel : 'TRL1',  phaseLabel : 'Investigación Básica', colorCircle : '#0077b6'},
+
+                {trlNumber : 2,trlLabel : 'TRL2',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+                {trlNumber : 3,trlLabel : 'TRL3',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+                {trlNumber : 4,trlLabel : 'TRL4',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+
+                {trlNumber : 5,trlLabel : 'TRL5',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+                {trlNumber : 6,trlLabel : 'TRL6',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+                {trlNumber : 7,trlLabel : 'TRL7',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+
+                {trlNumber : 8,trlLabel : 'TRL8',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
+                {trlNumber : 9,trlLabel : 'TRL9',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
+            ]
+
+            const progressBar = document.querySelector(".progressBar-circles");
+
+            const historyPhase = [];
+            elementsTrl.forEach((val, index)=>{
+                const circle = document.createElement('div');
+                circle.classList.add('progressBar-circle');
+                if (val.trlNumber <= trlIndex) {
+                    circle.style.backgroundColor=val.colorCircle;
+                }else{
+                    circle.style.opacity=0.5
+                }
+                
+                const labelTrl = document.createElement('p');
+                labelTrl.textContent = val.trlLabel
+                labelTrl.classList.add('label-circle');
+                
+                circle.appendChild(labelTrl);
+
+                progressBar.appendChild(circle);
+            })
+
         })
     </script>
 </body>
+
 </html>

@@ -3,11 +3,11 @@ from aditional_data.db import engine
 from aditional_data.db import engine
 from sqlalchemy import text
 
-bp_register=Blueprint('register',__name__,url_prefix='/register')
+bp_register=Blueprint('register',__name__,url_prefix='/')
 
 @bp_register.route("/")
 def root():
-    return render_template("formulario.html")
+    return render_template("datos.html")
 
 @bp_register.route('/register_participant',methods=['POST'])
 def register_participant():
@@ -27,4 +27,4 @@ def register_participant():
         })
         conn.commit()
 
-    return 'Formulario hecho'
+    return render_template('home.1.html')

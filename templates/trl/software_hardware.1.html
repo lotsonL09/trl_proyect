@@ -36,20 +36,31 @@
                 </div>
             </fieldset>
             {%endfor%}
-            <!--<input type="submit" value="Evaluar" onclick="redirectToResultPage()">-->
-            <button type="submit" class="submit-button">Evaluar</button>
+            <div class="form-button">
+                <button type="submit" class="submit-button">Evaluar</button>
+            </div>
+            <div class="form-regresar">
+                <button type="button" class="regresar-button">Regresar</button>
+            </div>
         </form>
     </section>
 
     <script src="/static/js/script.js"></script>
     <script>
+
         function handleNoneOption(element) {
             const fieldset = element.closest('fieldset');
-            const options = fieldset.querySelectorAll('.option');
+            const options = fieldset.querySelectorAll('.option-input');
             options.forEach(option => {
                 option.checked = false;
                 option.disabled = element.checked;
             });
         }
+
+    </script>
+    <script>
+        document.querySelector('.regresar-button').addEventListener('click', function() {
+            window.history.back(); // Go back to the previous page
+        });
     </script>
 {%endblock%}

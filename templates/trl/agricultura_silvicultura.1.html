@@ -12,43 +12,55 @@
 
 {%block content%}
 
-<section class="section">
-    <form action="/ingenieria_tecnologia/evaluacion" method="post">
-        {% for campo, datos in data.items() %}
-        <fieldset class="form-section">
-            <div class="title-wrapper">
-                <legend class="section-title">{{ datos.title }}</legend>
-            </div>
-            <div class="form-content">
-                {% for question in datos.questions %}
-                <div class="option-container">
-                    <label class="option-label">
-                        <input type="checkbox" name="{{ datos.title }}" value="{{ question.pregunta.TRL }}" class="option-input">
-                        <span class="option-text">{{ question.pregunta.enunciado }}</span>
-                    </label>
+    <section class="section">
+        <form action="/ingenieria_tecnologia/evaluacion" method="post">
+            {% for campo, datos in data.items() %}
+            <fieldset class="form-section">
+                <div class="title-wrapper">
+                    <legend class="section-title">{{ datos.title }}</legend>
                 </div>
-                {% endfor %}
-                <div class="option-container">
-                    <label class="option-label">
-                        <input type="checkbox" name="{{ datos.title }}" value="none" class="none-option" onclick="handleNoneOption(this)">
-                        <span class="option-text">No cumplo con ninguna de las alternativas</span>
-                    </label>
+                <div class="form-content">
+                    {% for question in datos.questions %}
+                    <div class="option-container">
+                        <label class="option-label">
+                            <input type="checkbox" name="{{ datos.title }}" value="{{ question.pregunta.TRL }}" class="option-input">
+                            <span class="option-text">{{ question.pregunta.enunciado }}</span>
+                        </label>
+                    </div>
+                    {% endfor %}
+                    <div class="option-container">
+                        <label class="option-label">
+                            <input type="checkbox" name="{{ datos.title }}" value="none" class="none-option" onclick="handleNoneOption(this)">
+                            <span class="option-text">No cumplo con ninguna de las alternativas</span>
+                        </label>
+                    </div>
                 </div>
+            </fieldset>
+            {% endfor %}
+            <div class="form-button">
+                <button type="submit" class="submit-button">Evaluar</button>
             </div>
-        </fieldset>
-        {% endfor %}
-        <button type="submit" class="submit-button">Evaluar</button>
-    </form>
-</section>
+            <div class="form-regresar">
+                <button type="button" class="regresar-button">Regresar</button>
+            </div>
+        </form>
+    </section>
     <script src="/static/js/script.js"></script>
     <script>
+
         function handleNoneOption(element) {
             const fieldset = element.closest('fieldset');
-            const options = fieldset.querySelectorAll('.option');
+            const options = fieldset.querySelectorAll('.option-input');
             options.forEach(option => {
                 option.checked = false;
                 option.disabled = element.checked;
             });
         }
+
+    </script>
+    <script>
+        document.querySelector('.regresar-button').addEventListener('click', function() {
+            window.history.back(); // Go back to the previous page
+        });
     </script>
 {%endblock%}

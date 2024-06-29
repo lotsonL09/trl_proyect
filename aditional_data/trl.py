@@ -49,10 +49,27 @@ condictions_salud_medicamentos={
     'TRL9':2
 }
 
+#El resto de disciplinas
+factor_investigacion=1.2
+factor_desarrollo_tecnologico=1
+factor_implementacion=1
+factor_desarrollo_comercial=2
+
+#Salud-Dispositivos
+factor_fase_preclinica_clinica=1.2
+factor_desarrollo_produccion=1.5
+factor_desarrollo_comercial_dispositivos=1.5
+
+#Salud-Medicamentos
+factor_ensayos_preclinicos=1.5
+factor_ensayos_clinicos=1.2
+factor_aprobacion_comercializacion=1.5
+
 
 trl_questions_pesca={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
@@ -83,6 +100,7 @@ trl_questions_pesca={
 
     'campo_2':{
         'title': 'Desarrollo Tecnológico',
+        'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
                 'enunciado':'Ha modelado y simulado condiciones marinas en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
@@ -113,6 +131,7 @@ trl_questions_pesca={
 
     'campo_3':{
         'title': 'Implementación',
+        'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
@@ -143,6 +162,7 @@ trl_questions_pesca={
 
     'campo_4':{
         'title': 'Desarrollo Comercial',
+        'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
             'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
@@ -163,6 +183,7 @@ trl_questions_pesca={
 trl_questions_ingenieria_tecnologia={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
@@ -193,6 +214,7 @@ trl_questions_ingenieria_tecnologia={
 
     'campo_2':{
         'title': 'Desarrollo Tecnológico',
+        'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se cuenta con un prototipo considerado con al menos nivel de banco de pruebas con componentes básicas integradas.',
@@ -223,6 +245,7 @@ trl_questions_ingenieria_tecnologia={
 
     'campo_3':{
         'title': 'Implementación',
+        'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales con usuarios finales, es decir, en el entorno real de uso.',
@@ -253,6 +276,7 @@ trl_questions_ingenieria_tecnologia={
 
     'campo_4':{
         'title': 'Desarrollo Comercial',
+        'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
             'enunciado':'Se está recopilando y analizando datos producto del despliegue y de los usuarios/clientes para realizar las mejoras pertinentes.',
@@ -273,6 +297,7 @@ trl_questions_ingenieria_tecnologia={
 trl_questions_software_hardware={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
@@ -303,6 +328,7 @@ trl_questions_software_hardware={
 
     'campo_2':{
         'title': 'Desarrollo Tecnológico',
+        'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
                 'enunciado':'Cuenta con una versión alpha del modelo o prototipo inicial con funciones/componentes básicos integrados.',
@@ -333,6 +359,7 @@ trl_questions_software_hardware={
 
     'campo_3':{
         'title': 'Implementación',
+        'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales con usuarios finales, es decir, en el entorno real de uso.',
@@ -363,6 +390,7 @@ trl_questions_software_hardware={
 
     'campo_4':{
         'title': 'Desarrollo Comercial',
+        'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
             'enunciado':'Se está recopilando y analizando datos producto del despliegue y de los usuarios/clientes para realizar las mejoras pertinentes.',
@@ -383,6 +411,7 @@ trl_questions_software_hardware={
 trl_questions_general={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación .',
@@ -413,6 +442,7 @@ trl_questions_general={
 
     'campo_2':{
         'title': 'Desarrollo Tecnológico',
+        'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
                 'enunciado':'Ha modelado y simulado en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
@@ -443,6 +473,7 @@ trl_questions_general={
 
     'campo_3':{
         'title': 'Implementación',
+        'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
@@ -473,6 +504,7 @@ trl_questions_general={
 
     'campo_4':{
         'title': 'Desarrollo Comercial',
+        'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
             'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
@@ -493,6 +525,7 @@ trl_questions_general={
 trl_questions_agricultura_silvicultura={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
@@ -523,6 +556,7 @@ trl_questions_agricultura_silvicultura={
 
     'campo_2':{
         'title': 'Desarrollo Tecnológico',
+        'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
                 'enunciado':'Ha modelado y simulado condiciones marinas en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
@@ -553,6 +587,7 @@ trl_questions_agricultura_silvicultura={
 
     'campo_3':{
         'title': 'Implementación',
+        'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
@@ -583,6 +618,7 @@ trl_questions_agricultura_silvicultura={
 
     'campo_4':{
         'title': 'Desarrollo Comercial',
+        'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
             'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes agrícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
@@ -603,6 +639,7 @@ trl_questions_agricultura_silvicultura={
 trl_questions_salud_medicamentos={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha realizado una investigación científica inicial, la cual incluye: Revisión de literatura relevante, definición de hipótesis y objetivos.',
@@ -633,6 +670,7 @@ trl_questions_salud_medicamentos={
 
     'campo_2':{
         'title': 'Ensayos Preclínicos',
+        'factor':factor_ensayos_preclinicos,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se han realizado ensayos preclínicos in vitro (en células o tejidos) e in vivo (en animales), para identificar posibles efectos adversos del medicamento.',
@@ -647,7 +685,7 @@ trl_questions_salud_medicamentos={
                 'TRL': 'TRL4_1_2'}
             },
             {'pregunta':{
-                'enunciado':'4.	Actualmente, tengo la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 1.',
+                'enunciado':'Actualmente, tengo la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 1.',
                 'TRL': 'TRL5_1_3'}
             },
         ]
@@ -655,6 +693,7 @@ trl_questions_salud_medicamentos={
 
     'campo_3':{
         'title': 'Ensayos Clínicos',
+        'factor':factor_ensayos_clinicos,
         'questions': [
             {'pregunta':{
                 'enunciado':'He realizado ensayos clínicos de fase 1, donde el nuevo medicamento se ha administrado a un pequeño grupo de voluntarios sanos.',
@@ -681,6 +720,7 @@ trl_questions_salud_medicamentos={
 
     'campo_4':{
         'title': 'Aprobación y Comercialización',
+        'factor':factor_aprobacion_comercializacion,
         'questions': [
         {'pregunta':{
             'enunciado':'Se ha confirmado la eficacia del medicamento mediante la realización de ensayos preclínicos y clínicos, donde se han monitoreado los efectos secundarios, y ha comparado los resultados con tratamientos estándar o placebos.',
@@ -705,6 +745,7 @@ trl_questions_salud_medicamentos={
 trl_questions_salud_dispositivos={
     'campo_1':{
         'title': 'Investigación',
+        'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se ha realizado una investigación científica inicial, la cual incluye: Revisión de literatura relevante, definición de hipótesis y objetivos.',
@@ -735,6 +776,7 @@ trl_questions_salud_dispositivos={
 
     'campo_2':{
         'title': 'Fase preclínica/clínica',
+        'factor':factor_fase_preclinica_clinica,
         'questions': [
             {'pregunta':{
                 'enunciado':'Se han realizado ensayos preclínicos en entorno de laboratorio, donde la tecnología ha demostrado cumplir con los requerimientos de rendimiento y funcionabilidad.',
@@ -761,6 +803,7 @@ trl_questions_salud_dispositivos={
 
     'campo_3':{
         'title': 'Desarrollo y Producción',
+        'factor':factor_desarrollo_produccion,
         'questions': [
             {'pregunta':{
                 'enunciado':'12.	Se ha realizado un prototipo de la tecnología, basado en los resultados de los ensayos entorno a laboratorio.',
@@ -783,6 +826,7 @@ trl_questions_salud_dispositivos={
 
     'campo_4':{
         'title': 'Desarrollo Comercial',
+        'factor':factor_desarrollo_comercial_dispositivos,
         'questions': [
         {'pregunta':{
             'enunciado':'Se ha realizado la optimización de la tecnología para que se adapte mejor a las necesidades y preferencias del mercado.',

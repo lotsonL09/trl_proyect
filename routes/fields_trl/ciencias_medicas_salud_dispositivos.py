@@ -20,22 +20,23 @@ def root():
 def evaluation():
     results=[]
     investigacion = request.form.getlist('Investigación')
-    desarrollo = request.form.getlist('Desarrollo Tecnológico')
-    implementacion = request.form.getlist('Implementación')
+    desarrollo = request.form.getlist('Fase preclínica/clínica')
+    implementacion = request.form.getlist('Desarrollo y Producción')
     comercial = request.form.getlist('Desarrollo Comercial')
     results.extend(investigacion)
     results.extend(desarrollo)
     results.extend(implementacion)
     results.extend(comercial)
 
-    options_marked,results_new=ciencias_salud_dispositivos.get_options_marked_and_new_format(results)
+    options_marked,results_new,spider_dict=ciencias_salud_dispositivos.get_options_marked_and_new_format(results)
     
     level=ciencias_salud_dispositivos.get_level(results_new)
 
     window_content={
         'answers':options_marked,
         'TRL':level,
-        'phase':trl_data[level]
+        'phase':trl_data[level],
+        'spider_data':spider_dict
     }
 
     return render_template("/resultados/resultados.1.html",data=window_content)

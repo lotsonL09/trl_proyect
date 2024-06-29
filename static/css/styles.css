@@ -97,6 +97,49 @@ header h1 {
     padding: 0px 0; /* Add padding as needed */
 }
 
+/* Para el boton de resultados */
+.form-button { 
+    text-align: center; /* This will center the button if it's displayed as inline-block */
+}
+
+.submit-button {
+    background-color: #4dbbd4; /* Set the background color */
+    border: none; /* No border for a flat design */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 1.5em; /* Text size */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+    outline: none; /* Remove outline */
+    margin-bottom: 10px;
+}
+
+.submit-button:hover, .submit-button:focus {
+    background-color: #3991a1; /* Darker shade of blue on hover/focus */
+    transform: scale(1.05); /* Slightly increase size on hover/focus */
+}
+
+/* Para el boton de regresar */
+.regresar-button {
+    color: gray;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.regresar-button:hover {
+    color: white;
+    background-color: gray; /* Darker on hover */
+    transform: scale(1.05);
+}
+
+
 /* Para el contenedor de logos */
 .logo-container {
     display: flex;
@@ -108,8 +151,6 @@ header h1 {
     background-color: white; /* Fondo blanco para el contenedor */
     padding: 10px 0; /* Espacio vertical alrededor de los logos */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el contenedor */
-    justify-content: center;
-    align-items: center;
 }
 
 .logo {

@@ -27,7 +27,7 @@ def evaluation():
     results.extend(implementacion)
     results.extend(comercial)
 
-    options_marked,results_new=agricultura_silvicultura.get_options_marked_and_new_format(results)
+    options_marked,results_new,spider_dict=agricultura_silvicultura.get_options_marked_and_new_format(results)
     
     level=agricultura_silvicultura.get_level(results_new)
 
@@ -35,7 +35,8 @@ def evaluation():
     window_content={
         'answers':options_marked,
         'TRL':level,
-        'phase':trl_data[level]
+        'phase':trl_data[level],
+        'spider_data':spider_dict
     }
 
     return render_template("/resultados/resultados.1.html",data=window_content)

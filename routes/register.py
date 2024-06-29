@@ -1,5 +1,7 @@
 from flask import Blueprint,render_template,request
 from aditional_data.db import engine
+from aditional_data.db import engine
+from sqlalchemy import text
 
 bp_register=Blueprint('register',__name__,url_prefix='/register')
 
@@ -13,8 +15,16 @@ def register_participant():
     last_name=request.form['last_name']
     company=request.form['company']
     job=request.form['job']
-    print(first_name)
-    print(last_name)
-    print(company)
-    print(job)
+    
+    stmt=text("INSERT participants(first_name,last_name,company,job) VALUES(:first_name,:last_name,:company,:job)")
+
+    with engine.connect() as conn:
+        conn.execute(stmt,{
+            "first_name":first_name,
+            "last_name":last_name,
+            "company":company,
+            "job":job
+        })
+        conn.commit()
+
     return 'Formulario hecho'

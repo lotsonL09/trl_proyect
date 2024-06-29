@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRL Chart</title>
-    <link rel="stylesheet" href="/static/css/styles_resultados.css">
-</head>
+{% extends "trl/base.html" %}
+
+
+{%block stylesheet%} /static/css/styles.css {%endblock%}
+
+{%block header%}
+    <div class="header">
+        <div class="title-container">
+            <h1>Calculadora TRL-Ingeniería y Tecnología</h1>
+        </div>
+    </div>
+{%endblock%}
+
 <body>
     {%if data.CRL != 'none' %}
         <h3>El CRL de su proyecto es: {{data.CRL}} </h3>

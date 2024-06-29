@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRL Chart</title>
-    <link rel="stylesheet" href="/static/css/styles_resultados.css">
-</head>
-<body>
+{% extends "base.html" %}
 
+
+{%block stylesheet%} /static/css/styles_resultados.css {%endblock%}
+
+{%block header%}
     <div class="header">
         <div class="title-container">
-            <h1>RESULTADOS</h1>
+            <h1>Resultados</h1>
         </div>
     </div>
+{%endblock%}
+
+
+{%block content%}
+
+    <div class="resultados">
+
 
     {%if data.TRL != 'none' %}
-        <h2>El TRL de su proyecto es: {{data.TRL}} </h2>
+
     {%endif%}
+
+
+
 
     {%if data.phase != 'none' %}
         <h2>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h2>
     {%else%}
+    <div class="resultados-detalles">
         <h2>Los resultados de su proyecto no alcanza algún nivel de TRL.</h2>
     {%endif%}
     <h3>Alternativas seleccionadas:</h3>
@@ -32,8 +39,9 @@
                 <li> {{answer}} </li>
             {%endfor%}
         {%endif%}
-    </ul>
-    
+    </ul>  
+</div> 
+</div>
     <!-- Barra -->
 
     <div id="containerProgressBar">
@@ -123,6 +131,7 @@
 
         })
     </script>
-</body>
+    {%endblock%}
+<!--</body>
 
-</html>
+</html>-->

@@ -17,3 +17,11 @@
 #Ensayos preclinicos= 4 --> 1.5
 #Ensayos clinicos= 5 --> 1.2
 #Aprobacion y comercializacion= 4 --> 1.5
+
+
+#CRL
+
+#Iniciacion y Evaluación Preliminar = 5 --> 1.2
+#Investigación y Análisis de mercado = 5 --> 1.2
+#Desarrollo y Validación Técnica = 5 --> 1.2
+#Lanzamiento y Evaluación Post-Lanzamiento = 5 --> 1.2

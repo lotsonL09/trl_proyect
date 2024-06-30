@@ -28,9 +28,11 @@
         <h2>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h2>
     {%else%}
     <div class="resultados-detalles">
+  
         <h2>Los resultados de su proyecto no alcanza algún nivel de TRL.</h2>
     {%endif%}
     <h3>Alternativas seleccionadas:</h3>
+    <h3>Investigación</h3>
     <ul>
         {%if data.answers == "No ha seleccionado ninguna opción" %}
         <li>{{data.answers}}</li>

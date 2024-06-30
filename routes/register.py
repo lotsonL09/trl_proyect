@@ -1,6 +1,4 @@
 from flask import Blueprint,render_template,request, jsonify
-from aditional_data.db import engine
-from aditional_data.db import engine
 from sqlalchemy import text
 from aditional_data.results import ingenieria_tecno, general,agricultura_silvicultura,crl,ciencias_salud_dispositivos,ciencias_salud_medicamentos,software_hardware,pesca
 

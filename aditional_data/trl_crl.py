@@ -263,7 +263,7 @@ trl_questions_pesca={
     },
 
     'campo_3':{
-        'title': 'Innovación',
+        'title': 'Implementación',
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
@@ -661,26 +661,26 @@ trl_questions_agricultura_silvicultura={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
+                'enunciado':'Se ha explorado tecnologías nuevas y emergentes aplicables a la agricultura/silvicultura.',
                 'TRL': 'TRL1_0_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado pruebas experimentales iniciales en condiciones controladas.',
+                'enunciado':'Se ha realizado pruebas de laboratorio para evaluar los conceptos tecnológicos y poder corroborar la hipótesis planteada para el sector agrícola/silvicultura.',
                 'TRL': 'TRL3_0_1'
             },
         },
             {'pregunta':{
-                'enunciado':'Se ha desarrollado modelos conceptuales que describen el funcionamiento práctico de la tecnología.',
+                'enunciado':'Se ha formulado conceptos teóricos para nuevas tecnologías agrícolas/silvicultura.',
                 'TRL': 'TRL2_0_2'
             },
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha demostrado eficacia en condiciones de laboratorio.',
+                'enunciado':'Se ha evaluado la eficacia de nuevas técnicas agrícolas/silvicultura dando resultados positivos en condiciones controladas.',
                 'TRL': 'TRL3_0_3'
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha formulado una hipótesis clara y específica.',
+                'enunciado':'Se ha desarrollado hipótesis sobre la aplicación de tecnologías emergentes en la agricultura/silvicultura.',
                 'TRL': 'TRL2_0_4'
             }
             }
@@ -692,19 +692,19 @@ trl_questions_agricultura_silvicultura={
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'Ha modelado y simulado condiciones marinas en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
+                'enunciado':'Se ha realizado pruebas controladas en entorno de laboratorio de sistemas tecnológicos agrícolas/silvicultura.',
                 'TRL': 'TRL4_1_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha simulado situaciones operativas reales controladas (no necesariamente en el campo o entorno de uso final) para validar la tecnología propuesta.',
+                'enunciado':'Se ha evaluado la eficacia de la tecnología agrícola/silvicultura en un entorno relevante o de alta fidelidad.',
                 'TRL': 'TRL5_1_1'}
             },
             {'pregunta':{
-                'enunciado':'Se ha colaborado con pescadores/usuarios para realizar pruebas operativas de la tecnología.',
+                'enunciado':'Se ha ajustado la tecnología agrícola/silviculturas basadas en los resultados de demostraciones en un entorno operacional.',
                 'TRL': 'TRL6_1_2'}
             },
             {'pregunta':{
-                'enunciado':'Se tiene alguna documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo.',
+                'enunciado':'Se ha ajustado y optimizado el/los prototipos agrícolas/silvicultura basados en las pruebas y resultados del laboratorio o entorno de baja fidelidad.',
                 'TRL': 'TRL4_1_3'}
             },
             {'pregunta':{
@@ -712,7 +712,7 @@ trl_questions_agricultura_silvicultura={
                 'TRL': 'TRL6_1_4'}
             },
             {'pregunta':{
-                'enunciado':'Ha realizado evaluaciones iniciales de eficiencia y sostenibilidad de la tecnología.',
+                'enunciado':'Se ha ajustado y mejorado los componentes tecnológicos basados en las pruebas de entorno relevante.',
                 'TRL': 'TRL5_1_5'}
             },
         ]
@@ -727,7 +727,7 @@ trl_questions_agricultura_silvicultura={
                 'TRL': 'TRL7_2_0'}
             },
             {'pregunta':{
-                'enunciado':'Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias .',
+                'enunciado':'Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias.',
                 'TRL': 'TRL7_2_1'}
             },
             {'pregunta':{
@@ -735,15 +735,15 @@ trl_questions_agricultura_silvicultura={
                 'TRL': 'TRL8_2_2'}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes para el sector agrícola.',
+                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes.',
                 'TRL': 'TRL8_2_3'}
             },
             {'pregunta':{
-                'enunciado':'Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado agrícola.',
+                'enunciado':'Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado.',
                 'TRL': 'TRL9_2_4'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de agrícolas de manera regular.',
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de manera regular.',
                 'TRL': 'TRL9_2_5'}
             },
         ]
@@ -754,15 +754,15 @@ trl_questions_agricultura_silvicultura={
         'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
-            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes agrícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
+            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes agrícolas/silvicultores para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
             'TRL': 'TRL9_3_0'}
         },
         {'pregunta':{
-            'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales .',
+            'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales.',
             'TRL': 'TRL8_3_1'}
         },
         {'pregunta':{
-            'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas agrícolas y ha recibido interés para futuras implementaciones comerciales.',
+            'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas y ha recibido interés para futuras implementaciones comerciales.',
             'TRL': 'TRL7_3_2'}
         },
     ]

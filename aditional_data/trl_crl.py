@@ -2,15 +2,15 @@ fields=['campo_1','campo_2','campo_3','campo_4']
 
 trl_data={
     'none':'none',
-    'TRL1':'Investigación Básica',
-    'TRL2':'Investigación Aplicada',
-    'TRL3':'Investigación Aplicada',
-    'TRL4':'Investigación Aplicada',
-    'TRL5':'Desarrollo Tecnológico',
-    'TRL6':'Desarrollo Tecnológico',
-    'TRL7':'Desarrollo Tecnológico',
-    'TRL8':'Innovación',
-    'TRL9':'Innovación',
+    'TRL 1':'Investigación Básica',
+    'TRL 2':'Investigación Aplicada',
+    'TRL 3':'Investigación Aplicada',
+    'TRL 4':'Investigación Aplicada',
+    'TRL 5':'Desarrollo Tecnológico',
+    'TRL 6':'Desarrollo Tecnológico',
+    'TRL 7':'Desarrollo Tecnológico',
+    'TRL 8':'Innovación',
+    'TRL 9':'Innovación',
 }
 
 condictions_crl={
@@ -42,7 +42,7 @@ condictions_salud_dispositivos={
     'TRL2':2,
     'TRL3':2,
     'TRL4':2,
-    'TRL5':2,
+    'TRL5':3,
     'TRL6':2,
     'TRL7':2,
     'TRL8':2,
@@ -89,7 +89,7 @@ crl_questions={
         'factor':factor_iniciacion_evaluacion_preliminar,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se tiene una comprensión inicial y superficial de cómo la idea podría ser aplicada en el mercado.',
+                'enunciado':'Se ha realizado una revisión inicial y sistemática de información disponible para identificar oportunidades y necesidades del mercado, generando ideas basadas en ellas, aunque sin una validación formal aún.',
                 'CRL': 'CRL1_0_0'}
             },
             {'pregunta':{
@@ -124,11 +124,11 @@ crl_questions={
                 'CRL': 'CRL1_1_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado un análisis de mercado basado en información secundaria: datos disponibles públicamente.',
+                'enunciado':'Se realiza una evaluación preliminar de la viabilidad comercial basándose en información secundaria disponible, como reportes de cámaras de comercio, estudios sectoriales y otros datos públicos.',
                 'CRL': 'CRL2_1_1'}
             },
             {'pregunta':{
-                'enunciado':'Se ha identificado aplicaciones específicas y realizando un análisis de mercado preliminar basado en encuestas o entrevistas con clientes potenciales.',
+                'enunciado':'Se han identificado aplicaciones específicas para el producto o servicio, y además se ha realizado un análisis de mercado preliminar basado en encuestas o entrevistas con clientes potenciales.',
                 'CRL': 'CRL3_1_2'}
             },
             {'pregunta':{
@@ -156,11 +156,11 @@ crl_questions={
                 'CRL': 'CRL7_2_1'}
             },
             {'pregunta':{
-                'enunciado':'Se tiene el conocimiento detallado y práctico de las normativas y certificaciones necesarias para operar legalmente y con éxito en el mercado. ',
+                'enunciado':'Se tiene el conocimiento detallado y práctico de las normativas y certificaciones necesarias para operar legalmente y con éxito en el mercado.',
                 'CRL': 'CRL6_2_2'}
             },
             {'pregunta':{
-                'enunciado':'Se ha desarrollado y validado modelos financieros detallados que proyectan los ingresos, costos, y rentabilidad del producto o servicio, tomando en cuenta el entorno económico y de mercado local. ',
+                'enunciado':'Se ha desarrollado y validado modelos financieros detallados que proyectan los ingresos, costos, y rentabilidad del producto o servicio, tomando en cuenta el entorno económico y de mercado local.',
                 'CRL': 'CRL7_2_3'}
             },
             {'pregunta':{
@@ -205,26 +205,26 @@ trl_questions_pesca={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
+                'enunciado':'Determinar los problemas y requerimientos del sector pesquero/acuícola.',
                 'TRL': 'TRL1_0_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado pruebas experimentales iniciales en condiciones controladas.',
+                'enunciado':'Se ha corroborado la hipótesis teórica con pruebas iniciales en condiciones controladas.',
                 'TRL': 'TRL3_0_1'
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha desarrollado modelos conceptuales que describen el funcionamiento práctico de la tecnología.',
+                'enunciado':'Se ha desarrollado modelos conceptuales que describen el funcionamiento práctico de la tecnología orientada a pesca/acuicultura.',
                 'TRL': 'TRL2_0_2'
             },
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha demostrado eficacia en condiciones de laboratorio.',
+                'enunciado':'La tecnología propuesta para pesca/acuicultura ha demostrado eficacia en condiciones de laboratorio.',
                 'TRL': 'TRL3_0_3'
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha formulado una hipótesis clara y específica.',
+                'enunciado':'Plantear hipótesis sobre el uso de nuevas tecnologías en pesca/acuicultura.',
                 'TRL': 'TRL2_0_4'
             }
             }
@@ -236,19 +236,19 @@ trl_questions_pesca={
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'Ha modelado y simulado condiciones marinas en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
+                'enunciado':'Ha modelado y simulado condiciones marinas y/o cuerpos hídricos (para el caso de acuicultura) en el laboratorio para probar la tecnología planteada, obteniendo resultados positivos.',
                 'TRL': 'TRL4_1_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha simulado situaciones operativas reales controladas (no necesariamente en el campo o entorno de uso final) para validar la tecnología propuesta.',
+                'enunciado':'Se ha validado la operatividad de sistemas pesquero/acuícolas en ambientes relevantes.',
                 'TRL': 'TRL5_1_1'}
             },
             {'pregunta':{
-                'enunciado':'Se ha colaborado con pescadores/usuarios para realizar pruebas operativas de la tecnología.',
+                'enunciado':'Se ha colaborado con pescadores/acuicultores para realizar pruebas operativas de la tecnología.',
                 'TRL': 'TRL6_1_2'}
             },
             {'pregunta':{
-                'enunciado':'Se tiene alguna documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo.',
+                'enunciado':'Se ha mejorado o refinado los prototipos de pesca/acuicultura basados en datos de laboratorio.',
                 'TRL': 'TRL4_1_3'}
             },
             {'pregunta':{
@@ -256,14 +256,14 @@ trl_questions_pesca={
                 'TRL': 'TRL6_1_4'}
             },
             {'pregunta':{
-                'enunciado':'Ha realizado evaluaciones iniciales de eficiencia y sostenibilidad de la tecnología.',
+                'enunciado':'Se ha evaluado la funcionalidad de la tecnología acuícola/pesca en entornos relevantes.',
                 'TRL': 'TRL5_1_5'}
             },
         ]
     },
 
     'campo_3':{
-        'title': 'Implementación',
+        'title': 'Innovación',
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
@@ -279,15 +279,15 @@ trl_questions_pesca={
                 'TRL': 'TRL8_2_2'}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes.',
+                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes en el sector pesquero/acuícola.',
                 'TRL': 'TRL8_2_3'}
             },
             {'pregunta':{
-                'enunciado':'Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado.',
+                'enunciado':'Tu tecnología está en proceso de implementación comercial o ya se encuentra en el mercado pesquero/acuícola.',
                 'TRL': 'TRL9_2_4'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de pesca de manera regular.',
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de pesca/acuícola de manera regular.',
                 'TRL': 'TRL9_2_5'}
             },
         ]

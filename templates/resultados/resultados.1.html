@@ -49,16 +49,12 @@
         <div class="boxProgressBar">
             <div class="progressBar-titles">
                 <div class="title-progressBar" id="title1">
-                    <p >Investigación Básica</p>
                 </div>
                 <div class="title-progressBar" id="title2">
-                    <p >Investigación Aplicada</p>
                 </div>
                 <div class="title-progressBar" id="title3">
-                    <p >Desarrollo Tecnológico</p>
                 </div>
                 <div class="title-progressBar" id="title4">
-                    <p >Innovación</p>
                 </div>
             </div>
             <div class="progressBar-circles">
@@ -86,12 +82,47 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-    <script src="{{ url_for('static', filename='js/highcharts/highcharts.js') }}"></script>
     <script>
 
 document.addEventListener('DOMContentLoaded',function () {
+        const datosFormulario = localStorage.getItem('datos_formulario');
+        if (datosFormulario) {
+            const jsonFormulario = JSON.parse(datosFormulario)
+            console.log("Datos fomulario : ",jsonFormulario)
+        }
+
         var trlLevel = "{{ data['TRL'] }}";
         var trlIndex = parseInt(trlLevel.replace('TRL', ''));
+
+        var spyderData = "{{ data['spider_data'] }}"
+        const entities = {
+            '&#34;': '"',
+            '&#39;': "'",
+            '&amp;': '&',
+            '&lt;': '<',
+            '&gt;': '>'
+        };
+        let jsonString = spyderData.replace(/&#34;|&#39;|&amp;|&lt;|&gt;/g, function(match) {
+            return entities[match];
+        }).replace(/'/g, '"');
+
+        console.log("Spyder Data : ", jsonString)
+        console.log("Tipo de data spyder : ", typeof(spyderData))
+
+        const jsonSpyder = JSON.parse(jsonString);
+        console.log("JSON SPYDER : ", jsonSpyder)
+        const titlesJSONSpyder = Object.keys(jsonSpyder).map(title=>jsonSpyder[title]['title']);
+        const valuesJSONSpyder = Object.keys(jsonSpyder).map(title=> jsonSpyder[title]['value_spider'])
+        console.log(titlesJSONSpyder)
+
+        titlesJSONSpyder.forEach((item, index)=>{
+            const idTitle = 'title'+(index+1)
+            const titleElement = document.getElementById(idTitle);
+            const textoTitle = document.createElement('p')
+            textoTitle.innerText = item;
+            textoTitle.style.fontSize = '1rem'
+            titleElement.appendChild(textoTitle)
+        })
 
         const elementsTrl = [
             {trlNumber : 1,trlLabel : 'TRL1',  phaseLabel : 'Investigación Básica', colorCircle : '#0077b6'},
@@ -129,25 +160,7 @@ document.addEventListener('DOMContentLoaded',function () {
             progressBar.appendChild(circle);
         })
         
-        var spyderData = "{{ data['spider_data'] }}"
-        const entities = {
-            '&#34;': '"',
-            '&#39;': "'",
-            '&amp;': '&',
-            '&lt;': '<',
-            '&gt;': '>'
-        };
-        let jsonString = spyderData.replace(/&#34;|&#39;|&amp;|&lt;|&gt;/g, function(match) {
-            return entities[match];
-        }).replace(/'/g, '"');
-       
-        console.log("Spyder Data : ", jsonString)
-        console.log("Tipo de data spyder : ", typeof(spyderData))
 
-        const jsonSpyder = JSON.parse(jsonString);
-        const titlesJSONSpyder = Object.keys(jsonSpyder).map(title=>jsonSpyder[title]['title']);
-        const valuesJSONSpyder = Object.keys(jsonSpyder).map(title=> jsonSpyder[title]['value_spider'])
-        console.log(titlesJSONSpyder)
 
         Highcharts.chart('spyderChart', {
 
@@ -177,7 +190,9 @@ document.addEventListener('DOMContentLoaded',function () {
             yAxis: {
                 gridLineInterpolation: 'polygon',
                 lineWidth: 0,
-                min: 0
+                min: 0,
+                max : 7,
+                tickPositions: [0, 1, 2, 3, 4, 5, 6, 7]
             },
         
             tooltip: {
@@ -194,7 +209,8 @@ document.addEventListener('DOMContentLoaded',function () {
                 name: 'Respuestas',
                 data: valuesJSONSpyder,
                 pointPlacement: 'on'
-            }],
+            }
+        ],
         
             responsive: {
                 rules: [{

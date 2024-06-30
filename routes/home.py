@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template
 
-bp_home=Blueprint('main',__name__,'/main')
+bp_home=Blueprint('main',__name__,url_prefix='/home')
 
 @bp_home.route('/')
 def root():

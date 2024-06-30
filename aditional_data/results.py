@@ -10,13 +10,22 @@ class category:
         self.campo_4=campo_4
         self.type=type
         self.name=name
+        self.__valuesCache = ''
     
+    @property
+    def valuesCache(self):
+        return self.__valuesCache
+
+    @valuesCache.setter
+    def valuesCache(self, values):
+        self.__valuesCache = values
+
+
     def get_options_marked_and_new_format(self,results:list):
-        options_marked=[]
+        print(results)
         results_new=[]
         indexes_spider=[]
         data=tree_content[self.name]['content']
-        print(results)
         for result in results:
             try:
                 #index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
@@ -69,13 +78,16 @@ class category:
         #     factor=data[fields[index]]['factor']
         #     spider_dict[group_name]=amount*factor #correccion de los valores
         
-        print(spider_dict)
-        return options_marked,results_new,spider_dict
+        #print(spider_dict)
+        return results_new,spider_dict
     
     def get_level(self,results_new):
         count=0
         conditions=tree_content[self.name]['conditions']
+        print(results_new)
         for level in conditions.keys():
+            print("cantidad de la condicion",conditions[level])
+            print("cantidad marcada",results_new.count(level))
             if results_new.count(level) == conditions[level]:
                 count+=1
             else:
@@ -83,9 +95,9 @@ class category:
         if count == 0:
             return 'none'
         if count != 0 and self.type == 'TRL':
-            return f'TRL{count}'
+            return f'TRL {count}'
         if count != 0 and self.type == 'CRL':
-            return f'CRL{count}'
+            return f'CRL {count}'
 
 
 

@@ -24,13 +24,210 @@
         {%if data.answers == "No ha seleccionado ninguna opción" %}
             <li>{{data.answers}}</li>
         {%else%}
-            {%for answer in data.answers%}
-                <li> {{answer}} </li>
-            {%endfor%}
+            {% for campo,content in data.spider_data.items() %}
+                <h3>{{ content.title }}</h3>
+                {% if content.questions == 'No ha seleccionado ninguna opción' %}
+                    <ul>
+                        <li>No ha seleccionado alguna opcion en esta categoria.</li>
+                    </ul>
+                {% else %}
+                    <ul>
+                        {% for question in content.questions%}
+                            <li>{{question}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+            {% endfor %}
         {%endif%}
         </ul>
         </div>
     </div>
+    <div id="containerProgressBar">
+        <div class="boxProgressBar">
+            <div class="progressBar-titles">
+                <div class="title-progressBar" id="title1">
+                </div>
+                <div class="title-progressBar" id="title2">
+                </div>
+                <div class="title-progressBar" id="title3">
+                </div>
+                <div class="title-progressBar" id="title4">
+                </div>
+            </div>
+            <div class="progressBar-circles">
+            </div>
+            <div class="progressBar-separators">
+                <div class="separators" id="separator1"></div>
+                <div class="separators" id="separator2"></div>
+                <div class="separators" id="separator3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <figure class="highcharts-figure">
+            <div id="spyderChart"></div>
+        </figure>
+    </div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/xrange.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded',function () {
+        const datosFormulario = localStorage.getItem('datos_formulario');
+        if (datosFormulario) {
+            const jsonFormulario = JSON.parse(datosFormulario)
+            console.log("Datos fomulario : ",jsonFormulario)
+        }
+
+        var trlLevel = "{{ data['CRL'] }}";
+        console.log("DATOS CRL ",trlLevel)
+        var trlIndex = parseInt(trlLevel.replace('CRL', ''));
+
+        var spyderData = "{{ data['spider_data'] }}"
+        const entities = {
+            '&#34;': '"',
+            '&#39;': "'",
+            '&amp;': '&',
+            '&lt;': '<',
+            '&gt;': '>'
+        };
+        let jsonString = spyderData.replace(/&#34;|&#39;|&amp;|&lt;|&gt;/g, function(match) {
+            return entities[match];
+        }).replace(/'/g, '"');
+
+        console.log("Spyder Data : ", jsonString)
+        console.log("Tipo de data spyder : ", typeof(spyderData))
+
+        const jsonSpyder = JSON.parse(jsonString);
+        console.log("JSON SPYDER : ", jsonSpyder)
+        const titlesJSONSpyder = Object.keys(jsonSpyder).map(title=>jsonSpyder[title]['title']);
+        const valuesJSONSpyder = Object.keys(jsonSpyder).map(title=> jsonSpyder[title]['value_spider'])
+        console.log(titlesJSONSpyder)
+
+        titlesJSONSpyder.forEach((item, index)=>{
+            const idTitle = 'title'+(index+1)
+            const titleElement = document.getElementById(idTitle);
+            const textoTitle = document.createElement('p')
+            textoTitle.innerText = item;
+            textoTitle.style.fontSize = '1rem'
+            titleElement.appendChild(textoTitle)
+        })
+
+        const elementsTrl = [
+            {trlNumber : 1,trlLabel : 'CRL1',  phaseLabel : 'Investigación Básica', colorCircle : '#0077b6'},
+
+            {trlNumber : 2,trlLabel : 'CRL2',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+            {trlNumber : 3,trlLabel : 'CRL3',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+            {trlNumber : 4,trlLabel : 'CRL4',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+
+            {trlNumber : 5,trlLabel : 'CRL5',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+            {trlNumber : 6,trlLabel : 'CRL6',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+            {trlNumber : 7,trlLabel : 'CRL7',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+
+            {trlNumber : 8,trlLabel : 'CRL8',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
+            {trlNumber : 9,trlLabel : 'CRL9',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
+        ]
+
+        const progressBar = document.querySelector(".progressBar-circles");
+
+        const historyPhase = [];
+        elementsTrl.forEach((val, index)=>{
+            const circle = document.createElement('div');
+            circle.classList.add('progressBar-circle');
+            if (val.trlNumber <= trlIndex) {
+                circle.style.backgroundColor=val.colorCircle;
+            }else{
+                circle.style.opacity=0.5
+            }
+            
+            const labelTrl = document.createElement('p');
+            labelTrl.textContent = val.trlLabel
+            labelTrl.classList.add('label-circle');
+            
+            circle.appendChild(labelTrl);
+
+            progressBar.appendChild(circle);
+        })
+        
+
+
+        Highcharts.chart('spyderChart', {
+
+            chart: {
+                polar: true,
+                type: 'line'
+            },
+        
+            accessibility: {
+            },
+        
+            title: {
+                text: '',
+                x: -80
+            },
+        
+            pane: {
+                size: '80%'
+            },
+        
+            xAxis: {
+                categories: titlesJSONSpyder,
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+        
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0,
+                max:7,
+                tickPosition: [0, 1, 2, 3, 4, 5, 6, 7]
+            },
+        
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>' +
+                    '{point.y:.2f}</b><br/>'
+            },
+        
+            legend: {
+                enabled : false
+            },
+        
+            series: [{
+                name: 'Respuestas',
+                data: valuesJSONSpyder,
+                pointPlacement: 'on'
+            }],
+        
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 600
+                    },
+                    chartOptions: {
+                        pane: {
+                            size: '80%'
+                        }
+                    }
+                }]
+            }
+        
+        });
+
+    })
+    </script>
+
     <div class="form-regresar">
         <button type="button" class="regresar-button">Regresar</button>
     </div>

@@ -16,7 +16,7 @@
 
 
     <section class="section">
-        <form action="/ingenieria_tecnologia/evaluacion" method="post">
+        <form action="/ingenieria_tecnologia/evaluacion" id="formularioEvaluacion" method="post">
             {% for campo, datos in data.items() %}
             <fieldset class="form-section">
                 <div class="title-wrapper">
@@ -60,7 +60,33 @@
                 option.disabled = element.checked;
             });
         }
+        // const formularioTecnologia = document.getElementById('formularioEvaluacion');
+        // formularioTecnologia.addEventListener('submit',function (event) {
+        //     event.preventDefault();
+        //     const datosAlmacenados = localStorage.getItem('datos_formulario');
+        //     const jsonDatosFomulario = JSON.parse(datosAlmacenados);
+        //     const formData = new FormData()
+        //     formData.append('first_name', jsonDatosFomulario['first_name'])
+        //     formData.append('last_name', jsonDatosFomulario['last_name']);
+        //     formData.append('company', jsonDatosFomulario['company']);
+        //     formData.append('job', jsonDatosFomulario['job']);
 
+        //     fetch("/ingenieria_tecnologia/evaluacion",{
+        //         method : 'POST',
+        //         body : formData
+        //     })
+        //     .then(async(response)=>{
+        //         const jsonResponse = await response.json()
+        //         console.log(jsonResponse)
+        //         if (response.ok) {
+        //             alert('Datos enviados')
+        //             window.location.href = '/ingenieria_tecnologia/evaluacion'
+        //         }
+        //     })
+        //     .catch(err=>console.log(err))
+
+            
+        // })
     </script>
     <script>
         document.querySelector('.regresar-button').addEventListener('click', function() {

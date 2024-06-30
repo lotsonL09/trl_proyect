@@ -1,7 +1,8 @@
-from flask import Blueprint,render_template,request
+from flask import Blueprint,render_template,request, jsonify
 from random import shuffle
 from aditional_data.trl_crl import trl_questions_ingenieria_tecnologia,trl_data
 from aditional_data.results import ingenieria_tecno
+from aditional_data.db import client
 
 data=trl_questions_ingenieria_tecnologia
 
@@ -27,16 +28,22 @@ def evaluation():
     results.extend(implementacion)
     results.extend(comercial)
 
-    options_marked,results_new,spider_dict=ingenieria_tecno.get_options_marked_and_new_format(results)
+    results_new,spider_dict=ingenieria_tecno.get_options_marked_and_new_format(results)
     
     level=ingenieria_tecno.get_level(results_new)
 
-    
     window_content={
-        'answers':options_marked,
         'TRL':level,
         'phase':trl_data[level],
         'spider_data':spider_dict
     }
 
+    json_to_db={
+        'participant_data':ingenieria_tecno.valuesCache,
+        'form_data':window_content
+    }
+
+    client.insert.insert_one(json_to_db)
+
     return render_template("/resultados/resultados.1.html",data=window_content)
+

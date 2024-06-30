@@ -2,6 +2,7 @@ from flask import Blueprint,render_template,request
 from random import shuffle
 from aditional_data.trl_crl import crl_questions
 from aditional_data.results import crl
+from aditional_data.db import client
 
 data=crl_questions
 
@@ -15,7 +16,6 @@ def root():
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
     shuffle(data['campo_4']['questions'])
-
     return render_template('crl/crl.1.html',data=data)
 
 @bp_crl.route('/evaluacion',methods=['POST'])
@@ -30,15 +30,21 @@ def evaluation():
     results.extend(desarrollo_validacion)
     results.extend(lanzamiento_evaluacion)
     
-    options_marked,results_new,spider_dict=crl.get_options_marked_and_new_format(results)
+    results_new,spider_dict=crl.get_options_marked_and_new_format(results)
     
     level=crl.get_level(results_new)
 
     
     window_content={
-        'answers':options_marked,
         'CRL':level,
         'spider_data':spider_dict
     }
+
+    json_to_db={
+        'participant_data':crl.valuesCache,
+        'form_data':window_content
+    }
+
+    client.insert.insert_one(json_to_db)
 
     return render_template("/resultados/resultados_crl.1.html",data=window_content)

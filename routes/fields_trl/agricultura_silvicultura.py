@@ -2,6 +2,7 @@ from flask import Blueprint,render_template,request
 from random import shuffle
 from aditional_data.trl_crl import trl_questions_agricultura_silvicultura,trl_data
 from aditional_data.results import agricultura_silvicultura
+from aditional_data.db import client
 
 bp_agricultura_silvicultura=Blueprint('agricultura_silvicultura',__name__,url_prefix='/agricultura_silvicultura')
 
@@ -27,16 +28,21 @@ def evaluation():
     results.extend(implementacion)
     results.extend(comercial)
 
-    options_marked,results_new,spider_dict=agricultura_silvicultura.get_options_marked_and_new_format(results)
+    results_new,spider_dict=agricultura_silvicultura.get_options_marked_and_new_format(results)
     
     level=agricultura_silvicultura.get_level(results_new)
 
-    
     window_content={
-        'answers':options_marked,
         'TRL':level,
         'phase':trl_data[level],
         'spider_data':spider_dict
     }
+
+    json_to_db={
+        'participant_data':agricultura_silvicultura.valuesCache,
+        'form_data':window_content
+    }
+
+    client.insert.insert_one(json_to_db)
 
     return render_template("/resultados/resultados.1.html",data=window_content)

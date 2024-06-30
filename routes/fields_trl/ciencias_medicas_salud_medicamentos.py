@@ -2,6 +2,7 @@ from flask import Blueprint,render_template,request
 from random import shuffle
 from aditional_data.trl_crl import trl_questions_salud_medicamentos,trl_data
 from aditional_data.results import ciencias_salud_medicamentos
+from aditional_data.db import client
 
 data=trl_questions_salud_medicamentos
 
@@ -9,7 +10,6 @@ bp_ciencias_medicas_salud_medicamentos=Blueprint('ciencias_medicas_salud_medicam
 
 @bp_ciencias_medicas_salud_medicamentos.route('/')
 def root():
-
     shuffle(data['campo_1']['questions'])
     shuffle(data['campo_2']['questions'])
     shuffle(data['campo_3']['questions'])
@@ -28,15 +28,21 @@ def evaluation():
     results.extend(implementacion)
     results.extend(comercial)
 
-    options_marked,results_new,spider_dict=ciencias_salud_medicamentos.get_options_marked_and_new_format(results)
+    results_new,spider_dict=ciencias_salud_medicamentos.get_options_marked_and_new_format(results)
     
     level=ciencias_salud_medicamentos.get_level(results_new)
 
     window_content={
-        'answers':options_marked,
         'TRL':level,
         'phase':trl_data[level],
         'spider_data':spider_dict
     }
+
+    json_to_db={
+        'participant_data':ciencias_salud_medicamentos.valuesCache,
+        'form_data':window_content
+    }
+
+    client.insert.insert_one(json_to_db)
 
     return render_template("/resultados/resultados.1.html",data=window_content)

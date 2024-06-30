@@ -1,8 +1,8 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
-import re
 from aditional_data.trl_crl import trl_data,trl_questions_pesca
 from aditional_data.results import pesca
+from aditional_data.db import client
 
 data=trl_questions_pesca
 
@@ -28,15 +28,21 @@ def evaluation():
     results.extend(implementacion)
     results.extend(comercial)
     
-    options_marked,results_new,spider_dict=pesca.get_options_marked_and_new_format(results)
+    results_new,spider_dict=pesca.get_options_marked_and_new_format(results)
     
     level=pesca.get_level(results_new)
 
     window_content={
-        'answers':options_marked,
         'TRL':level,
         'phase':trl_data[level],
         'spider_data':spider_dict
     }
+    
+    json_to_db={
+        'participant_data':pesca.valuesCache,
+        'form_data':window_content
+    }
+
+    client.insert.insert_one(json_to_db)
 
     return render_template("/resultados/resultados.1.html",data=window_content)

@@ -71,9 +71,11 @@
         </div>
     </div>
 
-    <figure class="highcharts-figure">
-        <div id="spyderChart"></div>
-    </figure>
+    <div>
+        <figure class="highcharts-figure">
+            <div id="spyderChart"></div>
+        </figure>
+    </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -137,12 +139,15 @@ document.addEventListener('DOMContentLoaded',function () {
         };
         let jsonString = spyderData.replace(/&#34;|&#39;|&amp;|&lt;|&gt;/g, function(match) {
             return entities[match];
-        });
-
+        }).replace(/'/g, '"');
+       
         console.log("Spyder Data : ", jsonString)
         console.log("Tipo de data spyder : ", typeof(spyderData))
 
         const jsonSpyder = JSON.parse(jsonString);
+        const titlesJSONSpyder = Object.keys(jsonSpyder).map(title=>jsonSpyder[title]['title']);
+        const valuesJSONSpyder = Object.keys(jsonSpyder).map(title=> jsonSpyder[title]['value_spider'])
+        console.log(titlesJSONSpyder)
 
         Highcharts.chart('spyderChart', {
 
@@ -164,7 +169,7 @@ document.addEventListener('DOMContentLoaded',function () {
             },
         
             xAxis: {
-                categories: Object.keys(jsonSpyder),
+                categories: titlesJSONSpyder,
                 tickmarkPlacement: 'on',
                 lineWidth: 0
             },
@@ -187,7 +192,7 @@ document.addEventListener('DOMContentLoaded',function () {
         
             series: [{
                 name: 'Respuestas',
-                data: Object.values(jsonSpyder),
+                data: valuesJSONSpyder,
                 pointPlacement: 'on'
             }],
         
@@ -197,11 +202,6 @@ document.addEventListener('DOMContentLoaded',function () {
                         maxWidth: 600
                     },
                     chartOptions: {
-                        legend: {
-                            align: 'center',
-                            verticalAlign: 'bottom',
-                            layout: 'horizontal'
-                        },
                         pane: {
                             size: '80%'
                         }

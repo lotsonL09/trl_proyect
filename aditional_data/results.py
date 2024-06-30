@@ -33,14 +33,13 @@ class category:
         # if len(options_marked)==0:
         #     return 'No ha seleccionado ninguna opción',[],{}
 
-        stored=[]
         spider_dict=dict()
         # for element in indexes_spider:
         #     if not stored.count(element[0]):
         #         stored.append(element[0])
         
-
         for index in range(4):
+            field=index
             amount=0
             questions=[]
             for element in indexes_spider:

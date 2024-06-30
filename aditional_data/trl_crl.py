@@ -164,7 +164,7 @@ crl_questions={
                 'CRL': 'CRL7_2_3'}
             },
             {'pregunta':{
-                'enunciado':'El producto cumple con todas las certificaciones y regulaciones requeridas para operar en el mercado. ',
+                'enunciado':'El producto cumple con todas las certificaciones y regulaciones requeridas para operar en el mercado.',
                 'CRL': 'CRL7_2_4'}
             },
 
@@ -176,7 +176,7 @@ crl_questions={
         'factor':factor_lanzamiento_evaluacion_post_lanzamiento,
         'questions': [
         {'pregunta':{
-            'enunciado':'Se ha realizado un ajuste en las estrategias y modelos financieros para reflejar mejor la realidad del mercado y maximizar la rentabilidad. ',
+            'enunciado':'Se ha realizado un ajuste en las estrategias y modelos financieros para reflejar mejor la realidad del mercado y maximizar la rentabilidad.',
             'CRL': 'CRL8_3_0'}
         },
         {'pregunta':{
@@ -192,7 +192,7 @@ crl_questions={
             'CRL': 'CRL9_3_3'}
         },
                 {'pregunta':{
-            'enunciado':'Se ha logrado una sólida posición en el mercado, con una red de distribución establecida y un flujo constante de producción y ventas. ',
+            'enunciado':'Se ha logrado una sólida posición en el mercado, con una red de distribución establecida y un flujo constante de producción y ventas.',
             'CRL': 'CRL9_3_4'}
         },
     ]
@@ -338,7 +338,7 @@ trl_questions_ingenieria_tecnologia={
             },
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con documentación técnica básica .',
+                'enunciado':'Se cuenta con documentación técnica básica.',
                 'TRL': 'TRL2_0_4'
             }
             }
@@ -472,11 +472,11 @@ trl_questions_software_hardware={
                 'TRL': 'TRL5_1_1'}
             },
             {'pregunta':{
-                'enunciado':'Se han hecho pruebas de una versión beta o prototipo mejorado con un grupo de usuarios seleccionados a nivel de entorno de alta fidelidad .',
+                'enunciado':'Se han hecho pruebas de una versión beta o prototipo mejorado con un grupo de usuarios seleccionados a nivel de entorno de alta fidelidad.',
                 'TRL': 'TRL6_1_2'}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo inicial o versión alpha del modelo .',
+                'enunciado':'Se cuenta con documentación o reportes de las pruebas en el laboratorio que muestren la funcionalidad de tu prototipo inicial o versión alpha del modelo.',
                 'TRL': 'TRL4_1_3'}
             },
             {'pregunta':{
@@ -511,11 +511,11 @@ trl_questions_software_hardware={
                 'TRL': 'TRL8_2_3'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología cuenta con una versión estable u optimizada que se encuentra en condiciones de pleno funcionamiento .',
+                'enunciado':'La tecnología cuenta con una versión estable u optimizada que se encuentra en condiciones de pleno funcionamiento.',
                 'TRL': 'TRL9_2_4'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa, se realiza monitoreo y mantenimiento continuo .',
+                'enunciado':'La tecnología está completamente operativa, se realiza monitoreo y mantenimiento continuo.',
                 'TRL': 'TRL9_2_5'}
             },
         ]
@@ -731,11 +731,11 @@ trl_questions_agricultura_silvicultura={
                 'TRL': 'TRL7_2_1'}
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha sido completamente desarrollada e implementada .',
+                'enunciado':'La tecnología ha sido completamente desarrollada e implementada.',
                 'TRL': 'TRL8_2_2'}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes para el sector agrícola .',
+                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes para el sector agrícola.',
                 'TRL': 'TRL8_2_3'}
             },
             {'pregunta':{
@@ -928,7 +928,7 @@ trl_questions_salud_dispositivos={
                 'TRL': 'TRL6_1_3'}
             },
             {'pregunta':{
-                'enunciado':'11.	Se ha demostrado el funcionamiento de la tecnología en un entorno operacional real, y ya se cuenta con una Autorización Sanitaria por parte de DIGEMID.',
+                'enunciado':'Se ha demostrado el funcionamiento de la tecnología en un entorno operacional real, y ya se cuenta con una Autorización Sanitaria por parte de DIGEMID.',
                 'TRL': 'TRL7_1_4'}
             },
         ]
@@ -939,7 +939,7 @@ trl_questions_salud_dispositivos={
         'factor':factor_desarrollo_produccion,
         'questions': [
             {'pregunta':{
-                'enunciado':'12.	Se ha realizado un prototipo de la tecnología, basado en los resultados de los ensayos entorno a laboratorio.',
+                'enunciado':'Se ha realizado un prototipo de la tecnología, basado en los resultados de los ensayos entorno a laboratorio.',
                 'TRL': 'TRL4_2_0'}
             },
             {'pregunta':{
@@ -966,7 +966,7 @@ trl_questions_salud_dispositivos={
             'TRL': 'TRL7_3_0'}
         },
         {'pregunta':{
-            'enunciado':'El dispositivo médico ha finalizado su desarrollo, pruebas y validaciones, obteniendo la certificación oficial para su uso. ',
+            'enunciado':'El dispositivo médico ha finalizado su desarrollo, pruebas y validaciones, obteniendo la certificación oficial para su uso.',
             'TRL': 'TRL8_3_1'}
         },
         {'pregunta':{

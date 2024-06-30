@@ -25,3 +25,7 @@
 #Investigación y Análisis de mercado = 5 --> 1.2
 #Desarrollo y Validación Técnica = 5 --> 1.2
 #Lanzamiento y Evaluación Post-Lanzamiento = 5 --> 1.2
+
+
+for i in range(4):
+    print(i)

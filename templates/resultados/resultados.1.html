@@ -16,36 +16,35 @@
 
     <div class="resultados">
 
-
-    {%if data.TRL != 'none' %}
-
-    {%endif%}
-
-
-
-
     {%if data.phase != 'none' %}
         <h2>Usted se encuentra en un {{data.TRL}}. Por lo tanto, está en una fase de {{data.phase}}</h2>
     {%else%}
     <div class="resultados-detalles">
-  
         <h2>Los resultados de su proyecto no alcanza algún nivel de TRL.</h2>
     {%endif%}
     <h3>Alternativas seleccionadas:</h3>
-    <h3>Investigación</h3>
-    <ul>
-        {%if data.answers == "No ha seleccionado ninguna opción" %}
-        <li>{{data.answers}}</li>
-        {%else%}
-            {%for answer in data.answers%}
-                <li> {{answer}} </li>
-            {%endfor%}
-        {%endif%}
-    </ul>  
+
+    {% for campo,content in data.spider_data.items() %}
+
+        <h3>{{ content.title }}</h3>
+        {% if content.questions == 'No ha seleccionado ninguna opción' %}
+            <ul>
+                <li>No ha seleccionado alguna opcion en esta categoria.</li>
+            </ul>
+        {% else %}
+            <ul>
+                {% for question in content.questions%}
+                    <li>{{question}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    {% endfor %}
+
 </div> 
 </div>
     <!-- Barra -->
-<!-- cambio -->
+
     <div id="containerProgressBar">
         <div class="boxProgressBar">
             <div class="progressBar-titles">
@@ -71,12 +70,10 @@
             </div>
         </div>
     </div>
-    <div>
-        <figure class="highcharts-figure">
-            <div id="spyderChart"></div>
-        </figure>
-    </div>
 
+    <figure class="highcharts-figure">
+        <div id="spyderChart"></div>
+    </figure>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -90,47 +87,131 @@
     <script src="{{ url_for('static', filename='js/highcharts/highcharts.js') }}"></script>
     <script>
 
-        document.addEventListener('DOMContentLoaded',function () {
-            var trlLevel = "{{ data['TRL'] }}";
-            var trlIndex = parseInt(trlLevel.replace('TRL', ''));
+document.addEventListener('DOMContentLoaded',function () {
+        var trlLevel = "{{ data['TRL'] }}";
+        var trlIndex = parseInt(trlLevel.replace('TRL', ''));
 
-            const elementsTrl = [
-                {trlNumber : 1,trlLabel : 'TRL1',  phaseLabel : 'Investigación Básica', colorCircle : '#0077b6'},
+        const elementsTrl = [
+            {trlNumber : 1,trlLabel : 'TRL1',  phaseLabel : 'Investigación Básica', colorCircle : '#0077b6'},
 
-                {trlNumber : 2,trlLabel : 'TRL2',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
-                {trlNumber : 3,trlLabel : 'TRL3',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
-                {trlNumber : 4,trlLabel : 'TRL4',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+            {trlNumber : 2,trlLabel : 'TRL2',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+            {trlNumber : 3,trlLabel : 'TRL3',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
+            {trlNumber : 4,trlLabel : 'TRL4',  phaseLabel : 'Investigación Aplicada', colorCircle: "#0096c7"},
 
-                {trlNumber : 5,trlLabel : 'TRL5',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
-                {trlNumber : 6,trlLabel : 'TRL6',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
-                {trlNumber : 7,trlLabel : 'TRL7',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+            {trlNumber : 5,trlLabel : 'TRL5',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+            {trlNumber : 6,trlLabel : 'TRL6',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
+            {trlNumber : 7,trlLabel : 'TRL7',  phaseLabel : 'Desarrollo Tecnológico', colorCircle: "#48cae4"},
 
-                {trlNumber : 8,trlLabel : 'TRL8',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
-                {trlNumber : 9,trlLabel : 'TRL9',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
-            ]
+            {trlNumber : 8,trlLabel : 'TRL8',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
+            {trlNumber : 9,trlLabel : 'TRL9',  phaseLabel : 'Innovación', colorCircle : "#ade8f4"},
+        ]
 
-            const progressBar = document.querySelector(".progressBar-circles");
+        const progressBar = document.querySelector(".progressBar-circles");
 
-            const historyPhase = [];
-            elementsTrl.forEach((val, index)=>{
-                const circle = document.createElement('div');
-                circle.classList.add('progressBar-circle');
-                if (val.trlNumber <= trlIndex) {
-                    circle.style.backgroundColor=val.colorCircle;
-                }else{
-                    circle.style.opacity=0.5
-                }
-                
-                const labelTrl = document.createElement('p');
-                labelTrl.textContent = val.trlLabel
-                labelTrl.classList.add('label-circle');
-                
-                circle.appendChild(labelTrl);
+        const historyPhase = [];
+        elementsTrl.forEach((val, index)=>{
+            const circle = document.createElement('div');
+            circle.classList.add('progressBar-circle');
+            if (val.trlNumber <= trlIndex) {
+                circle.style.backgroundColor=val.colorCircle;
+            }else{
+                circle.style.opacity=0.5
+            }
+            
+            const labelTrl = document.createElement('p');
+            labelTrl.textContent = val.trlLabel
+            labelTrl.classList.add('label-circle');
+            
+            circle.appendChild(labelTrl);
 
-                progressBar.appendChild(circle);
-            })
-
+            progressBar.appendChild(circle);
         })
+        
+        var spyderData = "{{ data['spider_data'] }}"
+        const entities = {
+            '&#34;': '"',
+            '&#39;': "'",
+            '&amp;': '&',
+            '&lt;': '<',
+            '&gt;': '>'
+        };
+        let jsonString = spyderData.replace(/&#34;|&#39;|&amp;|&lt;|&gt;/g, function(match) {
+            return entities[match];
+        });
+
+        console.log("Spyder Data : ", jsonString)
+        console.log("Tipo de data spyder : ", typeof(spyderData))
+
+        const jsonSpyder = JSON.parse(jsonString);
+
+        Highcharts.chart('spyderChart', {
+
+            chart: {
+                polar: true,
+                type: 'line'
+            },
+        
+            accessibility: {
+            },
+        
+            title: {
+                text: '',
+                x: -80
+            },
+        
+            pane: {
+                size: '80%'
+            },
+        
+            xAxis: {
+                categories: Object.keys(jsonSpyder),
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+        
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0
+            },
+        
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>' +
+                    '{point.y:.2f}</b><br/>'
+            },
+        
+            legend: {
+                enabled : false
+            },
+        
+            series: [{
+                name: 'Respuestas',
+                data: Object.values(jsonSpyder),
+                pointPlacement: 'on'
+            }],
+        
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 600
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            layout: 'horizontal'
+                        },
+                        pane: {
+                            size: '80%'
+                        }
+                    }
+                }]
+            }
+        
+        });
+
+    })
     </script>
      <div class="form-regresar">
         <button type="button" class="regresar-button">Regresar</button>

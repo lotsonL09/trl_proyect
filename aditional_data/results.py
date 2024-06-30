@@ -19,30 +19,55 @@ class category:
         print(results)
         for result in results:
             try:
-                index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
-                index_1=int(re.findall(f'[{self.type}0-9]+',result)[2])
-                option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
-                options_marked.append(option)
+                #index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
+                index_0=int(result.split('_')[1])
+                #index_1=int(re.findall(f'[{self.type}0-9]+',result)[2])
+                index_1=int(result.split('_')[2])
+                #option=data[fields[index_0]]['questions'][index_1]['pregunta']['enunciado']
+                #options_marked.append(option)
                 indexes_spider.append((index_0,index_1))
-                results_new.append(re.findall(f'[{self.type}0-9]+',result)[0])
+                #results_new.append(re.findall(f'[{self.type}0-9]+',result)[0])
+                results_new.append(result.split('_')[0])
             except:
                 continue
-        if len(options_marked)==0:
-            return 'No ha seleccionado ninguna opción',[],{}
+        # if len(options_marked)==0:
+        #     return 'No ha seleccionado ninguna opción',[],{}
 
         stored=[]
         spider_dict=dict()
-        for element in indexes_spider:
-            if not stored.count(element[0]):
-                stored.append(element[0])
-        for index in stored:
+        # for element in indexes_spider:
+        #     if not stored.count(element[0]):
+        #         stored.append(element[0])
+        
+
+        for index in range(4):
             amount=0
+            questions=[]
             for element in indexes_spider:
-                if index == element[0]:
+                if element[0] == index:
                     amount+=1
-            group_name=data[fields[index]]['title']
-            factor=data[fields[index]]['factor']
-            spider_dict[group_name]=amount*factor #correccion de los valores
+                    field=element[0]
+                    question=element[1]
+                    option=data[fields[field]]['questions'][question]['pregunta']['enunciado']
+                    
+                    questions.append(option)
+            if len(questions) == 0:
+                questions=["No ha seleccionado ninguna opción"]
+            factor=factor=data[fields[index]]['factor']
+            spider_dict[f'campo_{index}']={
+                'title':data[fields[field]]['title'],
+                'questions':questions,
+                'value_spider': float(amount*factor)
+            }
+
+        # for index in stored:
+        #     amount=0
+        #     for element in indexes_spider:
+        #         if index == element[0]:
+        #             amount+=1
+        #     group_name=data[fields[index]]['title']
+        #     factor=data[fields[index]]['factor']
+        #     spider_dict[group_name]=amount*factor #correccion de los valores
         
         print(spider_dict)
         return options_marked,results_new,spider_dict

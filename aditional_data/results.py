@@ -42,17 +42,18 @@ class category:
             field=index
             amount=0
             questions=[]
+            field=index
             for element in indexes_spider:
                 if element[0] == index:
                     amount+=1
-                    field=element[0]
+                    #field=element[0]
                     question=element[1]
                     option=data[fields[field]]['questions'][question]['pregunta']['enunciado']
                     
                     questions.append(option)
             if len(questions) == 0:
                 questions=["No ha seleccionado ninguna opción"]
-            factor=factor=data[fields[index]]['factor']
+            factor=data[fields[index]]['factor']
             spider_dict[f'campo_{index}']={
                 'title':data[fields[field]]['title'],
                 'questions':questions,

@@ -13,6 +13,33 @@ trl_data={
     'TRL 9':'Innovación',
 }
 
+trl_data_salud_dispositivos={
+    'none':'none',
+    'TRL 1':'Investigación Básica',
+    'TRL 2':'Investigación Aplicada',
+    'TRL 3':'Investigación Aplicada',
+    'TRL 4':'Fase Preclínica',
+    'TRL 5':'Fase Preclínica',
+    'TRL 6':'Fase Clínica',
+    'TRL 7':'Fase Clínica',
+    'TRL 8':'Validación y Certificación',
+    'TRL 9':'Comercialización',
+}
+
+trl_data_salud_medicamentos={
+    'none':'none',
+    'TRL 1':'Investigación Básica',
+    'TRL 2':'Investigación Aplicada',
+    'TRL 3':'Investigación Aplicada',
+    'TRL 4':'Fase Preclínica',
+    'TRL 5':'Fase Preclínica',
+    'TRL 6':'Fase Clínica',
+    'TRL 7':'Fase Clínica',
+    'TRL 8':'Fase Clínica',
+    'TRL 9':'Comercialización',
+}
+
+
 condictions_crl={
     'CRL1':2,
     'CRL2':2,

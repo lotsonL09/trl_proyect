@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template,request
 from random import shuffle
-from aditional_data.trl_crl import trl_questions_salud_dispositivos,trl_data
+from aditional_data.trl_crl import trl_questions_salud_dispositivos,trl_data_salud_dispositivos
 from aditional_data.results import ciencias_salud_dispositivos
 from aditional_data.db import client
 import copy
@@ -35,7 +35,7 @@ def evaluation():
 
     window_content={
         'TRL':level,
-        'phase':trl_data[level],
+        'phase':trl_data_salud_dispositivos[level],
         'spider_data':spider_dict
     }
 

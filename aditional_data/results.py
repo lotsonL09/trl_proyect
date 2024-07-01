@@ -1,7 +1,5 @@
 from aditional_data.trl_crl import tree_content,fields
 
-import re
-
 class category:
     def __init__(self,campo_1:str,campo_2:str,campo_3:str,campo_4:str,type:str,name:str=None):
         self.campo_1=campo_1
@@ -25,7 +23,6 @@ class category:
         results_new=[]
         indexes_spider=[]
         data=tree_content[self.name]['content']
-        print(self.name)
         for result in results:
             try:
                 #index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
@@ -41,8 +38,6 @@ class category:
                 continue
 
         spider_dict=dict()
-
-        print('indexes',indexes_spider)
 
         for index in range(4):
             amount=0

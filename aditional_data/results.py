@@ -22,10 +22,10 @@ class category:
 
 
     def get_options_marked_and_new_format(self,results:list):
-        print(results)
         results_new=[]
         indexes_spider=[]
         data=tree_content[self.name]['content']
+        print(self.name)
         for result in results:
             try:
                 #index_0=int(re.findall(f'[{self.type}0-9]+',result)[1])
@@ -39,27 +39,30 @@ class category:
                 results_new.append(result.split('_')[0])
             except:
                 continue
-        # if len(options_marked)==0:
-        #     return 'No ha seleccionado ninguna opción',[],{}
 
         spider_dict=dict()
-        # for element in indexes_spider:
-        #     if not stored.count(element[0]):
-        #         stored.append(element[0])
-        
+
+        print('indexes',indexes_spider)
+
         for index in range(4):
-            field=index
             amount=0
             questions=[]
             field=index
+            print(data[fields[field]])
             for element in indexes_spider:
+                print(element)
                 if element[0] == index:
                     amount+=1
-                    #field=element[0]
                     question=element[1]
+                    #field=element[0]
+                    print(field,fields[field])
+                    print(question,data[fields[field]]['questions'][question])
                     option=data[fields[field]]['questions'][question]['pregunta']['enunciado']
+                    print('option marcada',option)
                     
                     questions.append(option)
+                question=None
+
             if len(questions) == 0:
                 questions=["No ha seleccionado ninguna opción"]
             factor=data[fields[index]]['factor']
@@ -86,8 +89,6 @@ class category:
         conditions=tree_content[self.name]['conditions']
         print(results_new)
         for level in conditions.keys():
-            print("cantidad de la condicion",conditions[level])
-            print("cantidad marcada",results_new.count(level))
             if results_new.count(level) == conditions[level]:
                 count+=1
             else:

@@ -3,8 +3,8 @@ from random import shuffle
 from aditional_data.trl_crl import trl_data,trl_questions_pesca
 from aditional_data.results import pesca
 from aditional_data.db import client
-
-data=trl_questions_pesca
+import copy
+data=copy.deepcopy(trl_questions_pesca)
 
 bp_pesca=Blueprint('pesca',__name__,url_prefix='/pesca')
 

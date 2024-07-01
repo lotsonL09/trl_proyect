@@ -3,8 +3,9 @@ from random import shuffle
 from aditional_data.trl_crl import trl_questions_salud_dispositivos,trl_data
 from aditional_data.results import ciencias_salud_dispositivos
 from aditional_data.db import client
+import copy
 
-data=trl_questions_salud_dispositivos
+data=copy.deepcopy(trl_questions_salud_dispositivos)
 
 bp_ciencias_medicas_salud_dispositivos=Blueprint('ciencias_medicas_salud_dispositivos',__name__,url_prefix='/ciencias_medicas_salud_dispositivos')
 

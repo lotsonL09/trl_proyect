@@ -3,13 +3,14 @@ from random import shuffle
 from aditional_data.trl_crl import trl_questions_general,fields,trl_data
 from aditional_data.results import general
 from aditional_data.db import client
+import copy
 
 bp_general=Blueprint('general',__name__,url_prefix='/general')
 
 
 fields=fields
 
-data=trl_questions_general
+data=copy.deepcopy(trl_questions_general)
 
 @bp_general.route('/')
 def root():

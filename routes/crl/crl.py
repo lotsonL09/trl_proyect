@@ -3,8 +3,9 @@ from random import shuffle
 from aditional_data.trl_crl import crl_questions
 from aditional_data.results import crl
 from aditional_data.db import client
+import copy
 
-data=crl_questions
+data=copy.deepcopy(crl_questions)
 
 bp_crl=Blueprint('crl',__name__,url_prefix='/crl')
 

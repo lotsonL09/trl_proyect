@@ -116,7 +116,7 @@ crl_questions={
         'factor':factor_iniciacion_evaluacion_preliminar,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha realizado una revisión inicial y sistemática de información disponible para identificar oportunidades y necesidades del mercado, generando ideas basadas en ellas, aunque sin una validación formal aún.',
+                'enunciado':'Se ha realizado una revisión inicial de información disponible para identificar oportunidades y necesidades del mercado.',
                 'CRL': 'CRL1_0_0'}
             },
             {'pregunta':{
@@ -147,7 +147,7 @@ crl_questions={
         'factor':factor_investigacion_analisis_mercado,
         'questions': [
             {'pregunta':{
-                'enunciado':'Aun no se han llevado a cabo investigaciones formales como estudios de mercado, análisis de la competencia, ni evaluaciones de viabilidad técnica y económica.',
+                'enunciado':'Se ha realizado una exploración inicial de ideas basadas en la identificación preliminar de necesidades del cliente y oportunidades de mercado.',
                 'CRL': 'CRL1_1_0'}
             },
             {'pregunta':{

@@ -829,7 +829,7 @@ trl_questions_salud_medicamentos={
         'factor':factor_ensayos_clinicos,
         'questions': [
             {'pregunta':{
-                'enunciado':'He realizado ensayos clínicos de fase 1, donde el nuevo medicamento se ha administrado a un pequeño grupo de voluntarios sanos.',
+                'enunciado':'Se han realizado ensayos clínicos de fase 1, donde el nuevo medicamento se ha administrado a un pequeño grupo de voluntarios sanos.',
                 'TRL': 'TRL6_2_0'}
             },
             {'pregunta':{
@@ -837,7 +837,7 @@ trl_questions_salud_medicamentos={
                 'TRL': 'TRL6_2_1'}
             },
             {'pregunta':{
-                'enunciado':'He realizado ensayos clínicos de fase 2, donde se ha evaluado la eficacia del medicamento y su dosis óptima.',
+                'enunciado':'Se han realizado ensayos clínicos de fase 2, donde se ha evaluado la eficacia del medicamento y su dosis óptima.',
                 'TRL': 'TRL7_2_2'}
             },
             {'pregunta':{
@@ -845,7 +845,7 @@ trl_questions_salud_medicamentos={
                 'TRL': 'TRL7_2_3'}
             },
             {'pregunta':{
-                'enunciado':'He realizado ensayos clínicos de fase 3, donde el medicamento se ha administrado a un gran número de pacientes con la enfermedad o condición que el medicamento se destina a tratar.',
+                'enunciado':'Se han realizado ensayos clínicos de fase 3, donde el medicamento se ha administrado a un gran número de pacientes con la enfermedad o condición que el medicamento se destina a tratar.',
                 'TRL': 'TRL8_2_4'}
             },
         ]
@@ -864,11 +864,11 @@ trl_questions_salud_medicamentos={
             'TRL': 'TRL8_3_1'}
         },
         {'pregunta':{
-            'enunciado':'Se ha realizado una producción a gran escala del medicamento.',
+            'enunciado':'El medicamento ha sido lanzado oficialmente al mercado y está disponible para su uso médico.',
             'TRL': 'TRL9_3_2'}
         },
         {'pregunta':{
-            'enunciado':'Se ha realizado una producción a gran escala del medicamento.',
+            'enunciado':'Se han implementado controles de calidad y sistemas de distribución para asegurar que el medicamento llegue a los usuarios finales de manera segura y oportuna.',
             'TRL': 'TRL9_3_2'}
         },
     ]
@@ -924,7 +924,7 @@ trl_questions_salud_dispositivos={
                 'TRL': 'TRL5_1_2'}
             },
             {'pregunta':{
-                'enunciado':'Se han hecho ensayos clínicos para verificar la seguridad del dispositivo médico y su compatibilidad con el entorno clínico y fisiológico específico en el cual será utilizado.',
+                'enunciado':'Se han realizado ensayos clínicos para verificar la seguridad del dispositivo médico y su compatibilidad con el entorno clínico y fisiológico específico en el cual será utilizado.',
                 'TRL': 'TRL6_1_3'}
             },
             {'pregunta':{

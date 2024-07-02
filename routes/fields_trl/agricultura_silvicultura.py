@@ -41,7 +41,8 @@ def evaluation():
 
     json_to_db={
         'participant_data':agricultura_silvicultura.valuesCache,
-        'form_data':window_content
+        'form_data':window_content,
+        'category':'Agricultura y Silvicultura'
     }
 
     client.insert.insert_one(json_to_db)

@@ -41,7 +41,8 @@ def evaluation():
 
     json_to_db={
         'participant_data':ciencias_salud_medicamentos.valuesCache,
-        'form_data':window_content
+        'form_data':window_content,
+        'category':'Ciencias Medicas y de Salud-Medicamentos'
     }
 
     client.insert.insert_one(json_to_db)

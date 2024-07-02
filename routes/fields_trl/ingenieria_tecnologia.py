@@ -43,7 +43,8 @@ def evaluation():
 
     json_to_db={
         'participant_data':ingenieria_tecno.valuesCache,
-        'form_data':window_content
+        'form_data':window_content,
+        'category':'Ingenieria y Tecnologia'
     }
 
     client.insert.insert_one(json_to_db)

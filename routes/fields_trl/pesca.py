@@ -40,7 +40,8 @@ def evaluation():
     
     json_to_db={
         'participant_data':pesca.valuesCache,
-        'form_data':window_content
+        'form_data':window_content,
+        'category':'Pesca y Acuicultura'
     }
 
     client.insert.insert_one(json_to_db)

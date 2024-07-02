@@ -44,7 +44,8 @@ def evaluation():
 
     json_to_db={
         'participant_data':general.valuesCache,
-        'form_data':window_content
+        'form_data':window_content,
+        'category':'General'
     }
 
     client.insert.insert_one(json_to_db)

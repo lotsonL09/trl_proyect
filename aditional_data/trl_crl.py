@@ -688,16 +688,16 @@ trl_questions_agricultura_silvicultura={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Identificación de problemas y requerimientos del sector agrícola/silvícola.',
+                'enunciado':'Se ha identificado una necesidad o problema específico en agricultura o silvicultura que la tecnología abordará.',
                 'TRL': 'TRL1_0_0'}
             },
             {'pregunta':{
-                'enunciado':'Desarrollo de modelos conceptuales que describen el funcionamiento práctico de la tecnología orientada a la agricultura/silvicultura.',
+                'enunciado':'Se ha desarrollado una idea o concepto inicial para abordar la necesidad identificada en agricultura/silvicultura.',
                 'TRL': 'TRL2_0_1'
             },
         },
             {'pregunta':{
-                'enunciado':'Corroboración de hipótesis teóricas con pruebas iniciales en condiciones controladas.',
+                'enunciado':'Se ha validado el concepto a través de pruebas analíticas y de rendimiento.',
                 'TRL': 'TRL3_0_2'
             },
             },
@@ -719,15 +719,15 @@ trl_questions_agricultura_silvicultura={
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'Modelado y simulación de condiciones agrícolas/forestales en un entorno de laboratorio o similar para probar la tecnología planteada, obteniendo resultados positivos.',
+                'enunciado':'Se han validado los componentes o procesos en un entorno de laboratorio o semejante (baja fidelidad) específico para agricultura o silvicultura.',
                 'TRL': 'TRL4_1_0'}
             },
             {'pregunta':{
-                'enunciado':'Validación de la operatividad de sistemas agrícolas/forestales en un entorno de laboratorio o similar de alta fidelidad.',
+                'enunciado':'Se ha realizado pruebas para validar de la operatividad de sistemas agrícolas/forestales en un entorno de laboratorio o similar de alta fidelidad (campos agrícolas, bosques).',
                 'TRL': 'TRL5_1_1'}
             },
             {'pregunta':{
-                'enunciado':'Demostración de que la tecnología presentada es eficiente y sostenible en un entorno operativo de alta fidelidad (fuera de un entorno controlado, pero no es un entorno operativo final).',
+                'enunciado':'Se ha realizado una demostración de la tecnología presentada, mostrando que es eficiente y sostenible en un entorno operativo de alta fidelidad (fuera de un entorno controlado, pero no es un entorno operativo final).',
                 'TRL': 'TRL6_1_2'}
             },
             {'pregunta':{
@@ -750,7 +750,7 @@ trl_questions_agricultura_silvicultura={
                 'TRL': 'TRL6_2_1'}
             },
             {'pregunta':{
-                'enunciado':'Elaboración de informes detallados que evidencian resultados positivos del desempeño de la tecnología en operaciones diarias.',
+                'enunciado':'Se ha evaluado el rendimiento y se ha recopilado retroalimentación para mejoras adicionales.',
                 'TRL': 'TRL7_2_2'}
             },
             {'pregunta':{
@@ -773,15 +773,15 @@ trl_questions_agricultura_silvicultura={
             'TRL': 'TRL2_3_0'}
         },
         {'pregunta':{
-            'enunciado':'Presentación de la tecnología a potenciales clientes y/o empresas agrícolas/forestales y recepción de interés para futuras implementaciones comerciales.',
+            'enunciado':'Se ha recopilado retroalimentación de los usuarios pesquero/silvicultores finales para mejorar el diseño.',
             'TRL': 'TRL7_3_1'}
         },
         {'pregunta':{
-            'enunciado':'Obtención de certificados emitidos por autoridades regulatorias relevantes en el sector agrícola/silvícola.',
+            'enunciado':'Se ha obtenido certificados emitidos por autoridades regulatorias relevantes en el sector agrícola/silvícola.',
             'TRL': 'TRL8_3_2'}
         },
         {'pregunta':{
-            'enunciado':'Primer lote de producción de la tecnología.',
+            'enunciado':'Se ha completado el desarrollo del sistema y está listo para la producción del primer lote.',
             'TRL': 'TRL8_3_3'}
         },
         {'pregunta':{

@@ -232,7 +232,7 @@ trl_questions_pesca={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Determinar los problemas y requerimientos del sector pesquero/acuícola.',
+                'enunciado':'Se ha determinado los problemas y requerimientos del sector pesquero/acuícola.',
                 'TRL': 'TRL1_0_0'}
             },
             {'pregunta':{

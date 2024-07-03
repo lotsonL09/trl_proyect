@@ -11,7 +11,7 @@
 {%endblock%}
 
 {%block content%}
-
+    <h2 id="disclaimer">Lea atentamente los siguientes enunciados y marque las casillas correspondientes que considere que se han realizado.</h2>
     <section class="section">
         <form action="/pesca/evaluacion" method="post">
             {% for campo, datos in data.items() %}
@@ -28,12 +28,12 @@
                         </label>
                     </div>
                     {% endfor %}
-                    <div class="option-container">
+                    <!-- <div class="option-container">
                         <label class="option-label">
                             <input type="checkbox" name="{{ datos.title }}" value="none" class="none-option" onclick="handleNoneOption(this)">
                             <span class="option-text">No cumplo con ninguna de las alternativas</span>
                         </label>
-                    </div>
+                    </div> -->
                 </div>
             </fieldset>
             {% endfor %}

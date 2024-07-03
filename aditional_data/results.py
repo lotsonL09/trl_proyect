@@ -111,7 +111,7 @@ agricultura_silvicultura=category(
     campo_1='Investigación',
     campo_2='Entorno de Desarrollo',
     campo_3='Desarrollo Tecnológico/Producción',
-    campo_4='Implementación/Comercialización',
+    campo_4='Implementación/ Comercialización',
     type='TRL',
     name='Agricultura y Silvicultura'
 )
@@ -156,7 +156,7 @@ pesca=category(
     campo_1='Investigación',
     campo_2='Entorno de Desarrollo',
     campo_3='Desarrollo tecnológico/Producción',
-    campo_4='Implementación/Comercialización',
+    campo_4='Implementación/ Comercialización',
     type='TRL',
     name='Pesca'
 )

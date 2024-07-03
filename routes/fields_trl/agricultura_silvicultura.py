@@ -23,7 +23,7 @@ def evaluation():
     investigacion = request.form.getlist('Investigación')
     desarrollo = request.form.getlist('Entorno de Desarrollo')
     implementacion = request.form.getlist('Desarrollo Tecnológico/Producción')
-    comercial = request.form.getlist('Implementación/Comercialización')
+    comercial = request.form.getlist('Implementación/ Comercialización')
     results.extend(investigacion)
     results.extend(desarrollo)
     results.extend(implementacion)

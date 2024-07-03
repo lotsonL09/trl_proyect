@@ -309,7 +309,7 @@ trl_questions_pesca={
     },
 
     'campo_4':{
-        'title': 'Implementación/Comercialización',
+        'title': 'Implementación/ Comercialización',
         'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
@@ -333,7 +333,7 @@ trl_questions_pesca={
             'TRL': 'TRL9_3_4'}
         },
         {'pregunta':{
-            'enunciado':'Se está recopilando y analizando datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
+            'enunciado':'Se ha realizado la recopilación y análisis de datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
             'TRL': 'TRL9_3_5'}
         },
     ]
@@ -702,12 +702,12 @@ trl_questions_agricultura_silvicultura={
             },
             },
             {'pregunta':{
-                'enunciado':'Demostración de la eficacia de la tecnología propuesta para agricultura/silvicultura en condiciones de laboratorio o similares.',
+                'enunciado':'Se ha demostrado de la eficacia de la tecnología propuesta para agricultura/silvicultura en condiciones de laboratorio o similares.',
                 'TRL': 'TRL3_0_3'
             },
             },
             {'pregunta':{
-                'enunciado':'Refinamiento de la tecnología agrícola/silvícola basada en datos de laboratorio o similares.',
+                'enunciado':'Se ha realizado el refinamiento de la tecnología agrícola/silvícola basada en datos de laboratorio o similares.',
                 'TRL': 'TRL4_0_4'
             }
             }
@@ -742,11 +742,11 @@ trl_questions_agricultura_silvicultura={
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Evaluación de la funcionalidad de la tecnología agrícola/silvícola en un entorno de laboratorio o similar de alta fidelidad.',
+                'enunciado':'Se ha evaluado de la funcionalidad de la tecnología agrícola/silvícola en un entorno de laboratorio o similar de alta fidelidad.',
                 'TRL': 'TRL5_2_0'}
             },
             {'pregunta':{
-                'enunciado':'Colaboración con agricultores/silvicultores para realizar pruebas operativas de alta fidelidad de la tecnología.',
+                'enunciado':'Se ha colaborado con agricultores/silvicultores para realizar pruebas operativas de alta fidelidad de la tecnología.',
                 'TRL': 'TRL6_2_1'}
             },
             {'pregunta':{
@@ -754,7 +754,7 @@ trl_questions_agricultura_silvicultura={
                 'TRL': 'TRL7_2_2'}
             },
             {'pregunta':{
-                'enunciado':'Desarrollo de material de soporte técnico y formación para los usuarios y clientes potenciales.',
+                'enunciado':'Se ha desarrollado de material de soporte técnico y formación para los usuarios y clientes potenciales.',
                 'TRL': 'TRL8_2_3'}
             },
             {'pregunta':{
@@ -765,11 +765,11 @@ trl_questions_agricultura_silvicultura={
     },
 
     'campo_4':{
-        'title': 'Implementación/Comercialización',
+        'title': 'Implementación/ Comercialización',
         'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
-            'enunciado':'Análisis de viabilidad técnica y económica.',
+            'enunciado':'Se tiene un análisis de viabilidad técnica y económica.',
             'TRL': 'TRL2_3_0'}
         },
         {'pregunta':{
@@ -789,7 +789,7 @@ trl_questions_agricultura_silvicultura={
             'TRL': 'TRL9_3_4'}
         },
         {'pregunta':{
-            'enunciado':'Recopilación y análisis de datos de los usuarios/clientes agrícolas/silvícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
+            'enunciado':'Se ha realizado la recopilación y análisis de datos de los usuarios/clientes agrícolas/silvícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
             'TRL': 'TRL9_3_5'}
         },
     ]

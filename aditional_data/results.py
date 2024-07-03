@@ -50,11 +50,7 @@ class category:
                     amount+=1
                     question=element[1]
                     #field=element[0]
-                    print(field,fields[field])
-                    print(question,data[fields[field]]['questions'][question])
                     option=data[fields[field]]['questions'][question]['pregunta']['enunciado']
-                    print('option marcada',option)
-                    
                     questions.append(option)
                 question=None
 

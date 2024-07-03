@@ -246,7 +246,7 @@ trl_questions_pesca={
             },
             },
             {'pregunta':{
-                'enunciado':'La tecnología propuesta para pesca/acuicultura ha demostrado eficacia en condiciones de laboratorio o semejantes.',
+                'enunciado':'La tecnología propuesta ha demostrado eficacia en condiciones de laboratorio o semejantes.',
                 'TRL': 'TRL3_0_3'
             },
             },
@@ -267,7 +267,7 @@ trl_questions_pesca={
                 'TRL': 'TRL4_1_0'}
             },
             {'pregunta':{
-                'enunciado':'Se ha validado la operatividad de sistemas pesquero/acuícolas en entorno de laboratorio o semejante de alta fidelidad.',
+                'enunciado':'Se ha validado la operatividad de componentes pesqueros/acuicolas en entorno de laboratorio o semejante de alta fidelidad.',
                 'TRL': 'TRL5_1_1'}
             },
             {'pregunta':{

@@ -90,9 +90,9 @@ condictions_salud_medicamentos={
 
 #El resto de disciplinas
 factor_investigacion=1.2
-factor_desarrollo_tecnologico=1
-factor_implementacion=1
-factor_desarrollo_comercial=2
+factor_desarrollo_tecnologico=1.5
+factor_implementacion=1.2
+factor_desarrollo_comercial=1
 
 #Salud-Dispositivos
 factor_fase_preclinica_clinica=1.2

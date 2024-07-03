@@ -12,11 +12,10 @@ bp_crl=Blueprint('crl',__name__,url_prefix='/crl')
 
 @bp_crl.route('/')
 def root():
-
-    shuffle(data['campo_1']['questions'])
-    shuffle(data['campo_2']['questions'])
-    shuffle(data['campo_3']['questions'])
-    shuffle(data['campo_4']['questions'])
+    # shuffle(data['campo_1']['questions'])
+    # shuffle(data['campo_2']['questions'])
+    # shuffle(data['campo_3']['questions'])
+    # shuffle(data['campo_4']['questions'])
     return render_template('crl/crl.1.html',data=data)
 
 @bp_crl.route('/evaluacion',methods=['POST'])

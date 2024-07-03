@@ -10,10 +10,10 @@ bp_pesca=Blueprint('pesca',__name__,url_prefix='/pesca')
 
 @bp_pesca.route('/')
 def root():
-    shuffle(data['campo_1']['questions'])
-    shuffle(data['campo_2']['questions'])
-    shuffle(data['campo_3']['questions'])
-    shuffle(data['campo_4']['questions'])
+    # shuffle(data['campo_1']['questions'])
+    # shuffle(data['campo_2']['questions'])
+    # shuffle(data['campo_3']['questions'])
+    # shuffle(data['campo_4']['questions'])
     return render_template('trl/pesca.1.html',data=data)
 
 @bp_pesca.route('/evaluacion',methods=['POST'])

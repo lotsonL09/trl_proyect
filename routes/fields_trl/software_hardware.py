@@ -11,10 +11,10 @@ data=copy.deepcopy(trl_questions_software_hardware)
 
 @bp_software_hardware.route('/')
 def root():
-    shuffle(data['campo_1']['questions'])
-    shuffle(data['campo_2']['questions'])
-    shuffle(data['campo_3']['questions'])
-    shuffle(data['campo_4']['questions'])
+    # shuffle(data['campo_1']['questions'])
+    # shuffle(data['campo_2']['questions'])
+    # shuffle(data['campo_3']['questions'])
+    # shuffle(data['campo_4']['questions'])
     return render_template('trl/software_hardware.1.html',data=data)
 
 @bp_software_hardware.route('/evaluacion',methods=['POST'])

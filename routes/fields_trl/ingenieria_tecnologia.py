@@ -13,10 +13,10 @@ bp_ingenieria_tecnologia=Blueprint('ingenieria_tecnologia',__name__,url_prefix='
 
 @bp_ingenieria_tecnologia.route('/')
 def root():
-    shuffle(data['campo_1']['questions'])
-    shuffle(data['campo_2']['questions'])
-    shuffle(data['campo_3']['questions'])
-    shuffle(data['campo_4']['questions'])
+    # shuffle(data['campo_1']['questions'])
+    # shuffle(data['campo_2']['questions'])
+    # shuffle(data['campo_3']['questions'])
+    # shuffle(data['campo_4']['questions'])
     return render_template('trl/ingenieria_tecnologia.1.html',data=data)
 
 @bp_ingenieria_tecnologia.route('/evaluacion',methods=['POST'])

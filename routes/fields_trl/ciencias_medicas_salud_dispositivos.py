@@ -11,10 +11,10 @@ bp_ciencias_medicas_salud_dispositivos=Blueprint('ciencias_medicas_salud_disposi
 
 @bp_ciencias_medicas_salud_dispositivos.route('/')
 def root():
-    shuffle(data['campo_1']['questions'])
-    shuffle(data['campo_2']['questions'])
-    shuffle(data['campo_3']['questions'])
-    shuffle(data['campo_4']['questions'])
+    # shuffle(data['campo_1']['questions'])
+    # shuffle(data['campo_2']['questions'])
+    # shuffle(data['campo_3']['questions'])
+    # shuffle(data['campo_4']['questions'])
     return render_template('trl/ciencias_medicas_salud_dispositivos.1.html',data=data)
 
 @bp_ciencias_medicas_salud_dispositivos.route('/evaluacion',methods=['POST'])

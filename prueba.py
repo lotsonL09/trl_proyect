@@ -27,5 +27,5 @@
 #Lanzamiento y Evaluación Post-Lanzamiento = 5 --> 1.2
 
 
-for i in range(4):
-    print(i)
+for _ in range(3):
+    print('Hola')

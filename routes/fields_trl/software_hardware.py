@@ -32,7 +32,7 @@ def evaluation():
     results_new,spider_dict=software_hardware.get_options_marked_and_new_format(results)
     
     level=software_hardware.get_level(results_new)
-
+    
     
     window_content={
         'TRL':level,

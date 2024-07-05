@@ -139,8 +139,8 @@ agricultura_silvicultura=category(
 software_hardware=category(
     campo_1='Investigación',
     campo_2='Desarrollo Tecnológico',
-    campo_3='Implementación',
-    campo_4='Desarrollo Comercial',
+    campo_3='Entorno de Desarrollo',
+    campo_4='Implementación y Comercialización',
     type='TRL',
     name='Software y Hardware'
 )

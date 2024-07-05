@@ -521,18 +521,18 @@ trl_questions_software_hardware={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
+                'enunciado':'Se ha identificado el problema y las necesidades que justifican una investigación.',
                 'TRL': 'TRL1_0_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con documentación técnica a nivel básico.',
+                'enunciado':'Se cuenta la especificación de   requisitos   formales de la tecnología a nivel básico.',
                 'TRL': 'TRL2_0_1',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Las limitaciones han sido identificadas y se ha hecho el planteamiento de las estrategias para abordarlas..',
+                'enunciado':'Las limitaciones han sido identificadas y se ha hecho el planteamiento de las estrategias para abordarlas.',
                 'TRL': 'TRL3_0_2',
                 'chained':False
             },
@@ -585,7 +585,7 @@ trl_questions_software_hardware={
     },
 
     'campo_3':{
-        'title': 'Implementación',
+        'title': 'Entorno de Desarrollo',
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
@@ -609,7 +609,7 @@ trl_questions_software_hardware={
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología cuenta con una versión final que se encuentra en condiciones de pleno funcionamiento.',
+                'enunciado':'Se ha realizado capacitación y soporte a los usuarios del sistema y las nuevas funciones integradas.',
                 'TRL': 'TRL8_2_4',
                 'chained':False}
             },
@@ -617,7 +617,7 @@ trl_questions_software_hardware={
     },
 
     'campo_4':{
-        'title': 'Desarrollo Comercial',
+        'title': 'Implementación y Comercialización',
         'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
@@ -641,7 +641,7 @@ trl_questions_software_hardware={
                 'chained':False}
         },
         {'pregunta':{
-            'enunciado':'Se ha hecho el lanzamiento de la tecnología y se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes.',
+            'enunciado':'Se ha hecho el lanzamiento de la tecnología, además, se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes.',
             'TRL': 'TRL9_3_2',
                 'chained':False}
         },
@@ -678,7 +678,7 @@ trl_questions_general={
             },
             },
             {'pregunta':{
-                'enunciado':'Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología.',
+                'enunciado':'Se tiene evidencia de resultados positivos del desempeño de la tecnología.',
                 'TRL': 'TRL7_0_4',
                 'chained':False
             }
@@ -691,22 +691,22 @@ trl_questions_general={
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'La tecnología propuesta inicial, ha demostrado eficacia en condiciones de laboratorio o semejantes.',
+                'enunciado':'La tecnología propuesta inicial, ha demostrado eficacia en condiciones de laboratorio (ideales) o semejantes.',
                 'TRL': 'TRL3_1_0',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con un prototipo básico el cual se ha validado y demostrado sus componentes/subsistemas.',
+                'enunciado':'Se ha realizado la validación de un prototipo con una integración básica de sus componentes/subsistemas principales.',
                 'TRL': 'TRL5_1_1',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con un prototipo integrado el cual es sometido a pruebas rigurosas para asegurar su viabilidad y efectividad.',
+                'enunciado':'Se cuenta con un prototipo con una integración de sus componentes/subsistemas principales y auxiliares, el cual ha sido sometido a pruebas rigurosas para validar su viabilidad y efectividad.',
                 'TRL': 'TRL6_1_2',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología se encuentra completa y calificada a través de pruebas y demostraciones en un entorno real.',
+                'enunciado':'La tecnología se encuentra completamente integrada y ha sido calificada a través de pruebas y demostraciones en un entorno real.',
                 'TRL': 'TRL8_1_3',
                 'chained':True}
             },
@@ -728,22 +728,22 @@ trl_questions_general={
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha validado el prototipo básico en un entorno simulado de alta fidelidad, asegurando que cada componente individual funciona correctamente antes de su integración final.',
+                'enunciado':'Se ha validado el prototipo con integración básica en un entorno simulado de alta fidelidad, asegurando que cada componente individual funciona correctamente antes de su integración final.',
                 'TRL': 'TRL5_2_1',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'El prototipo es sometido a pruebas rigurosas para asegurar su viabilidad y efectividad en un entorno operacional simulado (cercano al real).',
+                'enunciado':'El prototipo ha sido sometido a pruebas rigurosas para asegurar su viabilidad y efectividad en un entorno operacional simulado (cercano al real).',
                 'TRL': 'TRL6_2_2',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'El prototipo del sistema se prueba en un entorno operacional real, demostrando su funcionalidad y eficacia en condiciones reales de uso.',
+                'enunciado':'El prototipo del sistema ha sido probado en un entorno operacional real, demostrando su funcionalidad y eficacia en condiciones reales de uso.',
                 'TRL': 'TRL7_2_3',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología cuenta con certificaciones por autoridades regulatorias (si fuese necesario).',
+                'enunciado':'La tecnología cuenta con certificaciones por autoridades regulatorias (si la tecnología lo requiere).',
                 'TRL': 'TRL8_2_4',
                 'chained':False}
             }
@@ -760,7 +760,7 @@ trl_questions_general={
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha recopilado retroalimentación de los usuarios pesquero/silvicultores finales para mejorar el diseño.',
+                'enunciado':'Se ha recopilado retroalimentación de los usuarios finales para mejorar el diseño.',
                 'TRL': 'TRL7_3_1',
                 'chained':False}
             },
@@ -770,12 +770,12 @@ trl_questions_general={
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales agrícolas/silvícolas de manera regular.',
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de manera regular.',
                 'TRL': 'TRL9_3_3',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Recopilación y análisis de datos de los usuarios/clientes agrícolas/silvícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
+                'enunciado':'Se han recopilado y analizado los datos de los usuarios/clientes para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas.',
                 'TRL': 'TRL9_3_4',
                 'chained':False}
             },

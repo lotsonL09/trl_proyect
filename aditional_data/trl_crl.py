@@ -190,13 +190,13 @@ crl_questions={
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha completado el diseño final del producto o servicio, asegurando que todas las características y especificaciones están definidas y optimizadas.',
-                'CRL': 'CRL7_2_1',
+                'enunciado':'Se tiene el conocimiento detallado y práctico de las normativas y certificaciones necesarias para operar legalmente y con éxito en el mercado.',
+                'CRL': 'CRL6_2_2',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se tiene el conocimiento detallado y práctico de las normativas y certificaciones necesarias para operar legalmente y con éxito en el mercado.',
-                'CRL': 'CRL6_2_2',
+                'enunciado':'Se ha completado el diseño final del producto o servicio, asegurando que todas las características y especificaciones están definidas y optimizadas.',
+                'CRL': 'CRL7_2_1',
                 'chained':False}
             },
             {'pregunta':{

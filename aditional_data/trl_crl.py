@@ -723,7 +723,7 @@ trl_questions_general={
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha validado el prototipo básico en un entorno de laboratorio o semejante (baja fidelidad).',
+                'enunciado':'Se ha validado el prototipo básico en un entorno de laboratorio (ideal) o semejante (baja fidelidad).',
                 'TRL': 'TRL4_2_0',
                 'chained':True}
             },

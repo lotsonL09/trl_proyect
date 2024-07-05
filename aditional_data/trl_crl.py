@@ -157,7 +157,7 @@ crl_questions={
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se realiza una evaluación preliminar de la viabilidad comercial basándose en información secundaria disponible, como reportes de cámaras de comercio, estudios sectoriales y otros datos públicos.',
+                'enunciado':'Se ha realizado una evaluación preliminar de la viabilidad comercial basándose en información secundaria disponible, como reportes de cámaras de comercio, estudios sectoriales y otros datos públicos.',
                 'CRL': 'CRL2_1_1',
                 'chained':False}
             },

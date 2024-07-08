@@ -270,14 +270,14 @@ trl_questions_pesca={
             },
             },
             {'pregunta':{
-                'enunciado':'La tecnología propuesta ha demostrado eficacia en condiciones de laboratorio o semejantes.',
-                'TRL': 'TRL3_0_3',
+                'enunciado':'Se ha mejorado o refinado la tecnología de pesca/acuicultura basadas en datos de laboratorio o condiciones controladas.',
+                'TRL': 'TRL4_0_3',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha mejorado o refinado la tecnología de pesca/acuicultura basadas en datos de laboratorio o semejantes.',
-                'TRL': 'TRL4_0_4',
+                'enunciado':'Se tiene evidencia de resultados positivos del desempeño de la tecnología o producto mínimo viable.',
+                'TRL': 'TRL7_0_4',
                 'chained':False
             }
             }
@@ -285,96 +285,96 @@ trl_questions_pesca={
     },
 
     'campo_2':{
-        'title': 'Entorno de Desarrollo',
+        'title': 'Desarrollo Tecnológico',
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'Ha modelado y simulado condiciones marinas y/o cuerpos hídricos (para el caso de acuicultura) de baja fidelidad en un entorno de laboratorio o semejante para probar la tecnología planteada, obteniendo resultados positivos.',
-                'TRL': 'TRL4_1_0',
-                'chained':False}
+                'enunciado':'La tecnología propuesta para pesca/acuicultura ha demostrado eficacia en condiciones de laboratorio o semejantes.',
+                'TRL': 'TRL3_1_0',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha validado la operatividad de componentes pesqueros/acuicolas en entorno de laboratorio o semejante de alta fidelidad.',
+                'enunciado':'Se ha evaluado la funcionalidad del prototipo o tecnología acuícola/pesca.',
                 'TRL': 'TRL5_1_1',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha demostrado que la tecnología presentada es eficiente y sostenible en un entorno operativo de alta fidelidad (fuera de un entorno controlado, pero no es un entorno operativo final).',
+                'enunciado':'Se ha colaborado con pescadores/acuicultores para realizar pruebas operativas del producto mínimo viable o prototipo con una integración de sus componentes/subsistemas principales y auxiliares.',
                 'TRL': 'TRL6_1_2',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
-                'TRL': 'TRL7_1_3',
+                'enunciado':'La tecnología se encuentra completamente integrada y ha sido calificada a través de pruebas y demostraciones en un entorno real.',
+                'TRL': 'TRL8_1_3',
+                'chained':True}
+            },
+            {'pregunta':{
+                'enunciado':'Se ha realizado evaluaciones periódicas de sostenibilidad y eficiencia de la tecnología/producto finalizado.',
+                'TRL': 'TRL9_1_4',
                 'chained':False}
             },
         ]
     },
 
     'campo_3':{
-        'title': 'Desarrollo tecnológico/Producción',
+        'title': 'Entorno de desarrollo',
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha evaluado la funcionalidad de la tecnología acuícola/pesca en entorno de laboratorio o semejante de alta fidelidad.',
-                'TRL': 'TRL5_2_0',
-                'chained':False}
+                'enunciado':'Se ha modelado y simulado condiciones marinas y/o cuerpos hídricos (para el caso de acuicultura) de baja fidelidad en un entorno de laboratorio o semejante para probar la tecnología planteada, obteniendo resultados positivos.',
+                'TRL': 'TRL4_2_0',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha colaborado con pescadores/acuicultores para realizar pruebas operativas de alta fidelidad de la tecnología.',
-                'TRL': 'TRL6_2_1',
-                'chained':False}
+                'enunciado':'Se ha validado la operatividad del prototipo pesquero/acuícolas en entorno de laboratorio o semejante de alta fidelidad.',
+                'TRL': 'TRL5_2_1',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se tiene informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en operaciones diarias.',
-                'TRL': 'TRL7_2_2',
-                'chained':False}
+                'enunciado':'Se ha demostrado que la tecnología o producto mínimo viable presentada es eficiente y sostenible en un entorno operativo de alta fidelidad (fuera de un entorno controlado, pero no es un entorno operativo final).',
+                'TRL': 'TRL6_2_2',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha desarrollado material de soporte técnico y formación para los usuarios y clientes potenciales.',
-                'TRL': 'TRL8_2_3',
-                'chained':False}
+                'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
+                'TRL': 'TRL7_2_3',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está en proceso de implementación comercial o ya se encuentra en el mercado pesquero/acuícola.',
-                'TRL': 'TRL9_2_4',
+                'enunciado':'La tecnología cuenta con certificaciones por autoridades regulatorias (si la tecnología lo requiere).',
+                'TRL': 'TRL8_2_4',
                 'chained':False}
             }
         ]
     },
 
     'campo_4':{
-        'title': 'Implementación/ Comercialización',
+        'title': 'Implementación comercial',
         'factor':factor_desarrollo_comercial,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha realizado un análisis de viabilidad técnica y económica.',
+                'enunciado':'Se ha realizado un análisis inicial de viabilidad técnica y/o económica.',
                 'TRL': 'TRL2_3_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha presentado la tecnología a potenciales clientes y/o empresas pesqueras y ha recibido interés para futuras implementaciones comerciales.',
+                'enunciado':'Se ha recopilado retroalimentación de los usuarios finales para mejorar el diseño.',
                 'TRL': 'TRL7_3_1',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con los certificados emitidos por autoridades regulatorias relevantes en el sector pesquero/acuícola.',
+                'enunciado':'Se ha completado el desarrollo del sistema y está listo para la producción.',
                 'TRL': 'TRL8_3_2',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se tiene el primer lote de producción de la tecnología.',
-                'TRL': 'TRL8_3_3',
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de manera regular.',
+                'TRL': 'TRL9_3_3',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de pesca/acuícola de manera regular.',
+                'enunciado':'Se han recopilado y analizado los datos de los usuarios/clientes para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas.',
                 'TRL': 'TRL9_3_4',
-                'chained':False}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha realizado la recopilación y análisis de datos de los usuarios/clientes pesqueros para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
-                'TRL': 'TRL9_3_5',
                 'chained':False}
             },
     ]
@@ -678,7 +678,7 @@ trl_questions_general={
             },
             },
             {'pregunta':{
-                'enunciado':'Se tiene evidencia de resultados positivos del desempeño de la tecnología.',
+                'enunciado':'Se tiene evidencia de resultados positivos del desempeño de la tecnología producto mínimo viable.',
                 'TRL': 'TRL7_0_4',
                 'chained':False
             }
@@ -765,7 +765,7 @@ trl_questions_general={
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha completado el desarrollo del sistema y está listo para la producción del primer lote.',
+                'enunciado':'Se ha completado el desarrollo del sistema y está listo para la producción.',
                 'TRL': 'TRL8_3_2',
                 'chained':False}
             },
@@ -791,7 +791,8 @@ trl_questions_agricultura_silvicultura={
             {'pregunta':{
                 'enunciado':'Se ha identificado una necesidad o problema específico en agricultura o silvicultura que la tecnología abordará.',
                 'TRL': 'TRL1_0_0',
-                'chained':False}
+                'chained':False
+                }
             },
             {'pregunta':{
                 'enunciado':'Se ha desarrollado una idea o concepto inicial para abordar la necesidad identificada en agricultura/silvicultura.',
@@ -806,14 +807,14 @@ trl_questions_agricultura_silvicultura={
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha demostrado de la eficacia de la tecnología propuesta para agricultura/silvicultura en condiciones de laboratorio o similares.',
-                'TRL': 'TRL3_0_3',
+                'enunciado':'Se han validado los componentes o procesos en un entorno de laboratorio o semejante (baja fidelidad) específico para agricultura o silvicultura.',
+                'TRL': 'TRL4_0_3',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado el refinamiento de la tecnología agrícola/silvícola basada en datos de laboratorio o similares.',
-                'TRL': 'TRL4_0_4',
+                'enunciado':'Se tiene evidencia de resultados positivos del desempeño de la tecnología.',
+                'TRL': 'TRL7_0_4',
                 'chained':False
             }
             }
@@ -821,96 +822,96 @@ trl_questions_agricultura_silvicultura={
     },
 
     'campo_2':{
-        'title': 'Entorno de Desarrollo',
+        'title': 'Desarrollo tecnológico',
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se han validado los componentes o procesos en un entorno de laboratorio o semejante (baja fidelidad) específico para agricultura o silvicultura.',
-                'TRL': 'TRL4_1_0',
-                'chained':False}
+                'enunciado':'Se ha demostrado la eficacia de la tecnología propuesta para agricultura/silvicultura en condiciones de laboratorio o similares.',
+                'TRL': 'TRL3_1_0',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado pruebas para validar de la operatividad de sistemas agrícolas/forestales en un entorno de laboratorio o similar de alta fidelidad (campos agrícolas, bosques).',
+                'enunciado':'Se ha realizado pruebas para validar la operatividad del prototipo con una integración básica orientado al sector agrícola/forestales.',
                 'TRL': 'TRL5_1_1',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado una demostración de la tecnología presentada, mostrando que es eficiente y sostenible en un entorno operativo de alta fidelidad (fuera de un entorno controlado, pero no es un entorno operativo final).',
+                'enunciado':'Se cuenta con un producto mínimo viable o con un prototipo con una integración de sus componentes/subsistemas principales y auxiliares, el cual ha mostrado que es eficiente y sostenible.',
                 'TRL': 'TRL6_1_2',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
-                'TRL': 'TRL7_1_3',
+                'enunciado':'La tecnología se encuentra en un estado beta de desarrollo o se encuentra completamente integrada y ha sido calificada a través de pruebas y demostraciones en un entorno real.',
+                'TRL': 'TRL8_1_3',
+                'chained':True}
+            },
+            {'pregunta':{
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales agrícolas/silvícolas de manera regular.',
+                'TRL': 'TRL9_1_4',
                 'chained':False}
             },
         ]
     },
 
     'campo_3':{
-        'title': 'Desarrollo Tecnológico/Producción',
+        'title': 'Entorno de desarrollo',
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha evaluado de la funcionalidad de la tecnología agrícola/silvícola en un entorno de laboratorio o similar de alta fidelidad.',
-                'TRL': 'TRL5_2_0',
-                'chained':False}
+                'enunciado':'El prototipo básico o tecnología agrícola/silvícola se ha evaluado en un entorno de laboratorio o similar de baja fidelidad.',
+                'TRL': 'TRL4_2_0',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha colaborado con agricultores/silvicultores para realizar pruebas operativas de alta fidelidad de la tecnología.',
-                'TRL': 'TRL6_2_1',
-                'chained':False}
+                'enunciado':'El prototipo con una integración básica o tecnología agrícola/silvícola se ha validado en un entorno de laboratorio o similar de alta fidelidad, con la finalidad de asegurar que cada componente individual funciona correctamente antes de su integración final.',
+                'TRL': 'TRL5_2_1',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha evaluado el rendimiento y se ha recopilado retroalimentación para mejoras adicionales.',
-                'TRL': 'TRL7_2_2',
-                'chained':False}
+                'enunciado':'El producto mínimo viable o tecnología ha sido sometido a pruebas operativas de alta fidelidad en colaboración con agricultores/silvicultores, en un entorno operacional simulado (cercano al real).',
+                'TRL': 'TRL6_2_2',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha desarrollado de material de soporte técnico y formación para los usuarios y clientes potenciales.',
-                'TRL': 'TRL8_2_3',
-                'chained':False}
+                'enunciado':'El producto mínimo viable o tecnología propuesta ya ha sido probada y demostrada en condiciones operativas finales, es decir, en el entorno real de uso.',
+                'TRL': 'TRL7_2_3',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está en proceso de implementación comercial o ya se encuentra en el mercado agrícola/silvícola.',
-                'TRL': 'TRL9_2_4',
+                'enunciado':'La tecnología cuenta con certificaciones por autoridades regulatorias (si la tecnología lo requiere).',
+                'TRL': 'TRL8_2_4',
                 'chained':False}
             },
         ]
     },
 
     'campo_4':{
-        'title': 'Implementación/ Comercialización',
+        'title': 'Implementación comercial',
         'factor':factor_desarrollo_comercial,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se tiene un análisis de viabilidad técnica y económica.',
+                'enunciado':'Se ha realizado un análisis inicial de viabilidad técnica y/o económica.',
                 'TRL': 'TRL2_3_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha recopilado retroalimentación de los usuarios pesquero/silvicultores finales para mejorar el diseño.',
+                'enunciado':'Se ha recopilado retroalimentación de los usuarios finales para mejorar el diseño.',
                 'TRL': 'TRL7_3_1',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha obtenido certificados emitidos por autoridades regulatorias relevantes en el sector agrícola/silvícola.',
+                'enunciado':'Se ha completado el desarrollo del sistema y está listo para la producción del primer lote.',
                 'TRL': 'TRL8_3_2',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se ha completado el desarrollo del sistema y está listo para la producción del primer lote.',
-                'TRL': 'TRL8_3_3',
+                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales de manera regular.',
+                'TRL': 'TRL9_3_3',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'La tecnología está completamente operativa y se utiliza en operaciones comerciales agrícolas/silvícolas de manera regular.',
+                'enunciado':'Se han recopilado y analizado los datos de los usuarios/clientes para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas.',
                 'TRL': 'TRL9_3_4',
-                'chained':False}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha realizado la recopilación y análisis de datos de los usuarios/clientes agrícolas/silvícolas para realizar las mejoras pertinentes y llevar a cabo campañas de marketing y ventas para aumentar la adopción y expandirse al mercado.',
-                'TRL': 'TRL9_3_5',
                 'chained':False}
             },
     ]

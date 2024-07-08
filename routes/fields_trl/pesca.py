@@ -20,9 +20,9 @@ def root():
 def evaluation():
     results=[]
     investigacion = request.form.getlist('Investigación')
-    desarrollo = request.form.getlist('Entorno de Desarrollo')
-    implementacion = request.form.getlist('Desarrollo tecnológico/Producción')
-    comercial = request.form.getlist('Implementación/ Comercialización')
+    desarrollo = request.form.getlist('Desarrollo Tecnológico')
+    implementacion = request.form.getlist('Entorno de desarrollo')
+    comercial = request.form.getlist('Implementación comercial')
     results.extend(investigacion)
     results.extend(desarrollo)
     results.extend(implementacion)

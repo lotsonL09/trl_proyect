@@ -56,6 +56,7 @@ class category:
             clock=True
             for index in indexes:
                 index_0,index_1=index
+                print(index_0,index_1)
                 chained=data[fields[index_0]]['questions'][index_1]['pregunta']['chained']
                 if clock:
                     if chained==True:
@@ -129,9 +130,9 @@ ingenieria_tecno=category(
 
 agricultura_silvicultura=category(
     campo_1='Investigación',
-    campo_2='Entorno de Desarrollo',
-    campo_3='Desarrollo Tecnológico/Producción',
-    campo_4='Implementación/ Comercialización',
+    campo_2='Desarrollo tecnológico',
+    campo_3='Entorno de desarrollo',
+    campo_4='Implementación comercial',
     type='TRL',
     name='Agricultura y Silvicultura'
 )
@@ -174,9 +175,9 @@ general=category(
 
 pesca=category(
     campo_1='Investigación',
-    campo_2='Entorno de Desarrollo',
-    campo_3='Desarrollo tecnológico/Producción',
-    campo_4='Implementación/ Comercialización',
+    campo_2='Desarrollo Tecnológico',
+    campo_3='Entorno de desarrollo',
+    campo_4='Implementación comercial',
     type='TRL',
     name='Pesca'
 )

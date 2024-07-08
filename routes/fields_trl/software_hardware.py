@@ -4,6 +4,7 @@ from aditional_data.trl_crl import trl_questions_software_hardware,trl_data
 from aditional_data.results import software_hardware
 from aditional_data.db import client
 import copy
+from flask import jsonify
 
 bp_software_hardware=Blueprint('software_hardware',__name__,url_prefix='/software_hardware')
 
@@ -16,6 +17,7 @@ def root():
     # shuffle(data['campo_3']['questions'])
     # shuffle(data['campo_4']['questions'])
     return render_template('trl/software_hardware.1.html',data=data)
+    #return jsonify(data)
 
 @bp_software_hardware.route('/evaluacion',methods=['POST'])
 def evaluation():
@@ -47,4 +49,5 @@ def evaluation():
     }
 
     client.insert.insert_one(json_to_db)
-    return render_template("/resultados/resultados.1.html",data=window_content)
+    # return render_template("/resultados/resultados.1.html",data=window_content)
+    return jsonify(window_content)

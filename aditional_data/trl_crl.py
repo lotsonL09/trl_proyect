@@ -924,31 +924,31 @@ trl_questions_salud_medicamentos={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha realizado una investigación científica inicial, la cual incluye: Revisión de literatura relevante, definición de hipótesis y objetivos.',
+                'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación a una molécula con potencial efecto terapéutico.',
                 'TRL': 'TRL1_0_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se han llevado a cabo ensayos in vitro que proporcionan evidencia inicial de que el concepto es viable y de que los principios del fármaco son efectivos bajo condiciones biológicas controladas.',
-                'TRL': 'TRL3_0_1',
+                'enunciado':'Se ha realizado una investigación científica que explora las posibles aplicaciones terapéuticas de la molécula en estudio.',
+                'TRL': 'TRL2_0_1',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado una investigación científica que explora las posibles aplicaciones terapéuticas del fármaco.',
+                'enunciado':'Se ha desarrollado el conocimiento necesario para iniciar el desarrollo de nuevas moléculas, con un propósito definido de aplicación.',
                 'TRL': 'TRL2_0_2',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se han realizado ensayos experimentales y se ha validado la hipótesis científica en un entorno de laboratorio.',
+                'enunciado':'Se han llevado a cabo ensayos in vitro que proporcionan evidencia inicial sobre los principios activos de la molécula bajo condiciones biológicas controladas.',
                 'TRL': 'TRL3_0_3',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha desarrollado el conocimiento necesario para iniciar el desarrollo de un nuevo medicamento, con un propósito definido de aplicación.',
-                'TRL': 'TRL2_0_4',
+                'enunciado':'Se han realizado ensayos in vitro (en células o tejidos) para identificar la actividad biológica y toxicidad inicial de la molécula en estudio.',
+                'TRL': 'TRL4_0_4',
                 'chained':False
             }
             }
@@ -959,24 +959,19 @@ trl_questions_salud_medicamentos={
         'factor':factor_ensayos_preclinicos,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se han realizado ensayos preclínicos in vitro (en células o tejidos) e in vivo (en animales), para identificar posibles efectos adversos del medicamento.',
+                'enunciado':'Se han realizado ensayos en modelos de animales para evaluar la eficacia, seguridad y farmacocinética (cómo se absorbe, distribuye, metaboliza y excreta la molécula en estudio).',
                 'TRL': 'TRL4_1_0',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se han realizado estudios de evaluación de dosis, efectos tóxicos a corto y largo plazo, y posibles efectos secundarios.',
+                'enunciado':'Se han realizado ensayos en modelos animales para una evaluación de dosis, efectos tóxicos a corto y largo plazo, y posibles efectos secundarios de la molécula en estudio.',
                 'TRL': 'TRL5_1_1',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se han realizado ensayos preclínicos en un entorno de laboratorio, donde se ha evaluado la farmacodinámica y la farmacocinética del nuevo medicamento.',
+                'enunciado':'Los resultados obtenidos en los ensayos preclínicos han sido demostrados ser precisos, consistentes y confiables, motivo por el cual se tiene la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 1.',
                 'TRL': 'TRL4_1_2',
-                'chained':False}
-            },
-            {'pregunta':{
-                'enunciado':'Actualmente, tengo la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 1.',
-                'TRL': 'TRL5_1_3',
-                'chained':False}
+                'chained':True}
             },
         ]
     },
@@ -987,27 +982,27 @@ trl_questions_salud_medicamentos={
             {'pregunta':{
                 'enunciado':'Se han realizado ensayos clínicos de fase 1, donde el nuevo medicamento se ha administrado a un pequeño grupo de voluntarios sanos.',
                 'TRL': 'TRL6_2_0',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Actualmente, tengo la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 2.',
+                'enunciado':'Los resultados obtenidos en los ensayos de fase 1 han sido satisfactorios y actualmente se tiene la autorización Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 2.',
                 'TRL': 'TRL6_2_1',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
                 'enunciado':'Se han realizado ensayos clínicos de fase 2, donde se ha evaluado la eficacia del medicamento y su dosis óptima.',
                 'TRL': 'TRL7_2_2',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Actualmente, tengo la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 3.',
+                'enunciado':'Los resultados obtenidos en los ensayos de fase 2 han sido satisfactorios y actualmente se tiene la autorización Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 3.',
                 'TRL': 'TRL7_2_3',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
                 'enunciado':'Se han realizado ensayos clínicos de fase 3, donde el medicamento se ha administrado a un gran número de pacientes con la enfermedad o condición que el medicamento se destina a tratar.',
                 'TRL': 'TRL8_2_4',
-                'chained':False}
+                'chained':True}
             },
         ]
     },
@@ -1017,23 +1012,28 @@ trl_questions_salud_medicamentos={
         'factor':factor_aprobacion_comercializacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha confirmado la eficacia del medicamento mediante la realización de ensayos preclínicos y clínicos, donde se han monitoreado los efectos secundarios, y ha comparado los resultados con tratamientos estándar o placebos.',
+                'enunciado':'Se ha confirmado la eficacia del medicamento mediante la realización de ensayos clínicos de fase 3 y se ha comparado los resultados con tratamientos estándar o placebos.',
                 'TRL': 'TRL8_3_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'El medicamento cuenta con la aprobación de las autoridades regulatorias para ser lanzado oficialmente al mercado.',
+                'enunciado':'Se ha realizado la solicitud de registro del nuevo medicamento antes las autorizades correspondientes.',
                 'TRL': 'TRL8_3_1',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'El medicamento ha sido lanzado oficialmente al mercado y está disponible para su uso médico.',
+                'enunciado':'El medicamento cuenta con la aprobación de las autoridades regulatorias y está disponible para su uso médico.',
                 'TRL': 'TRL9_3_2',
                 'chained':False}
             },
             {'pregunta':{
+                'enunciado':'Se ha realizado una producción a gran escala del medicamento.',
+                'TRL': 'TRL9_3_3',
+                'chained':False}
+            },
+            {'pregunta':{
                 'enunciado':'Se han implementado controles de calidad y sistemas de distribución para asegurar que el medicamento llegue a los usuarios finales de manera segura y oportuna.',
-                'TRL': 'TRL9_3_2',
+                'TRL': 'TRL9_3_4',
                 'chained':False}
             },
     ]

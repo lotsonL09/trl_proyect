@@ -48,5 +48,5 @@ def evaluation():
     }
 
     client.insert.insert_one(json_to_db)
-    #return render_template("/resultados/resultados.1.html",data=window_content)
-    return jsonify(window_content)
+    return render_template("/resultados/resultados.1.html",data=window_content)
+    #return jsonify(window_content)

@@ -60,7 +60,10 @@ class category:
                 chained=data[fields[index_0]]['questions'][index_1]['pregunta']['chained']
                 if clock:
                     if chained==True:
-                        count+=1+index_1 #suma su punto mas el de los encadenados a esta pregunta
+                        if index_1 == 5:
+                            count+= 1+ 3
+                        else:
+                            count+=1+index_1 #suma su punto mas el de los encadenados a esta pregunta
                         clock=False
                         for i in range(index_1):
                             question_added=data[fields[index_0]]['questions'][i]['pregunta'][self.type]
@@ -157,9 +160,9 @@ ciencias_salud_medicamentos=category(
 
 ciencias_salud_dispositivos=category(
     campo_1='Investigación',
-    campo_2='Fase preclínica-clínica',
-    campo_3='Implementación',
-    campo_4='Desarrollo Comercial',
+    campo_2='Desarrollo Tecnológico',
+    campo_3='Entorno de Desarrollo',
+    campo_4='Comercialización/Implementación',
     type='TRL',
     name='Ciencias Médicas y de la Salud-dispositivos'
 )

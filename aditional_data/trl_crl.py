@@ -1046,13 +1046,13 @@ trl_questions_salud_dispositivos={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha realizado una investigación científica inicial, la cual incluye: Revisión de literatura relevante, definición de hipótesis y objetivos.',
+                'enunciado':'Se ha realizado una investigación científica inicial, que incluye la revisión de literatura relevante, definición de hipótesis y objetivos.',
                 'TRL': 'TRL1_0_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se han realizado ensayos experimentales y se ha validado la hipótesis científica.',
-                'TRL': 'TRL3_0_1',
+                'enunciado':'Se ha realizado un análisis preliminar de Propiedad Intelectual (PI) para asegurarse de que la idea no infringe patentes existentes y para identificar cualquier invención potencial que pueda ser patentada en el futuro.',
+                'TRL': 'TRL2_0_1',
                 'chained':False
             },
         },
@@ -1063,14 +1063,14 @@ trl_questions_salud_dispositivos={
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha demostrado la viabilidad de la nueva tecnología a través de ensayos in vitro. (pruebas de concepto tecnológico)',
+                'enunciado':'Se han realizado ensayos analíticos y/o experimentales para validar los principios básicos observados y reportados.',
                 'TRL': 'TRL3_0_3',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado un análisis preliminar de Propiedad Intelectual (PI) para asegurarse de que la idea no infringe patentes existentes y para identificar cualquier invención potencial que pueda ser patentada en el futuro.',
-                'TRL': 'TRL2_0_4',
+                'enunciado':'Se han realizado pruebas en condiciones de laboratorio (in vitro) y/o en modelos animales (in vivo) para demostrar el concepto tecnológico.',
+                'TRL': 'TRL4_0_4',
                 'chained':False
             }
             }
@@ -1078,85 +1078,95 @@ trl_questions_salud_dispositivos={
     },
 
     'campo_2':{
-        'title': 'Fase preclínica/clínica',
+        'title': 'Desarrollo Tecnológico',
         'factor':factor_fase_preclinica_clinica,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se han realizado ensayos preclínicos en entorno de laboratorio, donde la tecnología ha demostrado cumplir con los requerimientos de rendimiento y funcionabilidad.',
-                'TRL': 'TRL4_1_0',
-                'chained':False}
+                'enunciado':'1.	La tecnología propuesta ha demostrado viabilidad a través de ensayos experimentales en un entorno de laboratorio.',
+                'TRL': 'TRL3_1_0',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Los ensayos preclínicos han sido validados en entornos simulados cercanos al real, lo que asegura que la tecnología cumple con los requisitos y expectativas de los usuarios.',
-                'TRL': 'TRL5_1_1',
-                'chained':False}
+                'enunciado':'2.	Se ha desarrollado un prototipo inicial de la tecnología, basado en los resultados de pruebas de laboratorio.',
+                'TRL': 'TRL4_1_1',
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología cuenta con autorización del Instituto Nacional de Salud (INS) para la realización de ensayos clínicos. ',
+                'enunciado':'3.	Se ha desarrollado un prototipo estandarizado, el cual ha sido validado mediante ensayos preclínicos.',
                 'TRL': 'TRL5_1_2',
+                'chained':True}
+            },
+            {'pregunta':{
+                'enunciado':'4.	Se ha desarrollado un prototipo final, el cual ha sido validado mediante ensayos clínicos.',
+                'TRL': 'TRL7_1_3',
+                'chained':True}
+            },
+            {'pregunta':{
+                'enunciado':'5.	El dispositivo médico desarrollado se encuentra completamente finalizado, validado y listo para ser comercializado/implementado.',
+                'TRL': 'TRL8_1_4',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se han realizado ensayos clínicos para verificar la seguridad del dispositivo médico y su compatibilidad con el entorno clínico y fisiológico específico en el cual será utilizado.',
-                'TRL': 'TRL6_1_3',
-                'chained':False}
-            },
-            {'pregunta':{
-                'enunciado':'Se ha demostrado el funcionamiento de la tecnología en un entorno operacional real, y ya se cuenta con una Autorización Sanitaria por parte de DIGEMID.',
-                'TRL': 'TRL7_1_4',
-                'chained':False}
+                'enunciado':'6.	La tecnología desarrollada no requiere ser validada mediante ensayos clínicos.',
+                'TRL': 'TRL7_1_5',
+                'chained':True}
             },
         ]
     },
 
     'campo_3':{
-        'title': 'Desarrollo y Producción',
+        'title': 'Entorno de Desarrollo',
         'factor':factor_desarrollo_produccion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha realizado un prototipo de la tecnología, basado en los resultados de los ensayos entorno a laboratorio.',
+                'enunciado':'1.	El prototipo desarrollado y sus componentes han sido validados en un entorno de laboratorio.',
                 'TRL': 'TRL4_2_0',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado una producción limitada de prototipos de la tecnología. (Lote piloto) ',
+                'enunciado':'2.	El prototipo desarrollado y sus componentes han sido validados en un entorno simulado que imita las condiciones de uso clínico.',
                 'TRL': 'TRL5_2_1',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado la producción mayor (Lote) de la tecnología.',
+                'enunciado':'3.	El prototipo desarrollado y sus componentes han sido validados en un entorno clínico real controlado.',
                 'TRL': 'TRL6_2_2',
-                'chained':False}
+                'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se ha realizado una producción a gran escala del producto/servicio. ',
-                'TRL': 'TRL8_2_3',
-                'chained':False}
+                'enunciado':'4.	El prototipo desarrollado y sus componentes han sido validados en un entorno clínico real operativo.',
+                'TRL': 'TRL7_2_3',
+                'chained':True}
             },
         ]
     },
 
     'campo_4':{
-        'title': 'Desarrollo Comercial',
+        'title': 'Comercialización/Implementación',
         'factor':factor_desarrollo_comercial_dispositivos,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha realizado la optimización de la tecnología para que se adapte mejor a las necesidades y preferencias del mercado.',
-                'TRL': 'TRL7_3_0',
+                'enunciado':'Se tiene un registro e historial de los diseños de los prototipos realizados.',
+                'TRL': 'TRL6_3_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'El dispositivo médico ha finalizado su desarrollo, pruebas y validaciones, obteniendo la certificación oficial para su uso.',
-                'TRL': 'TRL8_3_1',
+                'enunciado':'Los prototipos desarrollados han sido optimizados y ya se cuenta con un diseño final del dispositivo médico.',
+                'TRL': 'TRL7_3_1',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha sido lanzada oficialmente al mercado y está disponible para su uso médico.',
-                'TRL': 'TRL9_3_2',
+                'enunciado':'Se ha iniciado el proceso de producción de la tecnología.',
+                'TRL': 'TRL8_3_2',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se han implementado controles de calidad y sistemas de distribución para asegurar que el dispositivo médico llegue a los usuarios finales de manera segura y oportuna.',
+                'enunciado':'La tecnología se encuentra disponible para su uso médico y se encuentra en un proceso de comercialización/implementación.',
+                'TRL': 'TRL9_3_3',
+                'chained':False}
+            },
+            {'pregunta':{
+                'enunciado':'Se han implementado controles de calidad y sistemas de distribución para asegurar que la tecnología llegue a los usuarios finales de manera segura y oportuna.',
                 'TRL': 'TRL9_3_3',
                 'chained':False}
             },

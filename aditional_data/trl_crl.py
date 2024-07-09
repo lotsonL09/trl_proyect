@@ -79,13 +79,13 @@ condictions_salud_dispositivos={
 condictions_salud_medicamentos={
     'TRL1':1,
     'TRL2':2,
-    'TRL3':2,
+    'TRL3':1,
     'TRL4':2,
     'TRL5':2,
     'TRL6':2,
     'TRL7':2,
     'TRL8':3,
-    'TRL9':2
+    'TRL9':3
 }
 
 #El resto de disciplinas

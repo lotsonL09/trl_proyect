@@ -970,7 +970,7 @@ trl_questions_salud_medicamentos={
             },
             {'pregunta':{
                 'enunciado':'Los resultados obtenidos en los ensayos preclínicos han sido demostrados ser precisos, consistentes y confiables, motivo por el cual se tiene la autorización del Instituto Nacional de Salud (INS) para realizar ensayos clínicos de fase 1.',
-                'TRL': 'TRL4_1_2',
+                'TRL': 'TRL5_1_2',
                 'chained':True}
             },
         ]

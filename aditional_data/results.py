@@ -62,6 +62,7 @@ class category:
                     if chained==True:
                         if index_1 == 5:
                             count+= 1+ 3
+                            index_1=3
                         else:
                             count+=1+index_1 #suma su punto mas el de los encadenados a esta pregunta
                         clock=False
@@ -82,7 +83,6 @@ class category:
         spider_dict=dict()
 
         for index in range(4):
-            amount=0
             questions=[]
             field=index
             for element in spider_indexes:

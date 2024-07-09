@@ -68,10 +68,10 @@ condictions_salud_dispositivos={
     'TRL1':1,
     'TRL2':2,
     'TRL3':2,
-    'TRL4':2,
-    'TRL5':3,
+    'TRL4':3,
+    'TRL5':2,
     'TRL6':2,
-    'TRL7':2,
+    'TRL7':3,
     'TRL8':2,
     'TRL9':2
 }

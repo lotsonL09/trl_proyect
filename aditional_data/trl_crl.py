@@ -1082,32 +1082,32 @@ trl_questions_salud_dispositivos={
         'factor':factor_fase_preclinica_clinica,
         'questions': [
             {'pregunta':{
-                'enunciado':'1.	La tecnología propuesta ha demostrado viabilidad a través de ensayos experimentales en un entorno de laboratorio.',
+                'enunciado':'La tecnología propuesta ha demostrado viabilidad a través de ensayos experimentales en un entorno de laboratorio.',
                 'TRL': 'TRL3_1_0',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'2.	Se ha desarrollado un prototipo inicial de la tecnología, basado en los resultados de pruebas de laboratorio.',
+                'enunciado':'Se ha desarrollado un prototipo inicial de la tecnología, basado en los resultados de pruebas de laboratorio.',
                 'TRL': 'TRL4_1_1',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'3.	Se ha desarrollado un prototipo estandarizado, el cual ha sido validado mediante ensayos preclínicos.',
+                'enunciado':'Se ha desarrollado un prototipo estandarizado, el cual ha sido validado mediante ensayos preclínicos.',
                 'TRL': 'TRL5_1_2',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'4.	Se ha desarrollado un prototipo final, el cual ha sido validado mediante ensayos clínicos.',
+                'enunciado':'Se ha desarrollado un prototipo final, el cual ha sido validado mediante ensayos clínicos.',
                 'TRL': 'TRL7_1_3',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'5.	El dispositivo médico desarrollado se encuentra completamente finalizado, validado y listo para ser comercializado/implementado.',
+                'enunciado':'El dispositivo médico desarrollado se encuentra completamente finalizado, validado y listo para ser comercializado/implementado.',
                 'TRL': 'TRL8_1_4',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'6.	La tecnología desarrollada no requiere ser validada mediante ensayos clínicos.',
+                'enunciado':'La tecnología desarrollada no requiere ser validada mediante ensayos clínicos.',
                 'TRL': 'TRL7_1_5',
                 'chained':True}
             },
@@ -1119,22 +1119,22 @@ trl_questions_salud_dispositivos={
         'factor':factor_desarrollo_produccion,
         'questions': [
             {'pregunta':{
-                'enunciado':'1.	El prototipo desarrollado y sus componentes han sido validados en un entorno de laboratorio.',
+                'enunciado':'El prototipo desarrollado y sus componentes han sido validados en un entorno de laboratorio.',
                 'TRL': 'TRL4_2_0',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'2.	El prototipo desarrollado y sus componentes han sido validados en un entorno simulado que imita las condiciones de uso clínico.',
+                'enunciado':'El prototipo desarrollado y sus componentes han sido validados en un entorno simulado que imita las condiciones de uso clínico.',
                 'TRL': 'TRL5_2_1',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'3.	El prototipo desarrollado y sus componentes han sido validados en un entorno clínico real controlado.',
+                'enunciado':'El prototipo desarrollado y sus componentes han sido validados en un entorno clínico real controlado.',
                 'TRL': 'TRL6_2_2',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'4.	El prototipo desarrollado y sus componentes han sido validados en un entorno clínico real operativo.',
+                'enunciado':'El prototipo desarrollado y sus componentes han sido validados en un entorno clínico real operativo.',
                 'TRL': 'TRL7_2_3',
                 'chained':True}
             },

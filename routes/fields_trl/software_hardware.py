@@ -1,5 +1,4 @@
 from flask import Blueprint,render_template,request
-from random import shuffle
 from aditional_data.trl_crl import trl_questions_software_hardware,trl_data
 from aditional_data.results import software_hardware
 from aditional_data.db import client
@@ -49,5 +48,5 @@ def evaluation():
     }
 
     client.insert.insert_one(json_to_db)
-    # return render_template("/resultados/resultados.1.html",data=window_content)
+    #return render_template("/resultados/resultados.1.html",data=window_content)
     return jsonify(window_content)

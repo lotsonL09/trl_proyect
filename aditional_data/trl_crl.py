@@ -954,7 +954,6 @@ trl_questions_salud_medicamentos={
             }
         ],
     },
-
     'campo_2':{
         'title': 'Ensayos Preclínicos',
         'factor':factor_ensayos_preclinicos,
@@ -981,7 +980,6 @@ trl_questions_salud_medicamentos={
             },
         ]
     },
-
     'campo_3':{
         'title': 'Ensayos Clínicos',
         'factor':factor_ensayos_clinicos,

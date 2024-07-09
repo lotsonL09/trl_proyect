@@ -125,8 +125,8 @@ class category:
 ingenieria_tecno=category(
     campo_1='Investigación',
     campo_2='Desarrollo Tecnológico',
-    campo_3='Implementación',
-    campo_4='Desarrollo Comercial',
+    campo_3='Entorno de Desarrollo',
+    campo_4='Implementación y comercialización',
     type='TRL',
     name='Ingeniería y Tecnología'
 )

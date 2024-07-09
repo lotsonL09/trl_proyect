@@ -387,31 +387,31 @@ trl_questions_ingenieria_tecnologia={
         'factor':factor_investigacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se ha establecido una base teórica inicial que justifica la necesidad de una investigación.',
+                'enunciado':'Se ha identificado una necesidad o problema específico que la tecnología abordará.',
                 'TRL': 'TRL1_0_0',
                 'chained':False}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con documentación técnica a nivel básico.',
+                'enunciado':'Se ha desarrollado una idea o concepto inicial para abordar la necesidad identificada.',
                 'TRL': 'TRL2_0_1',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Las limitaciones han sido identificadas y se ha hecho el planteamiento de las estrategias para abordarlas..',
+                'enunciado':'Las limitaciones de la tecnología han sido identificadas y se ha hecho el planteamiento de las estrategias para abordarlas.',
                 'TRL': 'TRL3_0_2',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se han validado las componentes de la tecnología en condiciones controladas.',
+                'enunciado':'Se han validado las componentes de la tecnología en condiciones controladas de laboratorio o semejantes (de baja fidelidad).',
                 'TRL': 'TRL4_0_3',
                 'chained':False
             },
             },
             {'pregunta':{
-                'enunciado':'Se han hecho las evaluaciones iniciales de la eficiencia y sostenibilidad de la tecnología.',
-                'TRL': 'TRL5_0_4',
+                'enunciado':'Se tiene evidencia de resultados positivos del desempeño de la tecnología.',
+                'TRL': 'TRL7_0_4',
                 'chained':False
             }
             }
@@ -423,67 +423,67 @@ trl_questions_ingenieria_tecnologia={
         'factor':factor_desarrollo_tecnologico,
         'questions': [
             {'pregunta':{
-                'enunciado':'Se cuenta con las primeras versiones de la tecnología desarrollada con las funciones iniciales.',
+                'enunciado':'Se cuenta con las primeras versiones de la tecnología desarrollada en condiciones de laboratorio o semejantes (baja fidelidad) con las funciones iniciales.',
                 'TRL': 'TRL3_1_0',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con una versión alpha del modelo/algoritmo y/o versión inicial de la tecnología.',
+                'enunciado':'Se cuenta con un prototipo básico o a nivel de banco de pruebas con componentes básicas integradas.',
                 'TRL': 'TRL4_1_1',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con una versión beta del modelo/algoritmo y/o versión mejorada de la tecnología.',
-                'TRL': 'TRL6_1_2',
+                'enunciado':'Se cuenta con un prototipo desarrollado a nivel piloto.',
+                'TRL': 'TRL5_1_2',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con una versión estable del modelo/algoritmo y/o versión optimizada de la tecnología.',
-                'TRL': 'TRL8_1_3',
+                'enunciado':'Se cuenta con un prototipo desarrollado a escala completa.',
+                'TRL': 'TRL7_1_3',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología cuenta con una versión estable u optimizada que se encuentra en condiciones de pleno funcionamiento y recibe actualizaciones constantes.',
-                'TRL': 'TRL9_1_4',
+                'enunciado':'La tecnología cuenta con una versión final que ha sido completamente desarrollada e implementada.',
+                'TRL': 'TRL8_1_4',
                 'chained':False}
             },
         ]
     },
 
     'campo_3':{
-        'title': 'Implementación',
+        'title': 'Entorno de Desarrollo',
         'factor':factor_implementacion,
         'questions': [
             {'pregunta':{
-                'enunciado':'La tecnología ha sido probada por terceros o personas ajenas al equipo de desarrollo en condiciones simuladas.',
+                'enunciado':'La tecnología ha sido probada en un entorno de laboratorio o semejante (baja fidelidad).',
                 'TRL': 'TRL5_2_0',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología ha sido probada por usuarios seleccionados en condiciones cercanas a las reales.',
+                'enunciado':'La tecnología ha sido probada en un entorno relevante o simulado en condiciones controladas.',
                 'TRL': 'TRL6_2_1',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología se encuentra disponible para los usuarios finales siendo demostrada en condiciones operativas reales.',
+                'enunciado':'La tecnología ha sido probada en un entorno operacional real en condiciones normales de operación.',
                 'TRL': 'TRL7_2_2',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'Se cuenta con informes detallados donde se evidencie resultados positivos del desempeño de la tecnología en su versión estable en operaciones diarias.',
-                'TRL': 'TRL7_2_3',
+                'enunciado':'La tecnología ha sido probada exitosamente en funcionamiento con parámetros fuera de los rangos considerados normales.',
+                'TRL': 'TRL8_2_3',
                 'chained':True}
             },
             {'pregunta':{
-                'enunciado':'La tecnología cuenta con una versión final que se encuentra en condiciones de pleno funcionamiento.',
-                'TRL': 'TRL8_2_4',
+                'enunciado':'La tecnología se encuentra completamente implementado y funcionando en el rango completo de condiciones operacionales.',
+                'TRL': 'TRL9_2_4',
                 'chained':False}
             },
         ]
     },
 
     'campo_4':{
-        'title': 'Desarrollo Comercial',
+        'title': 'Implementación y comercialización',
         'factor':factor_desarrollo_comercial,
         'questions': [
         {'pregunta':{
@@ -492,8 +492,8 @@ trl_questions_ingenieria_tecnologia={
                 'chained':False}
         },
         {'pregunta':{
-            'enunciado':'Se cuenta con un diseño adaptado de la tecnología según las necesidades y/o preferencias del mercado.',
-            'TRL': 'TRL7_3_1',
+            'enunciado':'Se tienen en consideración las condiciones regulatorias y de cumplimiento en el sistema integrado.',
+            'TRL': 'TRL6_3_1',
                 'chained':False}
         },
         {'pregunta':{
@@ -507,7 +507,7 @@ trl_questions_ingenieria_tecnologia={
                 'chained':False}
         },
         {'pregunta':{
-            'enunciado':'Se ha hecho el lanzamiento de la tecnología y se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes.',
+            'enunciado':'Se ha hecho el lanzamiento de la tecnología, además, se está recopilando y analizando datos de los usuarios/clientes para realizar las mejoras pertinentes.',
             'TRL': 'TRL9_3_2',
                 'chained':False}
         },
